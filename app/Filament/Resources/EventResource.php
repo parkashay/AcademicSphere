@@ -2,12 +2,13 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PostResource\Pages;
-use App\Filament\Resources\PostResource\RelationManagers;
-use App\Models\Post;
+use App\Filament\Resources\EventResource\Pages;
+use App\Filament\Resources\EventResource\RelationManagers;
+use App\Models\Event;
+use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -18,9 +19,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class PostResource extends Resource
+class EventResource extends Resource
 {
-    protected static ?string $model = Post::class;
+    protected static ?string $model = Event::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -29,10 +30,9 @@ class PostResource extends Resource
         return $form
             ->schema([
                 TextInput::make('title')->required(),
-                TextInput::make('category')->required(),
+                DatePicker::make('date')->required(),
+                FileUpload::make('image'),
                 RichEditor::make('content')->required(),
-                TagsInput::make('keywords'),
-                FileUpload::make('thumbnail'),
             ]);
     }
 
@@ -40,22 +40,16 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id'),
                 TextColumn::make('title'),
-                TextColumn::make('category'),
+                TextColumn::make('date')->badge(),
+                ImageColumn::make('image'),
                 TextColumn::make('content')->limit(50),
-                TextColumn::make('keywords')->badge(),
-                ImageColumn::make('thumbnail'),
-                TextColumn::make('created_at'),
-                
-                
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -77,9 +71,9 @@ class PostResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPosts::route('/'),
-            'create' => Pages\CreatePost::route('/create'),
-            'edit' => Pages\EditPost::route('/{record}/edit'),
+            'index' => Pages\ListEvents::route('/'),
+            'create' => Pages\CreateEvent::route('/create'),
+            'edit' => Pages\EditEvent::route('/{record}/edit'),
         ];
     }    
 }

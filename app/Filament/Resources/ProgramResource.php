@@ -6,9 +6,12 @@ use App\Filament\Resources\ProgramResource\Pages;
 use App\Filament\Resources\ProgramResource\RelationManagers;
 use App\Models\Program;
 use Filament\Forms;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -23,7 +26,9 @@ class ProgramResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('title')->required(),
+                RichEditor::make('content')->required(),
+                TextInput::make('coordinator')->required(),
             ]);
     }
 
@@ -31,7 +36,9 @@ class ProgramResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title'),
+                TextColumn::make('content')->limit(50),
+                TextColumn::make('coordinator'),
             ])
             ->filters([
                 //
