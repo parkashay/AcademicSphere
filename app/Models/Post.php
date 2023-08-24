@@ -10,4 +10,7 @@ class Post extends Model
     protected $fillable = [
         'title', 'category', 'keywords', 'content', 'thumbnail'
     ];
+    protected $casts = [
+        'keywords' => 'array',
+    ];
 }

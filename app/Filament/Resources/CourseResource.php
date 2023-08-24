@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProgramResource\Pages;
-use App\Filament\Resources\ProgramResource\RelationManagers;
-use App\Models\Program;
+use App\Filament\Resources\CourseResource\Pages;
+use App\Filament\Resources\CourseResource\RelationManagers;
+use App\Models\Course;
 use Filament\Forms;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
@@ -16,11 +16,11 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ProgramResource extends Resource
+class CourseResource extends Resource
 {
-    protected static ?string $model = Program::class;
+    protected static ?string $model = Course::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static ?string $navigationGroup = 'Admin Control';
 
@@ -30,7 +30,7 @@ class ProgramResource extends Resource
             ->schema([
                 TextInput::make('title')->required(),
                 RichEditor::make('content')->required()->columnSpan(2),
-                TextInput::make('coordinator')->required(),
+                TextInput::make('access_code')->required(),
             ]);
     }
 
@@ -40,7 +40,7 @@ class ProgramResource extends Resource
             ->columns([
                 TextColumn::make('title'),
                 TextColumn::make('content')->limit(50),
-                TextColumn::make('coordinator'),
+                TextColumn::make('access_code')->badge(),
             ])
             ->filters([
                 //
@@ -68,9 +68,9 @@ class ProgramResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPrograms::route('/'),
-            'create' => Pages\CreateProgram::route('/create'),
-            'edit' => Pages\EditProgram::route('/{record}/edit'),
+            'index' => Pages\ListCourses::route('/'),
+            'create' => Pages\CreateCourse::route('/create'),
+            'edit' => Pages\EditCourse::route('/{record}/edit'),
         ];
     }    
 }

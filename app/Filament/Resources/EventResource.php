@@ -2,25 +2,29 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProgramResource\Pages;
-use App\Filament\Resources\ProgramResource\RelationManagers;
-use App\Models\Program;
+use App\Filament\Resources\EventResource\Pages;
+use App\Filament\Resources\EventResource\RelationManagers;
+use App\Models\Event;
 use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ProgramResource extends Resource
+class EventResource extends Resource
 {
-    protected static ?string $model = Program::class;
+    protected static ?string $model = Event::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
+    protected static ?string $navigationIcon = 'heroicon-o-calendar';
 
     protected static ?string $navigationGroup = 'Admin Control';
 
@@ -29,8 +33,9 @@ class ProgramResource extends Resource
         return $form
             ->schema([
                 TextInput::make('title')->required(),
+                DatePicker::make('date')->required(),
+                FileUpload::make('image'),
                 RichEditor::make('content')->required()->columnSpan(2),
-                TextInput::make('coordinator')->required(),
             ]);
     }
 
@@ -39,14 +44,16 @@ class ProgramResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title'),
+                TextColumn::make('date')->badge(),
+                ImageColumn::make('image'),
                 TextColumn::make('content')->limit(50),
-                TextColumn::make('coordinator'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                DeleteAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -55,6 +62,7 @@ class ProgramResource extends Resource
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
+                DeleteAction::make()
             ]);
     }
     
@@ -68,9 +76,9 @@ class ProgramResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPrograms::route('/'),
-            'create' => Pages\CreateProgram::route('/create'),
-            'edit' => Pages\EditProgram::route('/{record}/edit'),
+            'index' => Pages\ListEvents::route('/'),
+            'create' => Pages\CreateEvent::route('/create'),
+            'edit' => Pages\EditEvent::route('/{record}/edit'),
         ];
     }    
 }

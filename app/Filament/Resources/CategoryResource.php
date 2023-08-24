@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProgramResource\Pages;
-use App\Filament\Resources\ProgramResource\RelationManagers;
-use App\Models\Program;
+use App\Filament\Resources\CategoryResource\Pages;
+use App\Filament\Resources\CategoryResource\RelationManagers;
+use App\Models\Category;
 use Filament\Forms;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -16,11 +15,11 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ProgramResource extends Resource
+class CategoryResource extends Resource
 {
-    protected static ?string $model = Program::class;
+    protected static ?string $model = Category::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
+    protected static ?string $navigationIcon = 'heroicon-o-tag';
 
     protected static ?string $navigationGroup = 'Admin Control';
 
@@ -28,9 +27,7 @@ class ProgramResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('title')->required(),
-                RichEditor::make('content')->required()->columnSpan(2),
-                TextInput::make('coordinator')->required(),
+                TextInput::make('name')->label('Category Name')->required()
             ]);
     }
 
@@ -38,14 +35,13 @@ class ProgramResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title'),
-                TextColumn::make('content')->limit(50),
-                TextColumn::make('coordinator'),
+                TextColumn::make('name')->badge()
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\DeleteAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -68,9 +64,9 @@ class ProgramResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPrograms::route('/'),
-            'create' => Pages\CreateProgram::route('/create'),
-            'edit' => Pages\EditProgram::route('/{record}/edit'),
+            'index' => Pages\ListCategories::route('/'),
+            'create' => Pages\CreateCategory::route('/create'),
+            'edit' => Pages\EditCategory::route('/{record}/edit'),
         ];
     }    
 }
