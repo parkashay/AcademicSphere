@@ -32,7 +32,7 @@ class PostResource extends Resource
             ->schema([
                 TextInput::make('title')->required(),
                 TextInput::make('category')->required(),
-                RichEditor::make('content')->required(),
+                RichEditor::make('content')->required()->columnSpan(2),
                 TagsInput::make('keywords'),
                 FileUpload::make('thumbnail'),
             ]);

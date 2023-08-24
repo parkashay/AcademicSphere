@@ -12,6 +12,6 @@ class CreateCourse extends CreateRecord
 
     protected function getRedirectUrl(): string
     {
-     return $this->getResource()::getUrl('index');  
+        return $this->getResource()::getUrl('index');
     }
 }

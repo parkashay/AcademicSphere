@@ -29,7 +29,7 @@ class ProgramResource extends Resource
         return $form
             ->schema([
                 TextInput::make('title')->required(),
-                RichEditor::make('content')->required(),
+                RichEditor::make('content')->required()->columnSpan(2),
                 TextInput::make('coordinator')->required(),
             ]);
     }
