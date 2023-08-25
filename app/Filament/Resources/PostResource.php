@@ -4,9 +4,11 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
 use App\Filament\Resources\PostResource\RelationManagers;
+use App\Models\Category;
 use App\Models\Post;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -31,10 +33,10 @@ class PostResource extends Resource
         return $form
             ->schema([
                 TextInput::make('title')->required(),
-                TextInput::make('category')->required(),
+                Select::make('category')->required()->options(Category::all()->pluck('name'))->native(false),
                 RichEditor::make('content')->required()->columnSpan(2),
                 TagsInput::make('keywords'),
-                FileUpload::make('thumbnail'),
+                FileUpload::make('thumbnail')->image(),
             ]);
     }
 
@@ -44,7 +46,7 @@ class PostResource extends Resource
             ->columns([
                 TextColumn::make('id'),
                 TextColumn::make('title'),
-                TextColumn::make('category'),
+                TextColumn::make('category')->badge()->color('gray'),
                 TextColumn::make('content')->limit(50),
                 TextColumn::make('keywords')->badge(),
                 ImageColumn::make('thumbnail'),

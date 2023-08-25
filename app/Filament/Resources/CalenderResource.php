@@ -5,8 +5,10 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CalenderResource\Pages;
 use App\Filament\Resources\CalenderResource\RelationManagers;
 use App\Models\Calender;
+use DateTime;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -14,6 +16,8 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+
+use function PHPSTORM_META\type;
 
 class CalenderResource extends Resource
 {
@@ -25,9 +29,18 @@ class CalenderResource extends Resource
 
     public static function form(Form $form): Form
     {
+        $minYear = 2000;
+        $currentYear = date('Y');
+        $maxYear = $currentYear + 3;
+        $yearsArray = [];
+        for ($i = $maxYear; $i >= $minYear; $i--) {
+            $yearsArray[] = $i;
+        }
         return $form
             ->schema([
-                DatePicker::make('year')
+                Select::make('year')->options(
+                    $yearsArray
+                )->searchable()->native(false)
             ]);
     }
 
@@ -36,7 +49,7 @@ class CalenderResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('year'),
-                
+
             ])
             ->filters([
                 //
@@ -56,14 +69,14 @@ class CalenderResource extends Resource
                 Tables\Actions\CreateAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -71,5 +84,5 @@ class CalenderResource extends Resource
             'create' => Pages\CreateCalender::route('/create'),
             'edit' => Pages\EditCalender::route('/{record}/edit'),
         ];
-    }    
+    }
 }
