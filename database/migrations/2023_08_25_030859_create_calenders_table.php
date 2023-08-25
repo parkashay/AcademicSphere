@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('calenders', function (Blueprint $table) {
             $table->id();
             $table->string('year')->nullable();
+            $table->text('file')->nullable();
             $table->timestamps();
         });
     }

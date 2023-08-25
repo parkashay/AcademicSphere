@@ -20,6 +20,8 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+use function Livewire\wrap;
+
 class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
@@ -33,10 +35,14 @@ class PostResource extends Resource
         return $form
             ->schema([
                 TextInput::make('title')->required(),
-                Select::make('category')->required()->options(Category::all()->pluck('name'))->native(false),
+                Select::make('category')->required()->multiple()->options(Category::all()->pluck('name', 'name'))->native(false),
                 RichEditor::make('content')->required()->columnSpan(2),
                 TagsInput::make('keywords'),
-                FileUpload::make('thumbnail')->image(),
+                FileUpload::make('thumbnail')->image()
+                ->imageResizeMode('cover')
+                ->imageCropAspectRatio('16:9')
+                ->imageEditor()
+                ->imageEditorAspectRatios(['16:9']),
             ]);
     }
 
