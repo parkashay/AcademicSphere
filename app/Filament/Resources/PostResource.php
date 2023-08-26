@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
-use App\Filament\Resources\PostResource\RelationManagers;
 use App\Models\Category;
 use App\Models\Post;
 use Filament\Forms\Components\FileUpload;
@@ -17,8 +16,7 @@ use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class PostResource extends Resource
 {
@@ -33,10 +31,14 @@ class PostResource extends Resource
         return $form
             ->schema([
                 TextInput::make('title')->required(),
-                Select::make('category')->required()->options(Category::all()->pluck('name'))->native(false),
+                Select::make('category')->required()->multiple()->options(Category::all()->pluck('name', 'name'))->native(false),
                 RichEditor::make('content')->required()->columnSpan(2),
                 TagsInput::make('keywords'),
-                FileUpload::make('thumbnail')->image(),
+                FileUpload::make('thumbnail')->image()
+                ->imageResizeMode('cover')
+                ->imageCropAspectRatio('16:9')
+                ->imageEditor()
+                ->imageEditorAspectRatios(['16:9']),
             ]);
     }
 
@@ -86,4 +88,6 @@ class PostResource extends Resource
             'edit' => Pages\EditPost::route('/{record}/edit'),
         ];
     }    
+    
+   
 }
