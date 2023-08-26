@@ -12,5 +12,6 @@ class Post extends Model
     ];
     protected $casts = [
         'keywords' => 'array',
+        'category' => 'array',
     ];
 }

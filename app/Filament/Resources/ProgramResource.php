@@ -47,6 +47,8 @@ class ProgramResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+                
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -71,6 +73,7 @@ class ProgramResource extends Resource
             'index' => Pages\ListPrograms::route('/'),
             'create' => Pages\CreateProgram::route('/create'),
             'edit' => Pages\EditProgram::route('/{record}/edit'),
+            
         ];
     }    
 }
