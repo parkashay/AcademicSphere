@@ -48,8 +48,8 @@ class EventResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title'),
-                TextColumn::make('date')->badge(),
+                TextColumn::make('title')->searchable(),
+                TextColumn::make('date')->badge()->searchable(),
                 ImageColumn::make('image'),
                 TextColumn::make('content')->limit(50),
             ])
@@ -67,7 +67,6 @@ class EventResource extends Resource
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
-                DeleteAction::make()
             ]);
     }
 
