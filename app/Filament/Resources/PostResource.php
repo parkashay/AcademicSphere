@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
+use App\Filament\Resources\PostResource\Widgets\PostsChart;
 use App\Models\Category;
 use App\Models\Post;
 use Filament\Forms\Components\FileUpload;
@@ -31,7 +32,12 @@ class PostResource extends Resource
         return $form
             ->schema([
                 TextInput::make('title')->required(),
-                Select::make('category')->required()->multiple()->options(Category::all()->pluck('name', 'name'))->native(false),
+                Select::make('category')->required()
+                ->multiple()
+                ->options(Category::all()
+                ->pluck('name', 'name'))
+                ->native(false),
+
                 RichEditor::make('content')->required()->columnSpan(2),
                 TagsInput::make('keywords'),
                 FileUpload::make('thumbnail')->image()
@@ -47,17 +53,18 @@ class PostResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('id'),
-                TextColumn::make('title'),
+                TextColumn::make('title')->searchable(),
                 TextColumn::make('category')->badge()->color('gray'),
-                TextColumn::make('content')->limit(50),
-                TextColumn::make('keywords')->badge(),
+                TextColumn::make('content')->limit(50)->searchable(),
+                TextColumn::make('keywords')->badge()->searchable(),
                 ImageColumn::make('thumbnail'),
                 TextColumn::make('created_at'),
                 
                 
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('category')
+                ->options(Category::all()->pluck('name', 'name'))->native(false)
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -88,6 +95,5 @@ class PostResource extends Resource
             'edit' => Pages\EditPost::route('/{record}/edit'),
         ];
     }    
-    
    
 }
