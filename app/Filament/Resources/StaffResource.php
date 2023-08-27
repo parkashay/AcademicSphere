@@ -30,9 +30,9 @@ class StaffResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('username')->required(),
+                TextInput::make('username')->required()->unique(),
                 TextInput::make('fullname')->required(),
-                FileUpload::make('profile_image')->image(),
+                FileUpload::make('profile_image')->image()->nullable(),
                 TextInput::make('designation')->required(),
                 RichEditor::make('content')->required()->columnSpan(2),
 
