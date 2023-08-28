@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
-use App\Filament\Resources\PostResource\Widgets\PostsChart;
 use App\Models\Category;
 use App\Models\Post;
 use Filament\Forms\Components\FileUpload;
@@ -17,15 +16,16 @@ use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Widgets\StatsOverviewWidget\Stat;
 
-class PostResource extends Resource
+class PostResource extends Resource 
 {
     protected static ?string $model = Post::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
     protected static ?string $navigationGroup = 'Admin Control';
+
+    protected static bool $shouldRegisterNavigation = true;
 
     public static function form(Form $form): Form
     {
@@ -59,7 +59,6 @@ class PostResource extends Resource
                 TextColumn::make('keywords')->badge()->searchable(),
                 ImageColumn::make('thumbnail'),
                 TextColumn::make('created_at'),
-                
                 
             ])
             ->filters([
