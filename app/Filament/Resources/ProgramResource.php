@@ -75,5 +75,9 @@ class ProgramResource extends Resource
             'edit' => Pages\EditProgram::route('/{record}/edit'),
             
         ];
-    }    
+    } 
+    public static function shouldRegisterNavigation(): bool
+    {
+        return (auth()->user()->role === 'admin');
+    }   
 }

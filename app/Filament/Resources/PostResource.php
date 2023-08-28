@@ -17,7 +17,7 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class PostResource extends Resource 
+class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
 
@@ -25,7 +25,6 @@ class PostResource extends Resource
 
     protected static ?string $navigationGroup = 'Admin Control';
 
-    protected static bool $shouldRegisterNavigation = true;
 
     public static function form(Form $form): Form
     {
@@ -33,18 +32,18 @@ class PostResource extends Resource
             ->schema([
                 TextInput::make('title')->required(),
                 Select::make('category')->required()
-                ->multiple()
-                ->options(Category::all()
-                ->pluck('name', 'name'))
-                ->native(false),
+                    ->multiple()
+                    ->options(Category::all()
+                        ->pluck('name', 'name'))
+                    ->native(false),
 
                 RichEditor::make('content')->required()->columnSpan(2),
                 TagsInput::make('keywords'),
                 FileUpload::make('thumbnail')->image()
-                ->imageResizeMode('cover')
-                ->imageCropAspectRatio('16:9')
-                ->imageEditor()
-                ->imageEditorAspectRatios(['16:9']),
+                    ->imageResizeMode('cover')
+                    ->imageCropAspectRatio('16:9')
+                    ->imageEditor()
+                    ->imageEditorAspectRatios(['16:9']),
             ]);
     }
 
@@ -59,11 +58,11 @@ class PostResource extends Resource
                 TextColumn::make('keywords')->badge()->searchable(),
                 ImageColumn::make('thumbnail'),
                 TextColumn::make('created_at'),
-                
+
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('category')
-                ->options(Category::all()->pluck('name', 'name'))->native(false)
+                    ->options(Category::all()->pluck('name', 'name'))->native(false)
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -78,14 +77,14 @@ class PostResource extends Resource
                 Tables\Actions\CreateAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -93,6 +92,10 @@ class PostResource extends Resource
             'create' => Pages\CreatePost::route('/create'),
             'edit' => Pages\EditPost::route('/{record}/edit'),
         ];
-    }    
-   
+    }
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return (auth()->user()->role === 'admin');
+    }
 }

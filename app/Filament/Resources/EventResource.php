@@ -85,4 +85,8 @@ class EventResource extends Resource
             'edit' => Pages\EditEvent::route('/{record}/edit'),
         ];
     }
+    public static function shouldRegisterNavigation(): bool
+    {
+        return (auth()->user()->role === 'admin');
+    }
 }

@@ -81,4 +81,8 @@ class GalleryResource extends Resource
             'edit' => Pages\EditGallery::route('/{record}/edit'),
         ];
     }    
+    public static function shouldRegisterNavigation(): bool
+    {
+        return (auth()->user()->role === 'admin');
+    }
 }

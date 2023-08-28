@@ -82,4 +82,8 @@ class StaffResource extends Resource
             'edit' => Pages\EditStaff::route('/{record}/edit'),
         ];
     }    
+    public static function shouldRegisterNavigation(): bool
+    {
+        return (auth()->user()->role === 'admin');
+    }
 }

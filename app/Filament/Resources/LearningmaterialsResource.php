@@ -21,8 +21,9 @@ class LearningmaterialsResource extends Resource
 {
     protected static ?string $model = Learningmaterials::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Admin Control';
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
+    protected static ?string $navigationGroup = 'Staff Control';
+    
 
 
     public static function form(Form $form): Form
@@ -53,7 +54,6 @@ class LearningmaterialsResource extends Resource
                 TextColumn::make('course'),
                 TextColumn::make('access_code'),
                 TextColumn::make('date')->badge()->searchable(),
-
                 
             ])
             ->filters([

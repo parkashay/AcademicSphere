@@ -86,4 +86,8 @@ class CalenderResource extends Resource
             'edit' => Pages\EditCalender::route('/{record}/edit'),
         ];
     }
+    public static function shouldRegisterNavigation(): bool
+    {
+        return (auth()->user()->role === 'admin');
+    }
 }

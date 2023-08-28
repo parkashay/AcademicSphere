@@ -112,4 +112,8 @@ class TranscriptsResource extends Resource
             'edit' => Pages\EditTranscripts::route('/{record}/edit'),
         ];
     }    
+    public static function shouldRegisterNavigation(): bool
+    {
+        return (auth()->user()->role === 'admin');
+    }
 }
