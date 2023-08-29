@@ -8,6 +8,7 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class CourseOverview extends BaseWidget
 {
+    protected static ?int $sort = 2;
     protected function getStats(): array
     {
         return [
