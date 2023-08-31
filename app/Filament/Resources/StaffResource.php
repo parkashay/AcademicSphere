@@ -31,11 +31,11 @@ class StaffResource extends Resource
         return $form
             ->schema([
                 TextInput::make('username')->required(),
-                TextInput::make('fullname')->required(),
+                TextInput::make('fullname')
+                ->label('Full Name')->required(),
                 FileUpload::make('profile_image')->image(),
                 TextInput::make('designation')->required(),
                 RichEditor::make('content')->required()->columnSpan(2),
-
             ]);
     }
 

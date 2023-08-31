@@ -2,46 +2,38 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\EventResource\Pages;
-use App\Filament\Resources\EventResource\RelationManagers;
-use App\Models\Event;
-use Filament\Actions\ViewAction;
+use App\Filament\Resources\TestimonialResource\Pages;
+use App\Models\Testimonial;
 use Filament\Forms;
-use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\File;
 
-class EventResource extends Resource
+class TestimonialResource extends Resource
 {
-    protected static ?string $model = Event::class;
+    protected static ?string $model = Testimonial::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-star';
-
+    protected static ?string $navigationIcon = 'heroicon-o-pencil';
     protected static ?string $navigationGroup = 'Admin Control';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('title')->required(),
-                DatePicker::make('date')->required(),
-                FileUpload::make('image')->image()
+                TextInput::make('name'),
+                FileUpload::make('avatar')
+                    ->image()
+                    ->imageCropAspectRatio('1:1')
                     ->imageResizeMode('cover')
-                    ->imageCropAspectRatio('16:9')
-                    ->imageEditor()
-                    ->imageEditorAspectRatios(['16:9']),
-                RichEditor::make('content')->required()->columnSpan(2),
+                    ->imageEditor(),
+                RichEditor::make('content',)
             ]);
     }
 
@@ -49,9 +41,8 @@ class EventResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title')->searchable(),
-                TextColumn::make('date')->badge()->searchable(),
-                ImageColumn::make('image'),
+                TextColumn::make('name'),
+                ImageColumn::make('avatar'),
                 TextColumn::make('content')->limit(50),
             ])
             ->filters([
@@ -59,10 +50,10 @@ class EventResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                DeleteAction::make()
-                ->before(function (Event $record){
-                    File::delete(public_path('storage/'.$record->thumbnail));
-                }),
+                Tables\Actions\DeleteAction::make()
+                    ->before(function (Testimonial $record) {
+                        File::delete(public_path('storage/' . $record->avatar));
+                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -84,9 +75,9 @@ class EventResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListEvents::route('/'),
-            'create' => Pages\CreateEvent::route('/create'),
-            'edit' => Pages\EditEvent::route('/{record}/edit'),
+            'index' => Pages\ListTestimonials::route('/'),
+            'create' => Pages\CreateTestimonial::route('/create'),
+            'edit' => Pages\EditTestimonial::route('/{record}/edit'),
         ];
     }
     public static function shouldRegisterNavigation(): bool

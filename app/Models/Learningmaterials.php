@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Learningmaterials extends Model
 {
     protected $fillable = [
-        'title', 'teacher', 'date','course','keywords','access_code','content'
+        'title', 'teacher', 'date','course','keywords','access_code','content','files'
+    ];
+    protected $casts = [
+      'keywords' => 'array',
+      'files' => 'array',  
     ];
 }

@@ -16,10 +16,10 @@ return new class extends Migration
             $table->text('title');
             $table->text('teacher');
             $table->text('course');
-            $table->text('keywords');
+            $table->text('keywords')->nullable();
             $table->text('access_code');
             $table->text('content');
-            $table->string('date');
+            $table->text('files')->nullable();
             $table->timestamps();
         });
     }

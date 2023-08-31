@@ -59,12 +59,11 @@ class TranscriptsResource extends Resource
                 TextInput::make('name')->required(),
                 Select::make('program')->options(
                     $programs
-                )->required() ,
+                )->required()->native(false) ,
                 RichEditor::make('content')->required()->columnSpan(2),
                 Radio::make('passed_out')
-                    ->label('Are you a passed out student?')
+                    ->label('Is this a passed out student?')
                     ->boolean()
-
             ]);
     }
 

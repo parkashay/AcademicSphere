@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CourseResource\Pages;
-use App\Filament\Resources\CourseResource\Widgets\CourseOverview;
 use App\Models\Course;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
@@ -28,7 +27,6 @@ class CourseResource extends Resource
             ->schema([
                 TextInput::make('title')->required(),
                 RichEditor::make('content')->required()->columnSpan(2),
-                TextInput::make('access_code')->required(),
             ]);
     }
 
@@ -38,7 +36,6 @@ class CourseResource extends Resource
             ->columns([
                 TextColumn::make('title'),
                 TextColumn::make('content')->limit(50),
-                TextColumn::make('access_code')->badge(),
             ])
             ->filters([
                 //

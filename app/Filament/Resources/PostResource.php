@@ -16,6 +16,7 @@ use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\File;
 
 class PostResource extends Resource
 {
@@ -43,7 +44,6 @@ class PostResource extends Resource
                     ->imageResizeMode('cover')
                     ->imageCropAspectRatio('16:9')
                     ->imageEditor()
-                    ->imageEditorAspectRatios(['16:9']),
             ]);
     }
 
@@ -66,7 +66,10 @@ class PostResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DeleteAction::make()
+                ->before(function (Post $record){
+                    File::delete(public_path('storage/'.$record->thumbnail));
+                }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
