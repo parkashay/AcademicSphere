@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\TranscriptsResource\Pages;
 use App\Filament\Resources\TranscriptsResource\RelationManagers;
+use App\Models\Program;
 use App\Models\Transcripts;
 use Filament\Forms;
 use Filament\Forms\Components\Radio;
@@ -23,8 +24,9 @@ class TranscriptsResource extends Resource
 {
     protected static ?string $model = Transcripts::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-table-cells';
     protected static ?string $navigationGroup = 'Admin Control';
+    protected static ?int $navigationSort = 7;
 
 
     public static function form(Form $form): Form
@@ -36,20 +38,7 @@ class TranscriptsResource extends Resource
         for ($i = $maxYear; $i >= $minYear; $i--) {
             $yearsArray[$i] = $i;
         }
-        $programs = [
-            'Program 1' => 'BE Software',
-            'Program 2' => 'BE Computer',
-            'Program 3' => 'BE Civil',
-            'Program 4' => 'BE Civil and Rural',
-            'Program 5' => 'BE Electrical and Electronics',
-            'Program 6' => 'BE Civil',
-            'Program 7' => 'BE Electronics and Electrical'
-            
-
-
-
-            // Add more program options as needed
-        ];
+      
         return $form
             ->schema([
 
@@ -58,7 +47,7 @@ class TranscriptsResource extends Resource
                 )->searchable()->native(false)->required(),
                 TextInput::make('name')->required(),
                 Select::make('program')->options(
-                    $programs
+                    Program::all()->pluck('title', 'title')
                 )->required()->native(false) ,
                 RichEditor::make('content')->required()->columnSpan(2),
                 Radio::make('passed_out')
@@ -73,7 +62,7 @@ class TranscriptsResource extends Resource
             ->columns([
                 TextColumn::make('name'),
                 TextColumn::make('program'),
-                TextColumn::make('year'),
+                TextColumn::make('year')->badge(),
                 TextColumn::make('passed_out'),
                 TextColumn::make('content')->limit(50)->searchable(),
 

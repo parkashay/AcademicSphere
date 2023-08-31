@@ -22,6 +22,8 @@ class TestimonialResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-pencil';
     protected static ?string $navigationGroup = 'Admin Control';
+    protected static ?int $navigationSort = 9;
+
 
     public static function form(Form $form): Form
     {

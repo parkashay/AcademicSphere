@@ -29,6 +29,8 @@ class LearningmaterialsResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
     protected static ?string $navigationGroup = 'Staff Control';
+    protected static ?int $navigationSort = 12;
+
 
     public static function form(Form $form): Form
     {
