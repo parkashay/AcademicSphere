@@ -17,6 +17,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\File;
 
 class StaffResource extends Resource
 {
@@ -54,7 +55,10 @@ class StaffResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DeleteAction::make()
+                ->before(function(Staff $record){
+                    File::delete(public_path('storage/'.$record->profile_image));
+                }),
 
             ])
             ->bulkActions([
