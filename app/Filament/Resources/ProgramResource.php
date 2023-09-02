@@ -24,6 +24,9 @@ class ProgramResource extends Resource
 
     protected static ?string $navigationGroup = 'Admin Control';
 
+    protected static ?int $navigationSort = 4;
+
+
     public static function form(Form $form): Form
     {
         return $form
@@ -75,5 +78,9 @@ class ProgramResource extends Resource
             'edit' => Pages\EditProgram::route('/{record}/edit'),
             
         ];
-    }    
+    } 
+    public static function shouldRegisterNavigation(): bool
+    {
+        return (auth()->user()->role === 'admin');
+    }   
 }

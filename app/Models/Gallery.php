@@ -9,4 +9,7 @@ class Gallery extends Model
     protected $fillable = [
         'caption', 'date', 'content', 
     ];
+    protected $casts = [
+        'content' => 'array'
+    ];
 }

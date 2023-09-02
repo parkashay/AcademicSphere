@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
+use App\Models\Role;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -21,11 +22,18 @@ class UserResource extends Resource
 
     protected static ?string $navigationGroup = 'Admin Control';
 
+    protected static ?int $navigationSort = 8;
+
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')->required(),
+                Forms\Components\Select::make('role')
+                ->options(
+                    Role::all()->pluck('role', 'role')
+                )->native(false),
                 Forms\Components\TextInput::make('email')->email()->required(),
                 Forms\Components\TextInput::make('password')->password()->required(),
             ]);
@@ -37,6 +45,7 @@ class UserResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('id'),
                 Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('role')->badge()->color('success'),
                 Tables\Columns\TextColumn::make('email'),
             ])
             ->filters([
@@ -71,4 +80,8 @@ class UserResource extends Resource
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
     }    
+    public static function shouldRegisterNavigation(): bool
+    {
+        return (auth()->user()->role === 'admin');
+    }
 }

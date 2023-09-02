@@ -9,6 +9,6 @@ class Course extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title', 'content', 'access_code',
+        'title', 'content',
     ];
 }

@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\AboutPageController;
+use App\Http\Controllers\CoursesPageController;
+use App\Http\Controllers\EventPageController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostsPageController;
+use App\Models\Course;
+use App\Models\Staff;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/about', [AboutPageController::class, 'index']);
+Route::get('/courses', [CoursesPageController::class, 'index']);
+Route::get('/events', [EventPageController::class, 'index']);
+Route::get('/posts', [PostsPageController::class, 'index']);
+Route::get('/posts/single/{id}', [PostsPageController::class, 'singlePost']);

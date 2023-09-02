@@ -20,6 +20,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\File;
 
 class EventResource extends Resource
 {
@@ -28,6 +29,8 @@ class EventResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-star';
 
     protected static ?string $navigationGroup = 'Admin Control';
+    protected static ?int $navigationSort = 2;
+
 
     public static function form(Form $form): Form
     {
@@ -48,8 +51,8 @@ class EventResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title'),
-                TextColumn::make('date')->badge(),
+                TextColumn::make('title')->searchable(),
+                TextColumn::make('date')->badge()->searchable(),
                 ImageColumn::make('image'),
                 TextColumn::make('content')->limit(50),
             ])
@@ -59,6 +62,9 @@ class EventResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 DeleteAction::make()
+                ->before(function (Event $record){
+                    File::delete(public_path('storage/'.$record->thumbnail));
+                }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -67,7 +73,6 @@ class EventResource extends Resource
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make(),
-                DeleteAction::make()
             ]);
     }
 
@@ -85,5 +90,9 @@ class EventResource extends Resource
             'create' => Pages\CreateEvent::route('/create'),
             'edit' => Pages\EditEvent::route('/{record}/edit'),
         ];
+    }
+    public static function shouldRegisterNavigation(): bool
+    {
+        return (auth()->user()->role === 'admin');
     }
 }

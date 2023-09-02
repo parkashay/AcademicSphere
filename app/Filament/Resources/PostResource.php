@@ -16,7 +16,7 @@ use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Widgets\StatsOverviewWidget\Stat;
+use Illuminate\Support\Facades\File;
 
 class PostResource extends Resource
 {
@@ -26,19 +26,26 @@ class PostResource extends Resource
 
     protected static ?string $navigationGroup = 'Admin Control';
 
+    protected static ?int $navigationSort = 1;
+
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 TextInput::make('title')->required(),
-                Select::make('category')->required()->multiple()->options(Category::all()->pluck('name', 'name'))->native(false),
+                Select::make('category')->required()
+                    ->multiple()
+                    ->options(Category::all()
+                        ->pluck('name', 'name'))
+                    ->native(false),
+
                 RichEditor::make('content')->required()->columnSpan(2),
                 TagsInput::make('keywords'),
                 FileUpload::make('thumbnail')->image()
-                ->imageResizeMode('cover')
-                ->imageCropAspectRatio('16:9')
-                ->imageEditor()
-                ->imageEditorAspectRatios(['16:9']),
+                    ->imageResizeMode('cover')
+                    ->imageCropAspectRatio('16:9')
+                    ->imageEditor()
             ]);
     }
 
@@ -47,21 +54,25 @@ class PostResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('id'),
-                TextColumn::make('title'),
+                TextColumn::make('title')->searchable(),
                 TextColumn::make('category')->badge()->color('gray'),
-                TextColumn::make('content')->limit(50),
-                TextColumn::make('keywords')->badge(),
+                TextColumn::make('content')->limit(50)->searchable(),
+                TextColumn::make('keywords')->badge()->searchable(),
                 ImageColumn::make('thumbnail'),
                 TextColumn::make('created_at'),
-                
-                
+
             ])
+            ->defaultSort('updated_at', 'DESC')
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('category')
+                    ->options(Category::all()->pluck('name', 'name'))->native(false)
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DeleteAction::make()
+                ->before(function (Post $record){
+                    File::delete(public_path('storage/'.$record->thumbnail));
+                }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -72,14 +83,14 @@ class PostResource extends Resource
                 Tables\Actions\CreateAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -87,7 +98,10 @@ class PostResource extends Resource
             'create' => Pages\CreatePost::route('/create'),
             'edit' => Pages\EditPost::route('/{record}/edit'),
         ];
-    }    
-    
-   
+    }
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return (auth()->user()->role === 'admin');
+    }
 }

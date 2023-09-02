@@ -19,7 +19,9 @@ class CourseResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationGroup = 'Admin Control';
+    protected static ?string $navigationGroup = 'Staff Control';
+    protected static ?int $navigationSort = 13;
+
 
     public static function form(Form $form): Form
     {
@@ -27,7 +29,6 @@ class CourseResource extends Resource
             ->schema([
                 TextInput::make('title')->required(),
                 RichEditor::make('content')->required()->columnSpan(2),
-                TextInput::make('access_code')->required(),
             ]);
     }
 
@@ -37,7 +38,6 @@ class CourseResource extends Resource
             ->columns([
                 TextColumn::make('title'),
                 TextColumn::make('content')->limit(50),
-                TextColumn::make('access_code')->badge(),
             ])
             ->filters([
                 //
@@ -70,5 +70,6 @@ class CourseResource extends Resource
             'create' => Pages\CreateCourse::route('/create'),
             'edit' => Pages\EditCourse::route('/{record}/edit'),
         ];
-    }    
+    }   
+ 
 }

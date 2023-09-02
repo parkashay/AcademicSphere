@@ -26,6 +26,7 @@ class CalenderResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-calendar';
     protected static ?string $navigationGroup = 'Admin Control';
+    protected static ?int $navigationSort = 6;
 
 
     public static function form(Form $form): Form
@@ -85,5 +86,9 @@ class CalenderResource extends Resource
             'create' => Pages\CreateCalender::route('/create'),
             'edit' => Pages\EditCalender::route('/{record}/edit'),
         ];
+    }
+    public static function shouldRegisterNavigation(): bool
+    {
+        return (auth()->user()->role === 'admin');
     }
 }

@@ -3,29 +3,26 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\GalleryResource\Pages;
-use App\Filament\Resources\GalleryResource\RelationManagers;
 use App\Models\Gallery;
-use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
-
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\File;
 
 class GalleryResource extends Resource
 {
     protected static ?string $model = Gallery::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-photo';
 
     protected static ?string $navigationGroup = 'Admin Control';
+    protected static ?int $navigationSort = 3;
 
 
     public static function form(Form $form): Form
@@ -34,8 +31,10 @@ class GalleryResource extends Resource
             ->schema([
                 TextInput::make('caption')->required(),
                 DatePicker::make('date')->required(),
-                RichEditor::make('content')->required()->columnSpan(2),
-
+                FileUpload::make('content')
+                ->image()
+                ->multiple()
+                ->required()
             ]);
     }
 
@@ -44,7 +43,7 @@ class GalleryResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('caption'),
-                TextColumn::make('content')->limit(50),
+                ImageColumn::make('content'),
                 TextColumn::make('date')->badge(),
 
             ])
@@ -53,7 +52,11 @@ class GalleryResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DeleteAction::make()->before(function (Gallery $record){
+                    foreach($record->content as $image){
+                    File::delete(public_path('storage/'.$image));
+                    }
+                }),
 
             ])
             ->bulkActions([
@@ -81,4 +84,8 @@ class GalleryResource extends Resource
             'edit' => Pages\EditGallery::route('/{record}/edit'),
         ];
     }    
+    public static function shouldRegisterNavigation(): bool
+    {
+        return (auth()->user()->role === 'admin');
+    }
 }
