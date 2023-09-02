@@ -1,8 +1,14 @@
 @extends('layouts.page')
-@section('title', 'SOE Homepage')
+@section('title', 'School of Engineering - Home')
 @section('content')
-<h1> This is the homepage </h1>
-<p>This is some content in the homepage</p>
-<b>Welcome to blade </b>
+    @include('components.hero')
+    @include('components.banner-feature')
+    @include('components.news-preview')
+    @include('components.home-about')
+    @include('components.courses-preview')
+    @include('components.call-to-action')
+    @include('components.video-preview')
+    @include('components.events-preview')
+    @include('components.testimonials')
+    @include('components.staff-preview')
 @endsection
-

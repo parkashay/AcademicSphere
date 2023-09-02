@@ -35,8 +35,11 @@ class StaffResource extends Resource
             ->schema([
                 TextInput::make('username')->required(),
                 TextInput::make('fullname')
-                ->label('Full Name')->required(),
-                FileUpload::make('profile_image')->image(),
+                    ->label('Full Name')->required(),
+                FileUpload::make('profile_image')->image()
+                    ->imageResizeMode('cover')
+                    ->imageCropAspectRatio('1:1')
+                    ->imageEditor(),
                 TextInput::make('designation')->required(),
                 RichEditor::make('content')->required()->columnSpan(2),
             ]);
@@ -47,8 +50,8 @@ class StaffResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('username'),
-                TextColumn::make('fullname'),
-                TextColumn::make('designation'),
+                TextColumn::make('fullname')->searchable(),
+                TextColumn::make('designation')->searchable(),
                 TextColumn::make('content')->limit(50),
                 ImageColumn::make('profile_image'),
             ])
@@ -58,10 +61,9 @@ class StaffResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
-                ->before(function(Staff $record){
-                    File::delete(public_path('storage/'.$record->profile_image));
-                }),
-
+                    ->before(function (Staff $record) {
+                        File::delete(public_path('storage/' . $record->profile_image));
+                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -72,14 +74,14 @@ class StaffResource extends Resource
                 Tables\Actions\CreateAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -87,7 +89,7 @@ class StaffResource extends Resource
             'create' => Pages\CreateStaff::route('/create'),
             'edit' => Pages\EditStaff::route('/{record}/edit'),
         ];
-    }    
+    }
     public static function shouldRegisterNavigation(): bool
     {
         return (auth()->user()->role === 'admin');

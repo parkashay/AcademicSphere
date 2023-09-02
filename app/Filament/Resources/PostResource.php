@@ -62,6 +62,7 @@ class PostResource extends Resource
                 TextColumn::make('created_at'),
 
             ])
+            ->defaultSort('updated_at', 'DESC')
             ->filters([
                 Tables\Filters\SelectFilter::make('category')
                     ->options(Category::all()->pluck('name', 'name'))->native(false)
