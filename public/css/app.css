@@ -1053,3 +1053,8 @@ link:focus,
   color:gray;
   padding-inline: 3px;
 }
+
+.post-content-container{
+  width: 100%;
+  overflow-x: auto;
+}

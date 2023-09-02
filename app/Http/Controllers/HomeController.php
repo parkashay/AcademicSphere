@@ -24,6 +24,7 @@ class HomeController extends Controller
         ->with([
             'noticeBoard' => $noticeBoard,
             'boardOfDirectors'=> $boardOfDirectors,
+            'eventBoard' => $eventBoard,
         ]);
     }
 }
