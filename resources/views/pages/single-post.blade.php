@@ -45,14 +45,13 @@
                         </li>
                     </ul>
                 </div>
-                <!-- border -->
-                <div class="col-12 mt-4">
-                    <div class="border-bottom border-primary"></div>
-                </div>
+               
                 <!-- blog contect -->
                 <div class="col-12 mb-5">
                     <h2>{{ $post->title }}</h2>
-                    {!! $post->content !!}
+                    <div class="post-content-container">
+                        {!! $post->content !!}
+                    </div>
 
                 </div>
             </div>
