@@ -56,22 +56,15 @@
               <li class="nav-item dropdown view">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
-                  Pages
+                  More
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="teacher.html">Teacher</a>
-                  <a class="dropdown-item" href="teacher-single.html">Teacher Single</a>
-                  <a class="dropdown-item" href="notice.html">Notice</a>
-                  <a class="dropdown-item" href="notice-single.html">Notice Details</a>
-                  <a class="dropdown-item" href="research.html">Research</a>
-                  <a class="dropdown-item" href="scholarship.html">Scholarship</a>
-                  <a class="dropdown-item" href="course-single.html">Course Details</a>
-                  <a class="dropdown-item" href="event-single.html">Event Details</a>
-                  <a class="dropdown-item" href="blog-single.html">Blog Details</a>
+                  <a class="dropdown-item" href="/programs">Programs</a>
+                  <a class="dropdown-item" href="/staffs">Staffs</a>
                 </div>
               </li>
               <li class="nav-item @@contact">
-                <a class="nav-link" href="contact.html">CONTACT</a>
+                <a class="nav-link" href="/contact">CONTACT</a>
               </li>
             </ul>
           </div>
