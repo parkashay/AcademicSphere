@@ -18,8 +18,8 @@
             @foreach ($noticeBoard as $notice)
                 <!-- course item -->
                 <div class="col-lg-4 col-sm-6 mb-5">
-                    <div class="card p-0 border-primary rounded-0 hover-shadow">
-                        <div class="card-body">
+                    <div class="card card-post p-0 border-primary rounded-0 hover-shadow">
+                        <div class="card-body card-body-news">
                             <ul class="list-inline mb-2">
                                 <li class="list-inline-item mr-3"><i
                                         class="ti-calendar mr-1 text-color"></i>{{ substr($notice->created_at, 0, 10) }}
@@ -31,11 +31,9 @@
                                 </li>
                             </ul>
                             <a href="/posts/single/{{$notice->id}}">
-                                <h4 class="card-title">{{$notice->title}}</h4>
+                                <h4 class="card-title">{{Str::limit($notice->title, 50)}}</h4>
                             </a>
-                            <p class="card-text mb-4"> {!! Str::limit($notice->content, 30) !!}
-                            </p>
-                            <a href="/posts/single/{{$notice->id}}" class="btn btn-primary btn-sm">Read More</a>
+                         
                         </div>
                     </div>
                 </div>

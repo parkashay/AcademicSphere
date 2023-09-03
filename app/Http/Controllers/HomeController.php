@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Event;
 use App\Models\Post;
 use App\Models\Staff;
@@ -13,6 +14,8 @@ class HomeController extends Controller
 
         //Notice Board
         $noticeBoard = Post::orderBy('updated_at', 'DESC')->limit(6)->get();
+        //Courses
+        $coursesPreview = Course::orderBy('updated_at', 'DESC')->limit(3)->get();
         //Events
         $eventBoard = Event::orderBy('date', 'DESC')->limit(3)->get();
         //board of Directors
@@ -25,6 +28,7 @@ class HomeController extends Controller
             'noticeBoard' => $noticeBoard,
             'boardOfDirectors'=> $boardOfDirectors,
             'eventBoard' => $eventBoard,
+            'coursesPreview' => $coursesPreview,
         ]);
     }
 }

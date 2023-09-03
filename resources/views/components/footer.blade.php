@@ -24,15 +24,15 @@
             <!-- logo -->
             <a class="logo-footer" href="index.html"><img class="img-fluid mb-4" src="{{asset('images/logo.png')}}" alt="logo"></a>
             <ul class="list-unstyled">
-              <li class="mb-2">23621 15 Mile Rd #C104, Clinton MI, 48035, New York, USA</li>
-              <li class="mb-2">+1 (2) 345 6789</li>
-              <li class="mb-2">+1 (2) 345 6789</li>
-              <li class="mb-2">contact@yourdomain.com</li>
+              <li class="mb-2">Lekhnath, Dhungepatan, Kaski</li>
+              <li class="mb-2">+977-61-504046</li>
+              <li class="mb-2">+977-61-504047</li>
+              <li class="mb-2">info@pu.edu.np</li>
             </ul>
           </div>
           <!-- company -->
           <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-            <h4 class="text-white mb-5">COMPANY</h4>
+            <h4 class="text-white mb-5">University</h4>
             <ul class="list-unstyled">
               <li class="mb-3"><a class="text-color" href="about.html">About Us</a></li>
               <li class="mb-3"><a class="text-color" href="teacher.html">Our Teacher</a></li>
@@ -64,10 +64,10 @@
           <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
             <h4 class="text-white mb-5">RECOMMEND</h4>
             <ul class="list-unstyled">
-              <li class="mb-3"><a class="text-color" href="#">WordPress</a></li>
-              <li class="mb-3"><a class="text-color" href="#">LearnPress</a></li>
-              <li class="mb-3"><a class="text-color" href="#">WooCommerce</a></li>
-              <li class="mb-3"><a class="text-color" href="#">bbPress</a></li>
+              <li class="mb-3"><a class="text-color" href="#">Programs</a></li>
+              <li class="mb-3"><a class="text-color" href="#">Admission</a></li>
+              <li class="mb-3"><a class="text-color" href="#">Scholarship</a></li>
+              <li class="mb-3"><a class="text-color" href="#">Blog</a></li>
             </ul>
           </div>
         </div>
