@@ -31,14 +31,14 @@
                         <div class="card-body">
                             <ul class="list-inline mb-2">
                                 <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
-                                <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
+                                <li class="list-inline-item"><a class="text-color" href="#"></a></li>Engineering
                             </ul>
                             <a href="course-single.html">
                                 <h4 class="card-title">{{$item}}</h4>
                             </a>
-                            <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                eiusmod tempor
-                                incididunt ut labore et dolore magna.</p>
+                            <p class="card-text mb-4"> 
+                                Providing with the updated syllabus and quality education to the students.
+                            </p>
                             <a href="course-single.html" class="btn btn-primary btn-sm">See Details</a>
                         </div>
                     </div>
