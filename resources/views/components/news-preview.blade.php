@@ -17,7 +17,7 @@
         <div class="row justify-content-center">
             @foreach ($noticeBoard as $notice)
                 <!-- course item -->
-                <div class="col-lg-4 col-sm-6 mb-5">
+                <div class=" col-sm-12 col-lg-6 mb-5">
                     <div class="card card-post p-0 border-primary rounded-0 hover-shadow">
                         <div class="card-body card-body-news">
                             <ul class="list-inline mb-2">
@@ -31,7 +31,7 @@
                                 </li>
                             </ul>
                             <a href="/posts/single/{{$notice->id}}">
-                                <h4 class="card-title">{{Str::limit($notice->title, 50)}}</h4>
+                                <h4 class="card-title">{{Str::limit($notice->title, 60)}}</h4>
                             </a>
                          
                         </div>

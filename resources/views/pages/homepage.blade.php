@@ -5,7 +5,7 @@
     @include('components.banner-feature')
     @include('components.news-preview')
     @include('components.call-to-action')
-    @include('components.courses-preview')
+    @include('components.programs-preview')
     @include('components.home-about')
     @include('components.video-preview')
     @include('components.events-preview')
