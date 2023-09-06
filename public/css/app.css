@@ -2964,12 +2964,6 @@ a {
   font-weight: 400;
   font-family: Poppins;
 }
-.testimonials .section-arrow-primary-color.section-arrow--bottom-center:after {
-  border-bottom-color: #0cb4ce;
-}
-.testimonials .section-arrow-primary-color.section-arrow--bottom-center:after {
-  background-color: #0cb4ce;
-}
 .testimonials .special-heading.line span:before,
 .testimonials .special-heading.line span:after,
 .testimonials .footer.footer-minimal,
@@ -3005,7 +2999,6 @@ a {
   font-size: 45px;
 }
 .testimonials .testimonial-two blockquote p:after {
-  font-family: "Playfair Display";
   font-size: 54px;
   color: #0cb4ce;
   content: "”";
