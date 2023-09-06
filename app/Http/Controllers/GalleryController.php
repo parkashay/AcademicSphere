@@ -9,7 +9,7 @@ class GalleryController extends Controller
 
     public function index()
     {
-        $photos = Gallery::orderBy('updated_at', 'DESC')->paginate(10);
+        $photos = Gallery::orderBy('updated_at', 'DESC')->paginate(2);
         return view('pages.gallery')->with('photos', $photos);
     }
     

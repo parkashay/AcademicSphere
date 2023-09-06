@@ -45,7 +45,7 @@ class LearningmaterialsResource extends Resource
                     ->native(false)
                     ->required(),
                 TagsInput::make('keywords')->required(),
-                TextInput::make('access_code')->required()->unique(),
+                TextInput::make('access_code')->required(),
                 RichEditor::make('content')->required()->columnSpan(2),
                 FileUpload::make('files')->multiple(),
             ]);

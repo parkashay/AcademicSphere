@@ -3,7 +3,7 @@
 </div>
 <!-- second nav -->
 <header class="header">
-  <a id="cd-logo" href="./index.php"><img src="{{asset('logo/logo_pu.png')}}" alt="School of engineering pu">School Of Engineering</a>
+  <a id="cd-logo" href="./"><img src="{{asset('logo/logo_pu.png')}}" alt="School of engineering pu">School Of Engineering</a>
   <nav id="cd-top-nav" class="show-large-screen">
     <ul class="show-large-screen">
       <li><a href="../#" id="homen home" style="--nav-hover-clr:#ff0051;">Home</a></li>
@@ -62,7 +62,7 @@
           </nav>
         </nav>
       </li>
-      <li><a href="./gallery.php" style="--nav-hover-clr:#29b312;">Gallery</a></li>
+      <li><a href="./gallery" style="--nav-hover-clr:#29b312;">Gallery</a></li>
       <li>
         <nav class="dropdown">
           <a class="dropbtn" style="--nav-hover-clr:#b31240;"> About Soe <i class="fa-solid fa-angle-down"></i></a>

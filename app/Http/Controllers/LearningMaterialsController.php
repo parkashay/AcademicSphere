@@ -9,7 +9,7 @@ class LearningMaterialsController extends Controller
 {
     public function index(){
         $learningMaterials = Learningmaterials::paginate(10);
-        return view('pages.learning-materials-test')->with(['learningMaterials' => $learningMaterials]);
+        return view('pages.learning-materials')->with(['learningMaterials' => $learningMaterials]);
     }
     public function verificationForm(){
         return view('pages.code-verification');
@@ -27,5 +27,24 @@ class LearningMaterialsController extends Controller
     public function learn(string $id){
         $learningMaterial = Learningmaterials::find($id);
         return response([$learningMaterial]);
+    }
+
+    public function singleMaterial(string $id)
+    {
+        $singleMaterial = Learningmaterials::find($id);
+
+        // related notes
+        $relatedNotes = Learningmaterials::where('course', '==', $singleMaterial->course)->limit(5)->get();
+        return isset($singleMaterial) ?
+            view(
+                'pages.single-course',
+
+                [
+                    'singleMaterial' => $singleMaterial,
+                    'relatedNotes' => $relatedNotes
+                ]
+
+            )
+            : redirect('/learning-materials');
     }
 }

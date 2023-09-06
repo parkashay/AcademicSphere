@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutPageController;
+use App\Http\Controllers\CallendarController;
 use App\Http\Controllers\CoursesPageController;
 use App\Http\Controllers\EventPageController;
 use App\Http\Controllers\GalleryController;
@@ -25,7 +26,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [AboutPageController::class, 'index']);
 
 Route::get('/courses', [CoursesPageController::class, 'index']);
-Route::get('/courses/single/{id}', [CoursesPageController::class, 'singleCourse']);
+Route::get('/courses/single/{id}', [CoursesPageController::class, 'singleMaterial']);
 
 Route::get('/events', [EventPageController::class, 'index']);
 Route::get('/events/single/{id}', [EventPageController::class, 'singleEvent']);
@@ -36,15 +37,20 @@ Route::get('/posts/single/{id}', [PostsPageController::class, 'singlePost']);
 Route::get('/programs', [ProgramsPageController::class, 'index']);
 Route::get('/programs/single/{id}', [ProgramsPageController::class, 'singleProgram']);
 
-
+// LEARNING MATERIALS
 Route::get('/learning-materials', [LearningMaterialsController::class, 'index'])
     ->name('learning.materials');
-Route::get('/verify-code', [LearningMaterialsController::class, 'verificationForm'])
-    ->name('verify.code');
-Route::post('/verify-code', [LearningMaterialsController::class, 'verify']);
-Route::get('/learning-materials/single/{id}', [LearningMaterialsController::class, 'learn'])
-    ->name('learn')
-    ->middleware('verify.code');
+
+
+// Route::get('/verify-code', [LearningMaterialsController::class, 'verificationForm'])
+//     ->name('verify.code');
+
+
+// Route::post('/verify-code', [LearningMaterialsController::class, 'verify']);
+
+
+Route::get('/learning-materials/single/{id}', [LearningMaterialsController::class, 'singleMaterial'])
+    ->name('learn');
 
 // Search
 
@@ -54,3 +60,8 @@ Route::get('/search', [PostsPageController::class, 'getQuery'])->name('posts.sea
 // Gallery
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+
+// Calendar
+Route::get('/calendar', [CallendarController::class, 'index'])->name('calendar');
+
+
