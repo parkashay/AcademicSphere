@@ -60,9 +60,6 @@ class PostsPageController extends Controller
                 ->paginate(15);
         }
 
-
-
-
         
 
         return isset($posts) ?

@@ -32,7 +32,7 @@
 
                     </div>
                     <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0 py-3">
-                        <a href="notice-single.html" class="h4 mb-3 d-block">{{ $event->title }}</a>
+                        <a href="/events/single/{{$event->id}}" class="h4 mb-3 d-block">{{ $event->title }}</a>
                         <p class="mb-0">
                             {!! Str::limit($event->content, 200) !!}
                         </p>

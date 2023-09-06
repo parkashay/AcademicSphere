@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\CoursesPageController;
 use App\Http\Controllers\EventPageController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostsPageController;
 use Illuminate\Support\Facades\Route;
@@ -38,3 +39,7 @@ Route::get('/programs/single/{id}', [ProgramsPageController::class, 'singleProgr
 // Search
 
 Route::get('/search', [PostsPageController::class, 'getQuery'])->name('posts.search');
+
+// Gallery
+
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
