@@ -28,8 +28,13 @@ Route::get('/courses/single/{id}', [CoursesPageController::class, 'singleCourse'
 Route::get('/events', [EventPageController::class, 'index']);
 Route::get('/events/single/{id}', [EventPageController::class, 'singleEvent']);
 
-Route::get('/posts', [PostsPageController::class, 'index']);
+Route::get('/posts', [PostsPageController::class, 'getPosts']);
 Route::get('/posts/single/{id}', [PostsPageController::class, 'singlePost']);
 
 Route::get('/programs', [ProgramsPageController::class, 'index']);
 Route::get('/programs/single/{id}', [ProgramsPageController::class, 'singleProgram']);
+
+
+// Search
+
+Route::get('/search', [PostsPageController::class, 'getQuery'])->name('posts.search');

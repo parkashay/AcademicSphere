@@ -23,7 +23,12 @@
     <link rel="stylesheet" href="{{asset('plugins/aos/aos.css')}}">
     <!-- venobox popup -->
     <link rel="stylesheet" href="{{asset('plugins/venobox/venobox.css')}}">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+    <!-- Reset -->
+    <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
     <!-- Main Stylesheet -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 

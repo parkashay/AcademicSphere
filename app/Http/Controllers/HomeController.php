@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function index(){
 
         //Notice Board
-        $noticeBoard = Post::orderBy('updated_at', 'DESC')->limit(6)->get();
+        $noticeBoard = Post::orderBy('updated_at', 'DESC')->limit(12)->get();
         //Events
         $eventBoard = Event::orderBy('date', 'DESC')->limit(3)->get();
         //board of Directors

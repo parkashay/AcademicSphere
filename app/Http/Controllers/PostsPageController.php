@@ -17,7 +17,38 @@ class PostsPageController extends Controller
     {
         $singlePost = Post::find($id);
         return isset($singlePost) ?
-            view('pages.single-post',['post' => $singlePost])
+            view('pages.single-post', ['post' => $singlePost])
+            : redirect('/posts');
+    }
+
+
+
+
+    // All Posts
+    public function getPosts()
+    {
+        $allPosts = Post::paginate(2);
+
+        return isset($allPosts) ?
+            view('pages.all-posts', ['posts' => $allPosts])
+            : redirect('/posts');
+    }
+
+    // Search results
+    public function getQuery(Request $req){
+        $search=$req['search'] ?? "";
+        if($search != ""){
+            $posts=Post::where('title','LIKE',"%$search%")
+            ->orWhere('keywords','LIKE',"%$search%")
+            ->orWhere('content','LIKE',"%$search%")
+            ->orWhere('created_at','LIKE',"%$search%")
+            ->orWhere('category','LIKE',"%$search%")
+            ->orWhere('thumbnail','LIKE',"%$search%")
+            ->paginate(1);
+        }
+
+        return isset($posts) ?
+            view('pages.search', ['posts' => $posts, 'query'=>$search])
             : redirect('/posts');
     }
 }

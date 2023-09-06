@@ -1,100 +1,104 @@
-<!-- footer -->
 <footer>
-    <!-- newsletter -->
-    <div class="newsletter">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block ">
-            <h3 class="text-white">Subscribe Now</h3>
-            <form action="#">
-              <div class="input-wrapper">
-                <input type="email" class="form-control border-0" id="newsletter" name="newsletter" placeholder="Enter Your Email...">
-                <button type="submit" value="send" class="btn btn-primary">Join</button>
-              </div>
-            </form>
-          </div>
-        </div>
+  <div class="footer-about">
+    <img src="{{asset('logo/logo_pu.png')}}" alt="pu-logo" class="logo">
+    <p class="soe-slogan">School of Engineering</p>
+    <h1 class="soe-title">About Us</h1>
+    <p class="soe-description">
+      School of Engineering comes under the the Faculty of Science and Technology. It was established in 1997 under the Pokhara University Act. In 1997. PU has adopted four years Bachelor's Programs of Engineering based on credit-semester system. An academic year of the University consists of two semesters of 16 weeks each.
+    </p>
+  </div>
+  <div class="footer-links">
+    <div class="footer-links">
+      <div class="footer-link">
+        <h2 class="footer-link-header">Academics</h2>
+        <ul>
+          <li><a href="./undergraduate.php">Undergraduate</a></li>
+          <li><a href="./graduate.php">Graduate</a></li>
+        </ul>
+      </div>
+      <div class="footer-link">
+        <h2 class="footer-link-header">Admission</h2>
+        <ul>
+          <li><a href="./admission.php">Introduction</a></li>
+          <li><a href="./how-to-apply.php">How to apply</a></li>
+          <li><a href="./scholarship.php">Scholarship</a></li>
+          <li><a href="./academic-calendar.php">Academic calander</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-link">
+        <h2 class="footer-link-header">News & Notices</h2>
+        <ul>
+          <li><a href="./allpost.php">SOE News</a></li>
+          <li><a href="./category.php?category=Notice&key=2">SOE Notices</a></li>
+        </ul>
       </div>
     </div>
-    <!-- footer content -->
-    <div class="footer bg-footer section border-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
-            <!-- logo -->
-            <a class="logo-footer" href="index.html"><img class="img-fluid mb-4" src="{{asset('images/logo.png')}}" alt="logo"></a>
-            <ul class="list-unstyled">
-              <li class="mb-2">23621 15 Mile Rd #C104, Clinton MI, 48035, New York, USA</li>
-              <li class="mb-2">+1 (2) 345 6789</li>
-              <li class="mb-2">+1 (2) 345 6789</li>
-              <li class="mb-2">contact@yourdomain.com</li>
-            </ul>
-          </div>
-          <!-- company -->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-            <h4 class="text-white mb-5">COMPANY</h4>
-            <ul class="list-unstyled">
-              <li class="mb-3"><a class="text-color" href="about.html">About Us</a></li>
-              <li class="mb-3"><a class="text-color" href="teacher.html">Our Teacher</a></li>
-              <li class="mb-3"><a class="text-color" href="contact.html">Contact</a></li>
-              <li class="mb-3"><a class="text-color" href="blog.html">Blog</a></li>
-            </ul>
-          </div>
-          <!-- links -->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-            <h4 class="text-white mb-5">LINKS</h4>
-            <ul class="list-unstyled">
-              <li class="mb-3"><a class="text-color" href="courses.html">Courses</a></li>
-              <li class="mb-3"><a class="text-color" href="event.html">Events</a></li>
-              <li class="mb-3"><a class="text-color" href="gallary.html">Gallary</a></li>
-              <li class="mb-3"><a class="text-color" href="faqs.html">FAQs</a></li>
-            </ul>
-          </div>
-          <!-- support -->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-            <h4 class="text-white mb-5">SUPPORT</h4>
-            <ul class="list-unstyled">
-              <li class="mb-3"><a class="text-color" href="#">Forums</a></li>
-              <li class="mb-3"><a class="text-color" href="#">Documentation</a></li>
-              <li class="mb-3"><a class="text-color" href="#">Language</a></li>
-              <li class="mb-3"><a class="text-color" href="#">Release Status</a></li>
-            </ul>
-          </div>
-          <!-- support -->
-          <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-            <h4 class="text-white mb-5">RECOMMEND</h4>
-            <ul class="list-unstyled">
-              <li class="mb-3"><a class="text-color" href="#">WordPress</a></li>
-              <li class="mb-3"><a class="text-color" href="#">LearnPress</a></li>
-              <li class="mb-3"><a class="text-color" href="#">WooCommerce</a></li>
-              <li class="mb-3"><a class="text-color" href="#">bbPress</a></li>
-            </ul>
-          </div>
+
+    <div class="footer-links">
+      <div class="center">
+        <div class="footer-link">
+          <h2 class="footer-link-header">About us</h2>
+          <ul>
+            <li><a href="./messagefromdirector.php">Message from Director</a></li>
+            <li><a href="./contact.php">Contact Us</a></li>
+            <li><a href="../staffs.php">Faculties and Staffs</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-    <!-- copyright -->
-    <div class="copyright py-4 bg-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-7 text-sm-left text-center">
-            <p class="mb-0">Copyright
-              <script>
-                var CurrentYear = new Date().getFullYear()
-                document.write(CurrentYear)
-              </script> 
-            </p> Pokhara University, All Rights Reserved.
-          </div>
-          <div class="col-sm-5 text-sm-right text-center">
-            <ul class="list-inline">
-              <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.facebook.com/themefisher"><i class="ti-facebook text-secondary"></i></a></li>
-              <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.twitter.com/themefisher"><i class="ti-twitter-alt text-secondary"></i></a></li>
-              <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-instagram text-secondary"></i></a></li>
-              <li class="list-inline-item"><a class="d-inline-block p-2" href="https://dribbble.com/themefisher"><i class="ti-dribbble text-secondary"></i></a></li>
-            </ul>
-          </div>
-        </div>
+
+      <div class="footer-link">
+        <h2 class="footer-link-header">Download & Login</h2>
+        <ul>
+          <li><a href="./login.php" target="_blank">Login</a></li>
+          <li><a href="./assets/files/SOE-PU-Entrance-Sylllabus.pdf">SOE-PU-Entrance-Syllabus</a></li>
+          <li><a href="./assets/files/coverpage_2077-Updated-website.pdf">Guidelines</a></li>
+          <li><a href="./gallery.php">Gallery</a></li>
+          <li><a href="./studymaterials.php">eLearning</a></li>
+        </ul>
       </div>
+      <div class="footer-link">
+        <h2 class="footer-link-header">Research</h2>
+        <ul>
+          <li><a href="./coming-soon.php">Faculty Researches</a></li>
+          <li><a href="./coming-soon.php">Scholarship</a></li>
+          <li><a href="./coming-soon.php">Workshops</a></li>
+          <li><a href="./coming-soon.php">Seminars & Conferences</a></li>
+        </ul>
+      </div>
+
     </div>
-  </footer>
-  <!-- /footer -->
+  </div>
+  <div class="footer-contact-details">
+    <hr>
+    <div class="footer-contact-containers">
+      <ul class="footer-contact">
+        <li><i class="fa-solid fa-location-dot"></i>
+          <p>
+            Pokhara Metropolitan City-30, Lekhnath, Kaski, Nepal
+          </p>
+        </li>
+        <li><i class="fa-solid fa-phone"></i><a href="tel:+977-61-504046">+977-61-504046</a></li>
+        <li><i class="fa-solid fa-envelope"></i><a href="mailto:soe@pu.edu.np">soe@pu.edu.np</a></li>
+      </ul>
+    </div>
+    <hr>
+  </div>
+  <div class="social-links">
+    <p>connect with us</p><br>
+    <div class="icons">
+      <a href="">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href=""><i class="fab fa-twitter"></i></a>
+      <a href=""><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="copyright">
+
+    <p> &copy;School of Engineering <?php $current = date("Y");
+                                    print_r($current); ?> | <a href="./about_site.blade.php">About this site</a>
+    </p>
+
+  </div>
+</footer>
