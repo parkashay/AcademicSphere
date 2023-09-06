@@ -56,7 +56,7 @@
 <section class="section-sm">
   <div class="container p-3" style="background-color: #fff;">
     <!-- course list -->
-    <h2 class="my-2 ml-0 text-nowrap mr-3 section-heading highlight">Courses</h2>
+    <h2 class="my-2 ml-0 text-nowrap mr-3 section-heading highlight">Programs</h2>
         <div class="row justify-content-center">
         @foreach ($events as $event)
         <!-- course item -->

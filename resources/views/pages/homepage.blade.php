@@ -4,7 +4,7 @@
     @include('components.hero')
     @include('components.news-preview')
     @include('components.home-about')
-    @include('components.courses-preview')
+    @include('components.programs-preview')
     @include('components.events-preview')
     @include('components.testimonials')
     @include('components.staff-preview')
