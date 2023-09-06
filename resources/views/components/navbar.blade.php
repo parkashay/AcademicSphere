@@ -1,141 +1,182 @@
-
-<!-- header -->
-<header class="fixed-top header">
-    <!-- top header -->
-    <div class="top-header py-2 bg-white">
-      <div class="container">
-        <div class="row no-gutters">
-          <div class="col-lg-4 text-center text-lg-left">
-            <a class="text-color mr-3" href="callto:+443003030266"><strong>CALL</strong> +977 61-506046</a>
-            <ul class="list-inline d-inline">
-              <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-linkedin"></i></a></li>
-              <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
-            </ul>
-          </div>
-          <div class="col-lg-8 text-center text-lg-right">
-            <ul class="list-inline">
-              <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="https://pusoe.edu.np/" target="_blank">LMS</a></li>
-              <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="/">Admission</a></li>
-              <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="https://scholarship.pu.edu.np/" target="_blank">SCHOLARSHIP</a></li>
-              <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#loginModal">login</a></li>
-              <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#signupModal">register</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- navbar -->
-    <div class="navigation w-100">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light p-0">
-          <a class="navbar-brand" href="/"><img class="brand-logo-navbar" src="{{asset('images/logo.png')}}" alt="logo"></a>
-          <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
-            aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-  
-          <div class="collapse navbar-collapse" id="navigation">
-            <ul class="navbar-nav ml-auto text-center">
-              <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-              </li>
-              <li class="nav-item @@about">
-                <a class="nav-link" href="/about">About</a>
-              </li>
-              <li class="nav-item @@courses">
-                <a class="nav-link" href="/courses">COURSES</a>
-              </li>
-              <li class="nav-item @@events">
-                <a class="nav-link" href="/events">EVENTS</a>
-              </li>
-              <li class="nav-item @@blog">
-                <a class="nav-link" href="/posts">Posts</a>
-              </li>
-              <li class="nav-item dropdown view">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  More
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/programs">Programs</a>
-                  <a class="dropdown-item" href="/staffs">Staffs</a>
-                  <a class="dropdown-item" href="/learning-materials">Learning Materials</a>
-                </div>
-              </li>
-              <li class="nav-item @@contact">
-                <a class="nav-link" href="/contact">CONTACT</a>
-              </li>
-            </ul>
-          </div>
+<div class="toTop">
+  <i class="fa fa-angle-up" aria-hidden="true"></i>
+</div>
+<!-- second nav -->
+<header class="header">
+  <a id="cd-logo" href="./index.php"><img src="{{asset('logo/logo_pu.png')}}" alt="School of engineering pu">School Of Engineering</a>
+  <nav id="cd-top-nav" class="show-large-screen">
+    <ul class="show-large-screen">
+      <li><a href="../#" id="homen home" style="--nav-hover-clr:#ff0051;">Home</a></li>
+      <li>
+        <nav class="dropdown">
+          <a class="dropbtn" style="--nav-hover-clr:#456990;">Academics <i class="fa-solid fa-angle-down"></i></a>
+          <div class="invible-btn"></div>
+          <nav class="dropdown-content">
+            <nav class="dropdown-child">
+              <a href="#" class="dropbtn-child" style="--nav-hover-clr:#9A7085;">
+                <div><span>Undergraduate(B.E)</span> <span><i class="fa-solid fa-angle-right"></i></span></div>
+              </a>
+              <div class="invible-btn2"></div>
+              <nav class="dropdown-content-child">
+                <a href="how-to-apply.php" style="--nav-hover-clr:#49BEAA;">How to Apply</a>
+                <a href="#" style="--nav-hover-clr:#EEB868;">Scholarship</a>
+                <a href="./undergraduate.php" style="--nav-hover-clr:#74A9A0;">Undergraduate(B.E)</a>
+              </nav>
+            </nav>
+            <nav class="dropdown-child">
+              <a href="#" class="dropbtn-child" style="--nav-hover-clr:#e0a21f;">
+                <div><span>Graduate(M.Sc)</span> <span><i class="fa-solid fa-angle-right"></i></span></div>
+              </a>
+              <div class="invible-btn2"></div>
+              <nav class="dropdown-content-child">
+                <a href="how-to-apply.php" style="--nav-hover-clr:#36b336;">How to Apply</a>
+                <a href="#" style="--nav-hover-clr:#b31240;">Scholarship</a>
+                <a href="./graduate.php" style="--nav-hover-clr:#9d2b16;">Graduate(M.E)</a>
+              </nav>
+            </nav>
+          </nav>
         </nav>
-      </div>
-    </div>
-  </header>
-  <!-- /header -->
-
-
-  <!-- Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content rounded-0 border-0 p-4">
-            <div class="modal-header border-0">
-                <h3>Register</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="login">
-                    <form action="#" class="row">
-                        <div class="col-12">
-                            <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
-                        </div>
-                        <div class="col-12">
-                            <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
-                        </div>
-                        <div class="col-12">
-                            <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
-                        </div>
-                        <div class="col-12">
-                            <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary">SIGN UP</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+      </li>
+      <li>
+        <nav class="dropdown">
+          <a class="dropbtn" style="--nav-hover-clr:#ce0c94;">Admission <i class="fa-solid fa-angle-down"></i></a>
+          <div class="invible-btn"></div>
+          <nav class="dropdown-content">
+            <a href="admission.php" style="--nav-hover-clr:#017a8e;">Introduction</a>
+            <a href="how-to-apply.php" style="--nav-hover-clr:#ff8e84;">How to Apply</a>
+            <a href="#" style="--nav-hover-clr:#0040ff;">Scholarship</a>
+            <a href="./academic-calendar.php" style="--nav-hover-clr:#ffa500;">Academic Calendar</a>
+          </nav>
+        </nav>
+      </li>
+      <li>
+        <nav class="dropdown">
+          <a class="dropbtn" style="--nav-hover-clr:#e06f1f;">News & Notices <i class="fa-solid fa-angle-down"></i></a>
+          <div class="invible-btn"></div>
+          <nav class="dropdown-content">
+            <a href="./allpost.php" style="--nav-hover-clr:#9d5716;">SOE News</a>
+            <a href="./category.php?category=Notice&key=2" style="--nav-hover-clr:#e0a21f;">SOE Notices</a>
+            <a href="./studymaterials.php" style="--nav-hover-clr:#e03e1f;">eLearning</a>
+            <a href="./academic-calendar.php" style="--nav-hover-clr:#9d2b16;">Academic Calendar</a>
+            <a href="#" style="--nav-hover-clr:#1460a8;">Vacancy & Career</a>
+          </nav>
+        </nav>
+      </li>
+      <li><a href="./gallery.php" style="--nav-hover-clr:#29b312;">Gallery</a></li>
+      <li>
+        <nav class="dropdown">
+          <a class="dropbtn" style="--nav-hover-clr:#b31240;"> About Soe <i class="fa-solid fa-angle-down"></i></a>
+          <div class="invible-btn"></div>
+          <nav class="dropdown-content">
+            <a href="./about.php" style="--nav-hover-clr:#ff571a;">About us</a>
+            <a href="./messagefromdirector.php" style="--nav-hover-clr:#b312a2;">Message from Director</a>
+            <a href="./contact.php" style="--nav-hover-clr:#6918b4;">Contact Us</a>
+            <a href="./staffs.php" style="--nav-hover-clr:#8318b4;">Faculties and Staffs</a>
+          </nav>
+        </nav>
+      </li>
+      <li>
+        <nav class="dropdown">
+          <a class="dropbtn" style="--nav-hover-clr:#31bc76;">Research <i class="fa-solid fa-angle-down"></i></a>
+          <div class="invible-btn"></div>
+          <nav class="dropdown-content content-research-overflow">
+            <a href="./coming-soon.php" style="--nav-hover-clr:#6918b4;">Faculty Researches</a>
+            <a href="./coming-soon.php" style="--nav-hover-clr:#bf3769;">Workshops</a>
+            <a href="./coming-soon.php" style="--nav-hover-clr:#e03e1f;">Seminars & Conferences</a>
+          </nav>
+        </nav>
+      </li>
+      <li>
+        <div class="search-container">
+          <form action="{{route('posts.search')}}" method="GET" name="search">
+            <input class="search expandright" id="searchright" type="search" placeholder="Search" name="search">
+            <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
+          </form>
         </div>
-    </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content rounded-0 border-0 p-4">
-            <div class="modal-header border-0">
-                <h3>Login</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="#" class="row">
-                    <div class="col-12">
-                        <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
-                    </div>
-                    <div class="col-12">
-                        <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
-                    </div>
-                    <div class="col-12">
-                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
-                    </div>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary">LOGIN</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+      </li>
+    </ul>
+  </nav>
+  <a id="cd-menu-trigger" class="show-small-screen" href="#0"><span class="cd-menu-text"></span><span class="cd-menu-icon"></span></a>
+</header>
+<nav id="cd-lateral-nav">
+  <ul class="cd-navigation cd-single-item-wrapper">
+    <li class="form-center">
+      <form action="{{route('posts.search')}}" method="GET" class="form-inline my-2 my-lg-0 header-search search-small search-small-screen" name="form">
+        <input class=" form-control mr-sm-2" type="search" placeholder="Search here..." required type="text" name="search">
+      </form>
+    </li>
+  </ul>
+  <ul class="cd-navigation show-small-screen">
+    <ul class="cd-single-item-wrapper">
+      <li><a href="./index.php">Home</a></li>
+    </ul>
+    <li class="item-has-children">
+      <a href="#">Academics</a>
+      <ul class="sub-menu">
+        <li class="item-has-children">
+          <a href="#">Undergraduate(B.E)</a>
+          <ul class="sub-menu">
+            <li><a href="how-to-apply.php">How to Apply</a></li>
+            <li><a href="scholarship.php">Scholarship</a></li>
+            <li><a href="./undergraduate.php">Undergraduate(B.E)</a></li>
+          </ul>
+        </li>
+        <li class="item-has-children">
+          <a href="#">Graduate(M.Sc)</a>
+          <ul class="sub-menu">
+            <li><a href="how-to-apply.php">How to Apply</a></li>
+            <li><a href="scholarship.php">Scholarship</a></li>
+            <li><a href="./graduate.php">Graduate</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li> <!-- item-has-children -->
+
+    <li class="item-has-children">
+      <a href="">ADMISSION</a>
+      <ul class="sub-menu">
+        <li><a href="admission.php">Introduction</a></li>
+        <li><a href="how-to-apply.php">How to Apply</a></li>
+        <li><a href="scholarship.php">Scholarship</a></li>
+        <li><a href="./undergraduate.php">Undergraduate(B.E)</a></li>
+        <li><a href="./graduate.php">Graduate(M.Sc.)</a></li>
+        <li><a href="./academic-calendar.php">Academic Calendar</a></li>
+      </ul>
+    </li> <!-- item-has-children -->
+
+    <li class="item-has-children">
+      <a href="#">News & Notices</a>
+      <ul class="sub-menu">
+        <li> <a href="./allpost.php">SOE News</a></li>
+        <li><a href="./category.php?category=Notice&key=2">SOE Notices</a></li>
+        <li><a href="./studymaterials.php">eLearning</a></li>
+        <li><a href="./academic-calendar.php">Academic Calendar</a></li>
+        <li><a href="#">Vacancy & Career</a></li>
+      </ul>
+    </li> <!-- item-has-children -->
+    <ul class="cd-single-item-wrapper">
+      <li><a href="./gallery.php">Gallery</a></li>
+    </ul>
+    <li class="item-has-children">
+      <a href="#">About SOE</a>
+      <ul class="sub-menu">
+        <li><a href="about.php">About us</a></li>
+        <li><a href="./messagefromdirector.php">Message from Director</a></li>
+        <li><a href="#">Vision Mission Goals and Objective</a></li>
+        <li><a href="#">History of PoU</a></li>
+        <li><a href="./contact.php">Contact Us</a></li>
+        <li><a href="./staffs.php">Faculties and Staffs</a></li>
+      </ul>
+    </li>
+    <li class="item-has-children">
+      <a href="#">Research</a>
+      <ul class="sub-menu">
+        <li><a href="./coming-soon.php">Faculty Reseaches</a></li>
+        <li><a href="./coming-soon.php">Workshops</a></li>
+        <li><a href="./coming-soon.php">Vision Mission Goals and Objective</a></li>
+        <li><a href="./coming-soon.php">Seminars & Conferences</a></li>
+      </ul>
+    </li>
+  </ul> <!-- cd-navigation -->
+
+</nav>

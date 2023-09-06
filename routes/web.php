@@ -31,18 +31,13 @@ Route::get('/courses/single/{id}', [CoursesPageController::class, 'singleCourse'
 Route::get('/events', [EventPageController::class, 'index']);
 Route::get('/events/single/{id}', [EventPageController::class, 'singleEvent']);
 
-Route::get('/posts', [PostsPageController::class, 'index']);
+Route::get('/posts', [PostsPageController::class, 'getPosts']);
 Route::get('/posts/single/{id}', [PostsPageController::class, 'singlePost']);
 
 Route::get('/programs', [ProgramsPageController::class, 'index']);
 Route::get('/programs/single/{id}', [ProgramsPageController::class, 'singleProgram']);
 
-Route::get('/staffs', [StaffsPageController::class, 'index']);
-Route::get('/staffs/single/{id}', [StaffsPageController::class, 'singleStaff']);
 
-Route::get('/verify-code', [LearningMaterialsController::class, 'verificationForm'])
-    ->name('verify.code');
-Route::get('/learning-materials', [LearningMaterialsController::class, 'index'])
-    ->name('learning.materials')
-    ->middleware('learn');
-Route::post('/verify-code', [LearningMaterialsController::class, 'verify']);
+// Search
+
+Route::get('/search', [PostsPageController::class, 'getQuery'])->name('posts.search');
