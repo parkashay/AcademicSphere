@@ -3253,6 +3253,7 @@ a {
   background-color: #fff;
   .section-medium {
     padding: 55px 0px;
+    background-color: var(--footer-clr);
   }
 
   .testimonial-four blockquote:hover::after,
@@ -3301,7 +3302,6 @@ a {
     margin-top: 0.45em;
     margin-bottom: 0.35em;
     color: #303133;
-    font-family: Poppins;
     letter-spacing: -0.02em;
   }
 
@@ -3309,7 +3309,6 @@ a {
     font-size: 18px;
     margin-bottom: 20px;
     font-weight: 400;
-    font-family: Poppins;
   }
 
   .special-heading.line span:before,
@@ -3341,7 +3340,6 @@ a {
 
 
   .testimonial-two blockquote p:before {
-    font-family: 'Playfair Display';
     font-size: 54px;
     color: #0cb4ce;
     font-weight: 900;

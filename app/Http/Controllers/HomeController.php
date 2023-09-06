@@ -28,6 +28,8 @@ class HomeController extends Controller
         // Programs
         $programs=Program::orderBy('title','DESC')->get();
 
+        // Testimonial
+
         $boardOfDirectors = $director->union($chancellor)->union($viceChancellor)->get();
         return view('pages.homepage')
         ->with([

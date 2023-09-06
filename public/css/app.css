@@ -2916,6 +2916,7 @@ a {
 }
 .testimonials .section-medium {
   padding: 55px 0px;
+  background-color: var(--footer-clr);
 }
 .testimonials .testimonial-four blockquote:hover::after,
 .testimonials .section-arrow-primary-color.section-arrow--bottom-center:after {
@@ -2955,14 +2956,12 @@ a {
   margin-top: 0.45em;
   margin-bottom: 0.35em;
   color: #303133;
-  font-family: Poppins;
   letter-spacing: -0.02em;
 }
 .testimonials .section-sub-title {
   font-size: 18px;
   margin-bottom: 20px;
   font-weight: 400;
-  font-family: Poppins;
 }
 .testimonials .special-heading.line span:before,
 .testimonials .special-heading.line span:after,
@@ -2985,7 +2984,6 @@ a {
   border-radius: 2px;
 }
 .testimonials .testimonial-two blockquote p:before {
-  font-family: "Playfair Display";
   font-size: 54px;
   color: #0cb4ce;
   font-weight: 900;
