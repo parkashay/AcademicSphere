@@ -38,6 +38,14 @@ Route::get('/programs', [ProgramsPageController::class, 'index']);
 Route::get('/programs/single/{id}', [ProgramsPageController::class, 'singleProgram']);
 
 
+Route::get('/verify-code', [LearningMaterialsController::class, 'verificationForm'])
+    ->name('verify.code');
+Route::get('/learning-materials', [LearningMaterialsController::class, 'index'])
+    ->name('learning.materials')
+    ->middleware('learn');
+Route::post('/verify-code', [LearningMaterialsController::class, 'verify']);
+
+
 // Search
 
 Route::get('/search', [PostsPageController::class, 'getQuery'])->name('posts.search');
