@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\CoursesPageController;
 use App\Http\Controllers\EventPageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LearningMaterialsController;
 use App\Http\Controllers\PostsPageController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,15 @@ Route::get('/posts/single/{id}', [PostsPageController::class, 'singlePost']);
 Route::get('/programs', [ProgramsPageController::class, 'index']);
 Route::get('/programs/single/{id}', [ProgramsPageController::class, 'singleProgram']);
 
+
+Route::get('/learning-materials', [LearningMaterialsController::class, 'index'])
+    ->name('learning.materials');
+Route::get('/verify-code', [LearningMaterialsController::class, 'verificationForm'])
+    ->name('verify.code');
+Route::post('/verify-code', [LearningMaterialsController::class, 'verify']);
+Route::get('/learning-materials/single/{id}', [LearningMaterialsController::class, 'learn'])
+    ->name('learn')
+    ->middleware('verify.code');
 
 // Search
 
