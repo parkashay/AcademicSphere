@@ -1053,3 +1053,49 @@ link:focus,
   color:gray;
   padding-inline: 3px;
 }
+
+.post-content-container{
+  width: 100%;
+  overflow-x: auto;
+}
+
+.card-body-news{
+  display: flex;
+  flex-direction: column;
+}
+
+.enter-code-page{
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.enter-code-form-container{
+ display: grid;
+ gap: 2rem;
+ place-items: center;
+}
+.code-input-field{
+padding: 5px;
+font-size: 1.5rem;
+}
+.logo-verify-page{
+  width: 100%;
+}
+.code-submit-btn{
+  padding: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.code-verify-form{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem
+}
+.error-message-form{
+  color: red;
+  text-align: center;
+}

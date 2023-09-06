@@ -24,22 +24,22 @@
         <div class="container">
             <!-- course list -->
             <div class="row justify-content-center">
-              @foreach (['Physics','Chemistry','Biology','Maths','Electrical','Communication'] as $item)
+              @foreach ($courses as $course)
                     <!-- course item -->
                 <div class="col-lg-4 col-sm-6 mb-5">
                     <div class="card p-0 border-primary rounded-0 hover-shadow">
                         <div class="card-body">
                             <ul class="list-inline mb-2">
                                 <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
-                                <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
+                                <li class="list-inline-item"><a class="text-color" href="#"></a></li>Engineering
                             </ul>
-                            <a href="course-single.html">
-                                <h4 class="card-title">{{$item}}</h4>
+                            <a href="/courses/single/{{$course->id}}">
+                                <h4 class="card-title">{{$course->title}}</h4>
                             </a>
-                            <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                eiusmod tempor
-                                incididunt ut labore et dolore magna.</p>
-                            <a href="course-single.html" class="btn btn-primary btn-sm">See Details</a>
+                            <p class="card-text mb-4"> 
+                                {!! Str::limit($course->content, 10) !!}
+                            </p>
+                            <a href="/courses/single/{{$course->id}}" class="btn btn-primary btn-sm">See Details</a>
                         </div>
                     </div>
                 </div>

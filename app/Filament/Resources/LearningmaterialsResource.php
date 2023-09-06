@@ -7,10 +7,9 @@ use App\Filament\Resources\LearningmaterialsResource\RelationManagers;
 use App\Models\Course;
 use App\Models\Learningmaterials;
 use App\Models\Staff;
-use Filament\Forms;
-use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
@@ -19,8 +18,6 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\File;
 
 class LearningmaterialsResource extends Resource
@@ -36,18 +33,24 @@ class LearningmaterialsResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('title')->required(),
-                Select::make('teacher')
-                ->options(Staff::all()->pluck('fullname', 'fullname'))
-                ->native(false)->required(),
+                Section::make('Material Info')->schema([
+                    TextInput::make('title')->required(),
+                    TextInput::make('access_code')->required(),
+                ])->columnSpan(1),
+                Section::make('Details')->schema([
+                    Select::make('teacher')
+                    ->options(Staff::all()->pluck('fullname', 'fullname'))
+                    ->native(false)->required()->searchable(),
                 Select::make('course')
                     ->options(Course::all()->pluck('title', 'title'))
                     ->native(false)
                     ->required(),
-                TagsInput::make('keywords')->required(),
-                TextInput::make('access_code')->required()->unique(),
-                RichEditor::make('content')->required()->columnSpan(2),
-                FileUpload::make('files')->multiple(),
+                ])->columnSpan(1),
+                Section::make('Content')->schema([
+                    RichEditor::make('content')->required(),
+                    FileUpload::make('files')->multiple(),
+                ]),
+                TagsInput::make('keywords'),
             ]);
     }
 
@@ -59,11 +62,12 @@ class LearningmaterialsResource extends Resource
                 TextColumn::make('title')->searchable(),
                 TextColumn::make('teacher')->badge()->color('gray'),
                 TextColumn::make('content')->limit(20)->searchable(),
-                TextColumn::make('keywords')->badge()->searchable(),
                 TextColumn::make('course'),
                 TextColumn::make('access_code')->badge()->color('success'),
                 TextColumn::make('updated_at')->badge()->searchable(),
-                TextColumn::make('files')->limit(20)
+                TextColumn::make('files')->limit(20),
+                TextColumn::make('keywords')->badge()->searchable(),
+
             ])
             ->filters([
                 //
@@ -71,11 +75,11 @@ class LearningmaterialsResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
-                ->before(function (Learningmaterials $record){
-                    foreach($record->files as $file){
-                        File::delete(public_path('storage/'.$file));
-                    }
-                }),
+                    ->before(function (Learningmaterials $record) {
+                        foreach ($record->files as $file) {
+                            File::delete(public_path('storage/' . $file));
+                        }
+                    }),
 
             ])
             ->bulkActions([

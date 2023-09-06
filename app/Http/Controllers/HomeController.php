@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Event;
 use App\Models\Post;
+use App\Models\Program;
 use App\Models\Staff;
 use Illuminate\Http\Request;
 
@@ -13,8 +15,12 @@ class HomeController extends Controller
 
         //Notice Board
         $noticeBoard = Post::orderBy('updated_at', 'DESC')->limit(6)->get();
+        //Courses
+        $coursesPreview = Course::orderBy('updated_at', 'DESC')->limit(3)->get();
         //Events
         $eventBoard = Event::orderBy('date', 'DESC')->limit(3)->get();
+        //Programs
+        $programsPreview = Program::orderBy('created_at', 'DESC')->limit(6)->get();
         //board of Directors
         $director = Staff::where('designation', 'Director');
         $chancellor = Staff::where('designation', 'Chancellor');
@@ -24,6 +30,9 @@ class HomeController extends Controller
         ->with([
             'noticeBoard' => $noticeBoard,
             'boardOfDirectors'=> $boardOfDirectors,
+            'eventBoard' => $eventBoard,
+            'coursesPreview' => $coursesPreview,
+            'programsPreview' => $programsPreview,
         ]);
     }
 }
