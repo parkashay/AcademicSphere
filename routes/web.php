@@ -8,6 +8,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LearningMaterialsController;
 use App\Http\Controllers\PostsPageController;
+use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,4 +65,10 @@ Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 // Calendar
 Route::get('/calendar', [CallendarController::class, 'index'])->name('calendar');
 
+//  Course search
 
+Route::get('/learning/search', [LearningMaterialsController::class, 'getQuery'])->name('learning.search');
+
+// Staff
+Route::get('/staff', [StaffController::class, 'index'])->name('staff');
+Route::get('/staffdetails/{id}', [StaffController::class, 'singleStaff'])->name('staff.single');

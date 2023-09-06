@@ -1,0 +1,45 @@
+@extends('layouts.page')
+@section('title', 'Staff')
+@section('content')
+
+    <main class="cd-main-contentS fixed-bg">
+        <section class="component-main component-main-posts">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <div data-toggle="tooltip" data-placement="left" title="Home"><a href="../index.php"><i
+                                class="fa-solid fa-house"></i></a></div>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">SOE</li>
+                <li class="breadcrumb-item active" aria-current="page">Staffs</li>
+            </ol>
+            <div class="box-posts-container">
+                @foreach ($staffs as $staff)
+                    <div class="box-post soe-staffs-profile-45952hgfdf">
+                        <a href="/staffdetails/{{ $staff->id }}">
+                            <div class=" post-img">
+                                <img src="{{ asset('storage/' . $staff->profile_image) }}" alt="{{ $staff->profile_image }}">
+                            </div>
+                        </a>
+                        <div class="box-post-title">
+                            <a href="staffdetails/{{ $staff->id }}">{{ $staff->fullname }}</a>
+                        </div>
+                        <div class="box-post-date">
+                            {{ $staff->designation }}
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination ">
+    
+                    <div class="mi-auto mt-4">
+                        {{ $staffs->links('vendor.pagination.custom') }}
+    
+                    </div>
+                </ul>
+            </nav>
+        </section>
+       
+    </main>
+
+@endsection

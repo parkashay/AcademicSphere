@@ -47,4 +47,26 @@ class LearningMaterialsController extends Controller
             )
             : redirect('/learning-materials');
     }
+
+
+
+    // Search Learning material
+
+    public function getQuery(Request $req)
+    {
+        $search = $req['search'] ?? "";
+        if ($search != "") {
+            $posts = Learningmaterials::where('title', 'LIKE', "%$search%")
+                ->orWhere('keywords', 'LIKE', "%$search%")
+                ->orWhere('content', 'LIKE', "%$search%")
+                ->orWhere('course', 'LIKE', "%$search%")
+                ->paginate(15);
+        }
+
+        
+
+        return isset($posts) ?
+            view('pages.learning-material-search', ['posts' => $posts, 'query' => $search])
+            : redirect('/posts');
+    }
 }

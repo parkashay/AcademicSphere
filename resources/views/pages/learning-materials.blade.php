@@ -15,6 +15,13 @@
 
                 <li class="breadcrumb-item active" aria-current="page">Learning Materials</li>
             </ol>
+
+            <div class="input-group">
+                <form action="{{route('learning.search')}}" method="GET" style="width: 100%">
+                    <input type="search" name="search" class="form-control rounded" placeholder="Search your learning material here..." aria-label="Search" aria-describedby="search-addon" />
+                </form>
+              </div>
+
             <div class="row justify-content-center mt-2">
             
                 @foreach ($learningMaterials as $learningMaterial)

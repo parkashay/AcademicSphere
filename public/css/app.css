@@ -205,6 +205,13 @@ img {
   color: var(--link-hover-clr);
 }
 
+.home-page-post-title {
+  font-size: 16px;
+  line-height: 1.1;
+  color: var(--theme-clr);
+  font-weight: 600;
+}
+
 .more-posts-button {
   background-color: var(--theme-clr);
   color: #fff;
@@ -1888,18 +1895,11 @@ footer ul {
   margin-bottom: 5px;
 }
 .soe-staffs-profile-45952hgfdf .box-post-title a {
-  line-height: 2;
-  background: var(--random-clr);
-  color: var(--light-txt-clr);
   padding: 5px 10px;
   font-size: 0.8em;
-  text-align: center;
   width: 100%;
-  border-radius: 3px;
-  text-decoration: none;
-}
-.soe-staffs-profile-45952hgfdf .box-post-title a:hover {
-  color: var(--light-txt-clr);
+  -webkit-text-decoration: uppercase;
+          text-decoration: uppercase;
 }
 .soe-staffs-profile-45952hgfdf .box-post-date {
   text-align: center;
@@ -3308,4 +3308,106 @@ a {
 
 .mi-auto {
   margin-inline: auto;
+}
+
+.staff-details .border-0 {
+  border: 0 !important;
+}
+.staff-details .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+.staff-details section {
+  padding: 120px 0;
+  overflow: hidden;
+  background: #fff;
+}
+.staff-details .mb-2-3,
+.staff-details .my-2-3 {
+  margin-bottom: 2.3rem;
+}
+.staff-details .section-title {
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+.staff-details .text-primary {
+  color: #ceaa4d !important;
+}
+.staff-details .text-secondary {
+  color: #15395a !important;
+}
+.staff-details .font-weight-600 {
+  font-weight: 600;
+}
+.staff-details .display-26 {
+  font-size: 1.3rem;
+}
+@media screen and (min-width: 992px) {
+  .staff-details .p-lg-7 {
+    padding: 4rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .staff-details .p-md-6 {
+    padding: 3.5rem;
+  }
+}
+@media screen and (min-width: 576px) {
+  .staff-details .p-sm-2-3 {
+    padding: 2.3rem;
+  }
+}
+.staff-details .p-1-9 {
+  padding: 1.9rem;
+}
+@media screen and (min-width: 576px) {
+  .staff-details .pe-sm-6,
+  .staff-details .px-sm-6 {
+    padding-right: 3.5rem;
+  }
+}
+@media screen and (min-width: 576px) {
+  .staff-details .ps-sm-6,
+  .staff-details .px-sm-6 {
+    padding-left: 3.5rem;
+  }
+}
+.staff-details .pe-1-9,
+.staff-details .px-1-9 {
+  padding-right: 1.9rem;
+}
+.staff-details .ps-1-9,
+.staff-details .px-1-9 {
+  padding-left: 1.9rem;
+}
+.staff-details .pb-1-9,
+.staff-details .py-1-9 {
+  padding-bottom: 1.9rem;
+}
+.staff-details .pt-1-9,
+.staff-details .py-1-9 {
+  padding-top: 1.9rem;
+}
+.staff-details .mb-1-9,
+.staff-details .my-1-9 {
+  margin-bottom: 1.9rem;
+}
+@media (min-width: 992px) {
+  .staff-details .d-lg-inline-block {
+    display: inline-block !important;
+  }
+}
+.staff-details .rounded {
+  border-radius: 0.25rem !important;
 }/*# sourceMappingURL=app.css.map */
