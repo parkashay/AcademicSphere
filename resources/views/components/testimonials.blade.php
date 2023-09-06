@@ -3,11 +3,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-white text-center">
-                <h2 class="section-title "> What Others Say About Us</h2>
-                <p class="section-sub-title">
-                    We are a passionate digital design agency that specializes in beautiful and easy-to-
-                    <br> use digital design &amp; web development services.
-                </p>
+                <h2 class="section-title "> What Our Staff and Students Say About Us</h2>
+               
             </div>
         </div>
     </div>
