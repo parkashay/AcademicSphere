@@ -36,10 +36,16 @@
   --call-to-action-bg: var(var(--random-clr));
   --txt-clr-1: var(--royal-blue-text-clr);
   --txt-clr-2: var(--orange-500);
-  --linear-gradient-scheme-1: linear-gradient(90deg, #1cb5e0 0%, #000851 100%);
-  --linear-gradient-scheme-2: linear-gradient(106.9deg,
+  --linear-gradient-scheme-1: linear-gradient(
+      90deg,
+      #1cb5e0 0%,
+      #000851 100%
+  );
+  --linear-gradient-scheme-2: linear-gradient(
+      106.9deg,
       rgba(148, 14, 60, 1) 60.9%,
-      rgba(3, 22, 27, 1) 122.3%);
+      rgba(3, 22, 27, 1) 122.3%
+  );
 }
 
 ::-moz-selection {
@@ -1542,7 +1548,7 @@ footer ul {
 }
 .latest-posts .latest-posts-post {
   display: grid;
-  grid-template-columns: 1fr 40%;
+  grid-template-columns: 1fr;
   align-items: center;
 }
 .latest-posts .latest-posts-post .recent-posts-title {
@@ -2988,7 +2994,7 @@ a {
   color: #0cb4ce;
   font-weight: 900;
   left: 10px;
-  color: #FFF;
+  color: #fff;
   content: "“";
   font-style: normal;
   line-height: 1;
@@ -3077,13 +3083,19 @@ a {
   border-radius: 100px;
   overflow: hidden;
 }
-.testimonials .testimonial-three .testimonial-content {
+.testimonials .testimonial-content {
   overflow: hidden;
+  line-height: 1.5;
 }
 .testimonials .testimonial-three .testimonial-meta {
   position: relative;
   overflow: hidden;
   margin-left: 100px;
+}
+.testimonials .testimonial-three .testimonial-meta span {
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
 }
 .testimonials .testimonial-three .testimonial-name {
   display: block;
@@ -3266,4 +3278,34 @@ a {
 .testimonials img {
   max-width: 100%;
   height: auto;
+}
+
+.event-date {
+  min-width: 200px;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+  background-color: var(--theme-clr);
+}
+
+.btn-read-more {
+  background-color: var(--theme-clr);
+  color: #fff;
+  transition: all 0.2s linear;
+  text-transform: capitalize;
+}
+.btn-read-more:hover {
+  background-color: var(--theme-clr);
+  opacity: 0.95;
+  color: #fff;
+}
+
+.fixed-bg {
+  background-color: #fff;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.mi-auto {
+  margin-inline: auto;
 }/*# sourceMappingURL=app.css.map */

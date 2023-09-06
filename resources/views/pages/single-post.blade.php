@@ -1,61 +1,77 @@
 @extends('layouts.page')
 @section('title', $post->title)
 @section('content')
-    <!-- page title -->
-    <section class="page-title-section overlay" data-background="{{ asset('images/backgrounds/page-title.jpg') }}">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <ul class="list-inline custom-breadcrumb">
-                        <li class="list-inline-item"><a class="h2 text-white font-secondary" href="blog.html">Posts</a></li>
-                        <li class="list-inline-item text-white h3 font-secondary nasted">{{ Str::limit($post->title, 12) }}
-                        </li>
-                    </ul>
-                    <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured
-                        by some universities and the emphasis placed on final exams by others.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /page title -->
-    <!-- blog details -->
-    <section class="section-sm bg-gray">
-        <div class="container">
-            <div class="row">
-                @isset($post->thumbnail)
-                    <div class="col-12 mb-4">
-                        <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="blog-thumb" class="img-fluid w-100">
-                    </div>
-                @endisset
-                <div class="col-12">
-                    <ul class="list-inline">
-                        <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span
-                                class="font-weight-bold mr-2">Category :</span>
-                            @foreach ($post->category as $category)
-                                <span class="category-badge">{{ $category }}</span>
-                            @endforeach
-                        </li>
-                        <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><i
-                                class="ti-calendar mr-2"></i>{{ substr($post->created_at, 0, 10) }}</li>
-                        <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><i class="ti-book mr-2"></i>Read 289</li>
-                        <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light">Keywords:
-                            @foreach ($post->keywords as $keyword)
-                                <span class="keywords-badge">{{ $keyword }}</span>
-                            @endforeach
-                        </li>
-                    </ul>
-                </div>
-               
-                <!-- blog contect -->
-                <div class="col-12 mb-5">
-                    <h2>{{ $post->title }}</h2>
-                    <div class="post-content-container">
-                        {!! $post->content !!}
-                    </div>
+    <main class="cd-main-contentS">
+        <section class="component-main component-main-posts">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <div data-toggle="tooltip" data-placement="left" title="Home"><a href="/"><i
+                                class="fa-solid fa-house"></i></a></div>
+                </li>
+                <li class="breadcrumb-item" aria-current="page"><a href="./allpost.php">Notice</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ $post->title }}</li>
+            </ol>
 
+            <div class="tiles-container">
+                <div class="post-descriptive">
+                    <h1 class="post-title">{{ $post->title }}</h1>
+                    <div>
+                        <hr>
+                        <div class="date-share">
+                            <div class="post-date"><i class="fa-solid fa-calendar"></i>
+
+                                <?php
+                                $dateTime = new DateTime(substr($post->created_at, 0, 10));
+                                $formattedDate = $dateTime->format('F j, Y');
+                                print_r($formattedDate);
+                                ?>
+
+                            </div>
+                            <div class="post-share">
+                                <div class="sharethis-inline-share-buttons"></div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="post-text-image">
+                        <div class="post-thumb-img spotlight" data-src="{{ asset('storage/' . $post->thumbnail) }}">
+                            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}">
+                        </div>
+
+                        <div class="content-text">
+                            {!! $post->content !!}
+                        </div>
+                    </div>
                 </div>
+
+                <!-- recent posts -->
+                <section class="latest-posts">
+                    <div class="latest-header">
+                        <div>
+                            <h1>Latest</h1>
+                        </div>
+                        <div data-toggle="tooltip" data-placement="left" title="More posts"><a href="/posts"><i
+                                    class="fa-solid fa-square-rss"></i></a></div>
+                    </div>
+                    @foreach ($relatedPosts as $relatedPost)
+                        <div class="latest-posts-post">
+                            <div class="recent-posts-title">
+                                <a href="/posts/single/{{ $relatedPost->id }}">{{ $relatedPost->title }}</a>
+                                <div class="recent-posts-date">
+                                    <?php
+                                    $dateTime = new DateTime(substr($relatedPost->created_at, 0, 10));
+                                    $formattedDate = $dateTime->format('F j, Y');
+                                    print_r($formattedDate);
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    @endforeach
+
+                </section>
+
             </div>
-        </div>
-    </section>
-    <!-- /blog details -->
+        </section>
+    </main>
 @endsection

@@ -1,81 +1,56 @@
 @extends('layouts.page')
 @section('title', 'Events - School of Engineering')
 @section('content')
-    <!-- page title -->
-    <section class="page-title-section overlay" data-background="{{asset('images/backgrounds/page-title.jpg')}}">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <ul class="list-inline custom-breadcrumb">
-                        <li class="list-inline-item"><a class="h2 text-white font-secondary"
-                                href="@@page-link">Upcoming Events</a></li>
-                        <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
-                    </ul>
-                    <p class="text-lighten">What is Pokhara University up to? What events are being organized and a bried
-                        detail about each of them here.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /page title -->
+    <!-- events -->
+    <section class="section-sm mt-5 ">
 
+        <div class="container p-3" style="background-color: #fff;">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <div data-toggle="tooltip" data-placement="left" title="Home"><a href="/"><i
+                                class="fa-solid fa-house"></i></a></div>
+                </li>
 
-    <!-- Events -->
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                @foreach ($events as $event)
-                    <!-- event -->
-                    <div class="col-lg-4 col-sm-6 mb-5">
-                        <div class="card border-0 rounded-0 hover-shadow">
-                            <div class="card-img position-relative">
-                                <img class="card-img-top rounded-0" src="{{asset('images/events/event-bg.png')}}" alt="event thumb">
-                                <div class="card-date"><span
-                                        class="mr-3">{{ substr($event->date, 8, 2) }}</span>{{ date('F', mktime(0, 0, 0, (int) substr($event->date, 5, 2), 10)) }}
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <!-- location -->
-                                <p><i class="ti-location-pin text-primary mr-2"></i>Pokhara University</p>
-                                <a href="/events/single/{{$event->id}}">
-                                    <h4 class="card-title"> {{ $event->title }}</h4>
-                                </a>
-                            </div>
-                        </div>
+                <li class="breadcrumb-item active" aria-current="page">Upcoming Events </li>
+            </ol>
+
+            @foreach ($events as $event)
+                <li class="d-table mb-4 w-100 border-bottom hover-shadow">
+                    <div class="d-md-table-cell text-center p-4 .event-date text-white mb-4 mb-md-0 event-date">
+                        <span class="h2 d-block">
+                            <?php
+                            $dateTime = new DateTime(substr($event->date, 0, 10));
+                            $formattedDate = $dateTime->format('j');
+                            print_r($formattedDate);
+                            ?>
+                        </span>
+                        <?php
+                        $dateTime = new DateTime(substr($event->date, 0, 10));
+                        $formattedDate = $dateTime->format('F, Y');
+                        print_r($formattedDate);
+                        ?>
+
                     </div>
-                @endforeach
-            </div>
+                    <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0 py-3">
+                        <a href="notice-single.html" class="h4 mb-3 d-block">{{ $event->title }}</a>
+                        <p class="mb-0">
+                            {!! Str::limit($event->content, 200) !!}
+                        </p>
+                    </div>
+                    <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="events/single/{{ $event->id }}"
+                            class="btn btn-read-more">view details</a></div>
+                </li>
+            @endforeach
+            <nav aria-label="Page navigation example">
+                <ul class="pagination ">
+
+                    <div class="mi-auto mt-4">
+                        {{ $events->links('vendor.pagination.custom') }}
+
+                    </div>
+                </ul>
+            </nav>
         </div>
+
     </section>
     <!-- /events -->
-
-
-
-
-
-<section class="section-sm">
-  <div class="container p-3" style="background-color: #fff;">
-    <!-- course list -->
-    <h2 class="my-2 ml-0 text-nowrap mr-3 section-heading highlight">Programs</h2>
-        <div class="row justify-content-center">
-        @foreach ($events as $event)
-        <!-- course item -->
-    <div class="col-lg-4 col-sm-6 mb-5">
-      <div class="card p-0 border-primary rounded-0 hover-shadow">
-        <div class="card-body">
-        <img class="card-img-top rounded-0" src="{{asset('images/events/event-bg.png')}}" alt="event thumb">
-          <a href="course-single.html">
-            <h4 class="card-title">{{$course}}</h4>
-          </a>
-          <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna.</p>
-          <a href="course-single.html" class="btn btn-primary btn-sm">View Details</a>
-        </div>
-      </div>
-    </div>
-   @endforeach
-  </div>
-</section>
-
-
-@endsection

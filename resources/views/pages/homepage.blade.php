@@ -5,7 +5,6 @@
     @include('components.news-preview')
     @include('components.home-about')
     @include('components.programs-preview')
-    @include('components.events-preview')
     @include('components.testimonials')
-    @include('components.staff-preview')
+    @include('components.events-preview')
 @endsection
