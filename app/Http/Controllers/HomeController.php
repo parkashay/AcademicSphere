@@ -7,9 +7,6 @@ use App\Models\Event;
 use App\Models\Post;
 use App\Models\Program;
 use App\Models\Staff;
-use App\Models\Program;
-use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     public function index(){
