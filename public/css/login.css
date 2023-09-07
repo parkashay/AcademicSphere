@@ -59,6 +59,7 @@ input {
 }
 
 input[type="text"],
+input[type="password"],
 input[type="email"] {
   width: 100%;
   padding: 0 0 0 10px;
@@ -126,7 +127,7 @@ input[type="email"]:valid ~ .validation span:last-child {
 input[type="submit"] {
   border: none;
   display: block;
-  background-color: #3ca9e2;
+  background-color: #052B5D;
   color: #fff;
   font-weight: bold;
   text-transform: uppercase;
@@ -140,7 +141,7 @@ input[type="submit"] {
   text-align: center;
 }
 input[type="submit"]:hover {
-  background-color: #329dd5;
+  background-color: #10499a;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
