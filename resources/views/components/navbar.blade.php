@@ -17,28 +17,16 @@
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
                         <nav class="dropdown-child">
-                            <a href="#" class="dropbtn-child" style="--nav-hover-clr:#9A7085;">
-                                <div><span>Undergraduate(B.E)</span> <span><i
-                                            class="fa-solid fa-angle-right"></i></span></div>
+                            <a href="/courses" class="dropbtn-child" style="--nav-hover-clr:#9A7085;">
+                                <div><span>Courses</span> <span>
                             </a>
-                            <div class="invible-btn2"></div>
-                            <nav class="dropdown-content-child">
-                                <a href="how-to-apply.php" style="--nav-hover-clr:#49BEAA;">How to Apply</a>
-                                <a href="/courses" style="--nav-hover-clr:#EEB868;">Courses</a>
-                                <a href="/programs" style="--nav-hover-clr:#74A9A0;">Programs</a>
-                            </nav>
+                           
                         </nav>
                         <nav class="dropdown-child">
-                            <a href="#" class="dropbtn-child" style="--nav-hover-clr:#e0a21f;">
-                                <div><span>Graduate(M.Sc)</span> <span><i class="fa-solid fa-angle-right"></i></span>
+                            <a href="/programs" class="dropbtn-child" style="--nav-hover-clr:#e0a21f;">
+                                <div><span>Programs</span> 
                                 </div>
-                            </a>
-                            <div class="invible-btn2"></div>
-                            <nav class="dropdown-content-child">
-                                <a href="how-to-apply.php" style="--nav-hover-clr:#36b336;">How to Apply</a>
-                                <a href="#" style="--nav-hover-clr:#b31240;">Scholarship</a>
-                                <a href="./graduate.php" style="--nav-hover-clr:#9d2b16;">Graduate(M.E)</a>
-                            </nav>
+                            </a>       
                         </nav>
                     </nav>
                 </nav>
