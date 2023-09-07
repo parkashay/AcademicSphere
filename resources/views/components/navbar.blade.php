@@ -101,8 +101,8 @@
                     </form>
                 @endauth
                 @guest
-                    <a href="{{ route('login') }}">Login</a>
-                    <a href="{{ route('register') }}">Register</a>
+                    <a style="--nav-hover-clr:#8318b4;" href="{{ route('login') }}">Login</a>
+                    <a style="--nav-hover-clr:#8318b4;" href="{{ route('register') }}">Register</a>
                 @endguest
             </li>
         </ul>
