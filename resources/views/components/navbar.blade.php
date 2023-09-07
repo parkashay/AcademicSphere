@@ -98,7 +98,7 @@
                 @auth
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" class="btn btn-sm bg-primary text-white btn-logout">Logout</button>
+                        <button type="submit" class="btn btn-sm bg-danger text-white btn-logout">Logout</button>
                     </form>
                 @endauth
                 @guest
@@ -197,7 +197,7 @@
             @auth
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <a><button type="submit" class="btn text-white btn-sm bg-primary btn-logout">Logout</button></a>
+                    <a><button type="submit" class="btn text-white btn-sm bg-danger btn-logout">Logout</button></a>
                 </form>
             @endauth
             @guest
