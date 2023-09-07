@@ -1,5 +1,5 @@
 @extends('layouts.page')
-@section('title', 'School of Engineering - Home')
+@section('title', 'An Official Site of School of Engineering')
 @section('content')
     @include('components.hero')
     @include('components.news-preview')

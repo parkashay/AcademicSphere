@@ -36,7 +36,7 @@
                                                     {{ $staff->designation }}</li>
                                                 <li class="mb-2 mb-xl-3 display-28"><span
                                                         class="display-26 text-secondary me-2 font-weight-600">Experience:</span>
-                                                    10 Years</li>
+                                                        <?php echo(rand(4,8)); ?> Years</li>
                                                 <li class="mb-2 mb-xl-3 display-28"><span
                                                         class="display-26 text-secondary me-2 font-weight-600">Email:</span>
                                                     edith@mail.com</li>

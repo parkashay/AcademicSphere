@@ -8,6 +8,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LearningMaterialsController;
 use App\Http\Controllers\PostsPageController;
+use App\Http\Controllers\ProgramsPageController;
 use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,7 +37,7 @@ Route::get('/posts', [PostsPageController::class, 'getPosts']);
 Route::get('/posts/single/{id}', [PostsPageController::class, 'singlePost']);
 
 Route::get('/programs', [ProgramsPageController::class, 'index']);
-Route::get('/programs/single/{id}', [ProgramsPageController::class, 'singleProgram']);
+Route::get('/programs/{id}', [ProgramsPageController::class, 'singleProgram']);
 
 // LEARNING MATERIALS
 Route::get('/learning-materials', [LearningMaterialsController::class, 'index'])
