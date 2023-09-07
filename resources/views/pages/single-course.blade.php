@@ -5,7 +5,7 @@
         <section class="component-main component-main-posts">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <div data-toggle="tooltip" data-placement="left" title="Home"><a href="./"><i
+                    <div data-toggle="tooltip" data-placement="left" title="Home"><a href="/"><i
                                 class="fa-solid fa-house"></i></a></div>
                 </li>
                 <li class="breadcrumb-item" aria-current="page"><a href="/learning-materials">Study Materials</a></li>

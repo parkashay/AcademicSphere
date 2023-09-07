@@ -2241,10 +2241,8 @@ ol.with-counter {
 .admission-overlap {
     display: grid;
     grid-template-columns: 1fr;
-    background-color: var(--color-scheme-10);
     margin-top: -2em;
 }
-
 .side-img-text {
     padding: 0.5em;
 }
@@ -2884,6 +2882,7 @@ ol.with-counter {
 
 .content-xr45-text {
     --call-to-action-bg: var(--orange-500);
+    line-height: 1.5;
 }
 
 // media query
@@ -3841,4 +3840,8 @@ a {
     .rounded {
         border-radius: 0.25rem !important;
     }
+}.para-msg p{
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 1em;
 }

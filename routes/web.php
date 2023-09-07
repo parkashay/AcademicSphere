@@ -8,7 +8,9 @@ use App\Http\Controllers\EventPageController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LearningMaterialsController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PostsPageController;
+use App\Http\Controllers\ProgramsPageController;
 use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,7 +39,7 @@ Route::get('/posts', [PostsPageController::class, 'getPosts']);
 Route::get('/posts/single/{id}', [PostsPageController::class, 'singlePost']);
 
 Route::get('/programs', [ProgramsPageController::class, 'index']);
-Route::get('/programs/single/{id}', [ProgramsPageController::class, 'singleProgram']);
+Route::get('/programs/{id}', [ProgramsPageController::class, 'singleProgram']);
 
 // LEARNING MATERIALS
 Route::get('/learning-materials', [LearningMaterialsController::class, 'index'])
@@ -70,9 +72,19 @@ Route::get('/calendar', [CallendarController::class, 'index'])->name('calendar')
 
 Route::get('/learning/search', [LearningMaterialsController::class, 'getQuery'])->name('learning.search');
 
+// Contact
+Route::get('/contact', [MessageController::class, 'index']);
+
+
 // Staff
 Route::get('/staff', [StaffController::class, 'index'])->name('staff');
 Route::get('/staffdetails/{id}', [StaffController::class, 'singleStaff'])->name('staff.single');
+Route::get('/message/director', function(){
+    return view('pages.message-director');
+})->name('message.director');
+Route::get('/message/dean', function(){
+    return view('pages.message-dean');
+})->name('message.dean');
 
 //Authentication
 Route::get('/login', [AuthController::class, 'index'])->name('login');

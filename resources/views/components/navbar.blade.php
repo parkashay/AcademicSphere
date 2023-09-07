@@ -8,6 +8,7 @@
     <a id="cd-logo" href="./"><img src="{{ asset('logo/logo_pu.png') }}" alt="School of engineering pu">School Of
         Engineering</a>
     <nav id="cd-top-nav" class="show-large-screen">
+        
         <ul class="show-large-screen">
             <li><a href="/" id="homen home" style="--nav-hover-clr:#ff0051;">Home</a></li>
             <li>
@@ -119,6 +120,7 @@
                     type="text" name="search">
             </form>
         </li>
+        
     </ul>
     <ul class="cd-navigation show-small-screen">
         <ul class="cd-single-item-wrapper">
@@ -191,18 +193,18 @@
                 <li><a href="./coming-soon.php">Seminars & Conferences</a></li>
             </ul>
         </li>
+        
+            <li>
+                @auth
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="btn-logout">Logout</button>
+                    </form>
+                @endauth
+                @guest
+                    <a href="{{ route('login') }}">Login</a>
+                    <a href="{{ route('register') }}">Register</a>
+                @endguest
+            </li>
     </ul> <!-- cd-navigation -->
-
-    <li>
-        @auth
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit" class="btn-logout">Logout</button>
-            </form>
-        @endauth
-        @guest
-            <a href="{{ route('login') }}">Login</a>
-            <a href="{{ route('register') }}">Register</a>
-        @endguest
-    </li>
 </nav>

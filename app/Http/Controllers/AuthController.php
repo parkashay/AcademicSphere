@@ -22,7 +22,7 @@ class AuthController extends Controller
 
             $credentials = $request->only('email', 'password');
             if (Auth::attempt($credentials)) {
-                return redirect()->route('home')->with('message', 'Logged In Successfully');
+                return redirect()->route('learning.materials')->with('message', 'Logged In Successfully');
             } else {
                 return redirect()->route('login')->with('message', 'Invalid Password');
             }
