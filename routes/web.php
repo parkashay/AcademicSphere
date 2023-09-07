@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutPageController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CallendarController;
 use App\Http\Controllers\CoursesPageController;
 use App\Http\Controllers\EventPageController;
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/about', [AboutPageController::class, 'index']);
 
@@ -51,7 +52,7 @@ Route::get('/learning-materials', [LearningMaterialsController::class, 'index'])
 
 
 Route::get('/learning-materials/single/{id}', [LearningMaterialsController::class, 'singleMaterial'])
-    ->name('learn');
+    ->name('learn')->middleware('auth');
 
 // Search
 
@@ -72,3 +73,10 @@ Route::get('/learning/search', [LearningMaterialsController::class, 'getQuery'])
 // Staff
 Route::get('/staff', [StaffController::class, 'index'])->name('staff');
 Route::get('/staffdetails/{id}', [StaffController::class, 'singleStaff'])->name('staff.single');
+
+//Authentication
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/login', [AuthController::class, 'verifyLogin']);
+Route::get('register', [AuthController::class, 'register'])->name('register');
+Route::post('/register', [AuthController::class, 'verifyRegister']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
