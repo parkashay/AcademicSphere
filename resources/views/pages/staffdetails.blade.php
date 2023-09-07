@@ -1,5 +1,5 @@
 @extends('layouts.page')
-@section('title', 'Staffn Details')
+@section('title', 'Staff Details')
 @section('content')
 
     <main class="cd-main-contentS fixed-bg">

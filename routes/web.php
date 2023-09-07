@@ -8,6 +8,7 @@ use App\Http\Controllers\EventPageController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LearningMaterialsController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PostsPageController;
 use App\Http\Controllers\ProgramsPageController;
 use App\Http\Controllers\StaffController;
@@ -70,6 +71,10 @@ Route::get('/calendar', [CallendarController::class, 'index'])->name('calendar')
 //  Course search
 
 Route::get('/learning/search', [LearningMaterialsController::class, 'getQuery'])->name('learning.search');
+
+// Contact
+Route::get('/contact', [MessageController::class, 'index']);
+
 
 // Staff
 Route::get('/staff', [StaffController::class, 'index'])->name('staff');
