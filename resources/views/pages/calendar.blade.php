@@ -19,15 +19,16 @@
                             <div class="card-body">
                                 <ul class="list-inline mb-3 ">
                                     <li class="list-inline-item mr-3 home-post-date">
-                                       Calendar of Year, {{$calendar->year}}
+                                        Calendar of Year, {{ $calendar->year }}
                                     </li>
 
                                 </ul>
                                 <div>
                                     <?php
-                                        $string='/';
+                                    $string = '/';
                                     ?>
-                                    <a href="{{asset('storage').$string.$calendar->file}}">Academic Calendar, {{$calendar->year}}</a>
+                                    <a href="{{ asset('storage') . $string . $calendar->file }}">Academic Calendar,
+                                        {{ $calendar->year }}</a>
                                 </div>
                             </div>
                         </div>

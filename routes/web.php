@@ -74,6 +74,12 @@ Route::get('/learning/search', [LearningMaterialsController::class, 'getQuery'])
 // Staff
 Route::get('/staff', [StaffController::class, 'index'])->name('staff');
 Route::get('/staffdetails/{id}', [StaffController::class, 'singleStaff'])->name('staff.single');
+Route::get('/message/director', function(){
+    return view('pages.message-director');
+})->name('message.director');
+Route::get('/message/dean', function(){
+    return view('pages.message-dean');
+})->name('message.dean');
 
 //Authentication
 Route::get('/login', [AuthController::class, 'index'])->name('login');
