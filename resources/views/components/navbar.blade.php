@@ -4,7 +4,7 @@
 </div>
 
 <!-- second nav -->
-<header class="header ">
+<header class="header">
     <a id="cd-logo" href="./"><img src="{{ asset('logo/logo_pu.png') }}" alt="School of engineering pu">School Of
         Engineering</a>
     <nav id="cd-top-nav" class="show-large-screen">
@@ -17,30 +17,39 @@
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
                         <nav class="dropdown-child">
-                            <a href="/courses" class="dropbtn-child" style="--nav-hover-clr:#9A7085;">
-                                <div><span>Courses</span> <span>
+                            <a href="#" class="dropbtn-child" style="--nav-hover-clr:#9A7085;">
+                                <div><span>College</span> <span><i
+                                            class="fa-solid fa-angle-right"></i></span></div>
                             </a>
-                           
+                            <div class="invible-btn2"></div>
+                            <nav class="dropdown-content-child">
+                                <a href="/courses" style="--nav-hover-clr:#EEB868;">Courses</a>
+                                <a href="/programs" style="--nav-hover-clr:#74A9A0;">Programs</a>
+                            </nav>
                         </nav>
                         <nav class="dropdown-child">
-                            <a href="/programs" class="dropbtn-child" style="--nav-hover-clr:#e0a21f;">
-                                <div><span>Programs</span> 
+                            <a href="#" class="dropbtn-child" style="--nav-hover-clr:#e0a21f;">
+                                <div><span>More</span> <span><i class="fa-solid fa-angle-right"></i></span>
                                 </div>
-                            </a>       
+                            </a>
+                            <div class="invible-btn2"></div>
+                            <nav class="dropdown-content-child">
+                                <a href="https://pusoe.edu.np/" style="--nav-hover-clr:#36b336;">LMS</a>
+                                <a href="https://pu.edu.np/publications/" style="--nav-hover-clr:#b31240;">PU Publications</a>
+                            </nav>
                         </nav>
                     </nav>
                 </nav>
             </li>
             <li>
                 <nav class="dropdown">
-                    <a class="dropbtn" style="--nav-hover-clr:#ce0c94;">Admission <i
+                    <a class="dropbtn" style="--nav-hover-clr:#ce0c94;">Information <i
                             class="fa-solid fa-angle-down"></i></a>
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
-                        <a href="admission.php" style="--nav-hover-clr:#017a8e;">Introduction</a>
-                        <a href="how-to-apply.php" style="--nav-hover-clr:#ff8e84;">How to Apply</a>
-                        <a href="#" style="--nav-hover-clr:#0040ff;">Scholarship</a>
-                        <a href="./academic-calendar.php" style="--nav-hover-clr:#ffa500;">Academic Calendar</a>
+                        <a href="/about" style="--nav-hover-clr:#e03e1f;">About SOE</a>
+                        <a href="https://scholarship.pu.edu.np/" target="_blank" style="--nav-hover-clr:#b31240;">Scholarship</a>
+                        <a href="/calendar" style="--nav-hover-clr:#ffa500;">Academic Calendar</a>
                     </nav>
                 </nav>
             </li>
@@ -50,11 +59,9 @@
                             class="fa-solid fa-angle-down"></i></a>
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
-                        <a href="./allpost.php" style="--nav-hover-clr:#9d5716;">SOE News</a>
-                        <a href="./category.php?category=Notice&key=2" style="--nav-hover-clr:#e0a21f;">SOE Notices</a>
-                        <a href="./studymaterials.php" style="--nav-hover-clr:#e03e1f;">eLearning</a>
-                        <a href="./academic-calendar.php" style="--nav-hover-clr:#9d2b16;">Academic Calendar</a>
-                        <a href="#" style="--nav-hover-clr:#1460a8;">Vacancy & Career</a>
+                        <a href="/posts" style="--nav-hover-clr:#9d5716;">SOE News</a>
+                        <a href="/events" style="--nav-hover-clr:#e0a21f;">Events</a>
+                        <a href="/calendar" style="--nav-hover-clr:#9d2b16;">Academic Calendar</a>
                     </nav>
                 </nav>
             </li>
@@ -65,23 +72,15 @@
                             class="fa-solid fa-angle-down"></i></a>
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
-                        <a href="./about.php" style="--nav-hover-clr:#ff571a;">About us</a>
-                        <a href="./messagefromdirector.php" style="--nav-hover-clr:#b312a2;">Message from Director</a>
-                        <a href="./contact.php" style="--nav-hover-clr:#6918b4;">Contact Us</a>
-                        <a href="./staffs.php" style="--nav-hover-clr:#8318b4;">Faculties and Staffs</a>
+                        <a href="/about" style="--nav-hover-clr:#ff571a;">About us</a>
+                        <a href="/contact" style="--nav-hover-clr:#6918b4;">Contact Us</a>
+                        <a href="/staff" style="--nav-hover-clr:#8318b4;">Faculties and Staffs</a>
                     </nav>
                 </nav>
             </li>
             <li>
                 <nav class="dropdown">
-                    <a class="dropbtn" style="--nav-hover-clr:#31bc76;">Research <i
-                            class="fa-solid fa-angle-down"></i></a>
-                    <div class="invible-btn"></div>
-                    <nav class="dropdown-content content-research-overflow">
-                        <a href="./coming-soon.php" style="--nav-hover-clr:#6918b4;">Faculty Researches</a>
-                        <a href="./coming-soon.php" style="--nav-hover-clr:#bf3769;">Workshops</a>
-                        <a href="./coming-soon.php" style="--nav-hover-clr:#e03e1f;">Seminars & Conferences</a>
-                    </nav>
+                    <a href="/learning-materials"  style="--nav-hover-clr:#31bc76;">Learning Materials</a>
                 </nav>
             </li>
             <li>

@@ -12,25 +12,24 @@
       <div class="footer-link">
         <h2 class="footer-link-header">Academics</h2>
         <ul>
-          <li><a href="./undergraduate.php">Undergraduate</a></li>
-          <li><a href="./graduate.php">Graduate</a></li>
+          <li><a href="/courses">Courses</a></li>
+          <li><a href="/programs">Programs</a></li>
         </ul>
       </div>
       <div class="footer-link">
-        <h2 class="footer-link-header">Admission</h2>
+        <h2 class="footer-link-header">Information</h2>
         <ul>
-          <li><a href="./admission.php">Introduction</a></li>
-          <li><a href="./how-to-apply.php">How to apply</a></li>
-          <li><a href="./scholarship.php">Scholarship</a></li>
-          <li><a href="./academic-calendar.php">Academic calander</a></li>
+          <li><a href="/about">Introduction</a></li>
+          <li><a href="/calendar">Academic Calendar</a></li>
+        
         </ul>
       </div>
 
       <div class="footer-link">
-        <h2 class="footer-link-header">News & Notices</h2>
+        <h2 class="footer-link-header">Posts</h2>
         <ul>
-          <li><a href="./allpost.php">SOE News</a></li>
-          <li><a href="./category.php?category=Notice&key=2">SOE Notices</a></li>
+          <li><a href="/posts">News and Notices</a></li>
+          <li><a href="/events">Events</a></li>
         </ul>
       </div>
     </div>
@@ -40,9 +39,8 @@
         <div class="footer-link">
           <h2 class="footer-link-header">About us</h2>
           <ul>
-            <li><a href="./messagefromdirector.php">Message from Director</a></li>
-            <li><a href="./contact.php">Contact Us</a></li>
-            <li><a href="../staffs.php">Faculties and Staffs</a></li>
+            <li><a href="/about">Introduction</a></li>
+            <li><a href="/staff">Faculties and Staffs</a></li>
           </ul>
         </div>
       </div>
@@ -51,19 +49,14 @@
         <h2 class="footer-link-header">Download & Login</h2>
         <ul>
           <li><a href="/admin" target="_blank">DashBoard</a></li>
-          <li><a href="/assets/files/SOE-PU-Entrance-Sylllabus.pdf">SOE-PU-Entrance-Syllabus</a></li>
-          <li><a href="/assets/files/coverpage_2077-Updated-website.pdf">Guidelines</a></li>
           <li><a href="/gallery.php">Gallery</a></li>
-          <li><a href="/studymaterials.php">eLearning</a></li>
         </ul>
       </div>
       <div class="footer-link">
-        <h2 class="footer-link-header">Research</h2>
+        <h2 class="footer-link-header">Study and Research</h2>
         <ul>
-          <li><a href="./coming-soon.php">Faculty Researches</a></li>
-          <li><a href="./coming-soon.php">Scholarship</a></li>
-          <li><a href="./coming-soon.php">Workshops</a></li>
-          <li><a href="./coming-soon.php">Seminars & Conferences</a></li>
+          <li><a href="/learning-materials">Learning Materials</a></li>
+          <li><a href="https://pu.edu.np/publications" target="_blank">Faculty Researches</a></li>
         </ul>
       </div>
 
