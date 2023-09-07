@@ -231,7 +231,7 @@
                         </table>
                     </div>
                     </p>
-                    
+
                 </div>
                 <div class="floating-image">
                     <div class="h3-bg-i46">
@@ -248,7 +248,7 @@
 
             </div>
 
-            
+
         </div>
     </main>
 @endsection
