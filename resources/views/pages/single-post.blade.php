@@ -34,9 +34,11 @@
                         <hr>
                     </div>
                     <div class="post-text-image">
-                        <div class="post-thumb-img spotlight" data-src="{{ asset('storage/' . $post->thumbnail) }}">
-                            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}">
-                        </div>
+                        @isset($post->thumbnail)
+                            <div class="post-thumb-img spotlight" data-src="{{ asset('storage/' . $post->thumbnail) }}">
+                                <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}">
+                            </div>
+                        @endisset
 
                         <div class="content-text">
                             {!! $post->content !!}

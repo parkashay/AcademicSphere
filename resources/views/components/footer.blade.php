@@ -50,11 +50,11 @@
       <div class="footer-link">
         <h2 class="footer-link-header">Download & Login</h2>
         <ul>
-          <li><a href="./login.php" target="_blank">Login</a></li>
-          <li><a href="./assets/files/SOE-PU-Entrance-Sylllabus.pdf">SOE-PU-Entrance-Syllabus</a></li>
-          <li><a href="./assets/files/coverpage_2077-Updated-website.pdf">Guidelines</a></li>
-          <li><a href="./gallery.php">Gallery</a></li>
-          <li><a href="./studymaterials.php">eLearning</a></li>
+          <li><a href="/admin" target="_blank">DashBoard</a></li>
+          <li><a href="/assets/files/SOE-PU-Entrance-Sylllabus.pdf">SOE-PU-Entrance-Syllabus</a></li>
+          <li><a href="/assets/files/coverpage_2077-Updated-website.pdf">Guidelines</a></li>
+          <li><a href="/gallery.php">Gallery</a></li>
+          <li><a href="/studymaterials.php">eLearning</a></li>
         </ul>
       </div>
       <div class="footer-link">
