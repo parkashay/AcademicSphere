@@ -15,7 +15,9 @@
 
                 <li class="breadcrumb-item active" aria-current="page">Learning Materials</li>
             </ol>
-
+                @if (session()->has('message'))
+                    <div class="mb-2" style="color:blue;"> {{session('message')}}! </div>
+                @endif
             <div class="input-group">
                 <form action="{{route('learning.search')}}" method="GET" style="width: 100%">
                     <input type="search" name="search" class="form-control rounded" placeholder="Search your learning material here..." aria-label="Search" aria-describedby="search-addon" />

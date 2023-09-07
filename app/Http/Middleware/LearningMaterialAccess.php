@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Models\Learningmaterials;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class LearningMaterialAccess
@@ -16,17 +17,15 @@ class LearningMaterialAccess
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (session()->has('accessCode')) {
-            $learningMaterial = Learningmaterials::find($request->id);
-            if ((session('accessCode')) == ($learningMaterial->access_code)) {
+        if (Auth::check()) {
+            if (Auth::user()->verified === 1) {
                 return $next($request);
             }
             else{
-                return redirect()->route('verify.code');
+                return redirect()->back()->with('message', 'Your Email is not Verified');
             }
-        }
-        else{
-        return redirect()->route('verify.code');      
+        } else {
+            return redirect('login');
         }
     }
 }

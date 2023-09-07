@@ -54,7 +54,7 @@ Route::get('/learning-materials', [LearningMaterialsController::class, 'index'])
 
 
 Route::get('/learning-materials/single/{id}', [LearningMaterialsController::class, 'singleMaterial'])
-    ->name('learn')->middleware('auth');
+    ->name('learn')->middleware('learn');
 
 // Search
 
@@ -74,7 +74,7 @@ Route::get('/learning/search', [LearningMaterialsController::class, 'getQuery'])
 
 // Contact
 Route::get('/contact', [MessageController::class, 'index']);
-
+Route::post('/contact', [MessageController::class, 'submitMessage']);
 
 // Staff
 Route::get('/staff', [StaffController::class, 'index'])->name('staff');
