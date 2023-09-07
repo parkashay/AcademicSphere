@@ -26,8 +26,7 @@ class LearningMaterialAccess
             }
         }
         else{
-        return redirect()->route('verify.code');
-            
+        return redirect()->route('verify.code');      
         }
     }
 }

@@ -26,13 +26,13 @@
                         <hr>
                     </div>
                     <div class="post-text-image">
-
                         <div class="content-text">
+                            {!! $singleMaterial->content !!}
                             @if (!empty($singleMaterial->files))
                                 <br><br>Downloadable file here:
                                 <ul>
                                     @foreach ($singleMaterial->files as $file)
-                                        <li><a href="{{ asset('storage/') . $file }}"
+                                        <li><a href="{{ asset('storage/').'/' . $file }}"
                                                 download="{{ asset('storage/') . $file }}">{{ $file }}</a></li>
                                     @endforeach
 

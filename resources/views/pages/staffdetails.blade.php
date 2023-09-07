@@ -23,7 +23,7 @@
                                 <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
                                     <div class="row align-items-center">
                                         <div class="col-lg-6 mb-4 mb-lg-0">
-                                            <img src="{{ asset('storage/') . $staff->profile_image }}" alt="...">
+                                            <img src="{{ asset('storage/' . $staff->profile_image) }}" alt="...">
                                         </div>
                                         <div class="col-lg-6 px-xl-10">
                                             <div class="bg-secondary d-lg-inline-block p-2 mb-1-9 rounded">

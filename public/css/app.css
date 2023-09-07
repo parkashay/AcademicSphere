@@ -2049,7 +2049,6 @@ ol.with-counter li::before {
 .admission-overlap {
   display: grid;
   grid-template-columns: 1fr;
-  background-color: var(--color-scheme-10);
   margin-top: -2em;
 }
 
@@ -2624,6 +2623,7 @@ ol.with-counter li::before {
 
 .content-xr45-text {
   --call-to-action-bg: var(--orange-500);
+  line-height: 1.5;
 }
 
 @media only screen and (min-width: 768px) {

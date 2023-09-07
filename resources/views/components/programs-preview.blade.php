@@ -8,7 +8,7 @@
                 <div class="col-lg-4 col-sm-6 mb-5">
                     <div class="card p-0 border-primary rounded-0 hover-shadow">
                         <div class="card-body">
-                            <a href="programs/{{$program->id}}" class="vision-text">
+                            <a href="programs/{{ $program->id }}" class="vision-text">
                                 <h4 class="card-title h3-title vision-title" style="text-transform: capitalize;">
                                     {{ $program->title }}</h4>
                             </a>
@@ -17,10 +17,12 @@
                             <p class="card-text mb-4 vision-description preview">
                                 {!! Str::limit($program->content, 200) !!}
                             </p>
-                            <a href="programs/{{$program->id}}" class="mt-3 btn btn-lg btn-block btn-main">View Details</a>
+                            <a href="programs/{{ $program->id }}" class="mt-3 btn btn-lg btn-block btn-main">View
+                                Details</a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
+    </div>
 </section>
