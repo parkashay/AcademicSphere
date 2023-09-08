@@ -31,10 +31,8 @@
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination ">
-    
                     <div class="mi-auto mt-4">
                         {{ $staffs->links('vendor.pagination.custom') }}
-    
                     </div>
                 </ul>
             </nav>

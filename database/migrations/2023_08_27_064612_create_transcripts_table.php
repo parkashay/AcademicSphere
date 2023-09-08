@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('year');
             $table->string('name');
-            $table->text('content');
+            $table->longText('content');
             $table->string('program');
             $table->boolean('passed_out');
             $table->timestamps();
