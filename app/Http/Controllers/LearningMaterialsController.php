@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 class LearningMaterialsController extends Controller
 {
     public function index(){
-        $learningMaterials = Learningmaterials::paginate(10);
-        return view('pages.learning-materials')->with(['learningMaterials' => $learningMaterials]);
+        // $learningMaterials = Learningmaterials::paginate(10);
+        // return view('pages.learning-materials')->with(['learningMaterials' => $learningMaterials]);
+        $learningMaterialsGroups = Learningmaterials::distinct()->pluck('course');
+        return view('pages.learning-materials')->with(['learningMaterialsGroups' => $learningMaterialsGroups]);
     }
     public function verificationForm(){
         return view('pages.code-verification');
@@ -17,7 +19,7 @@ class LearningMaterialsController extends Controller
 
     public function verify(Request $request){
         $validatedCode  = $request->validate([
-            'access_code' => 'required |  exists:learningmaterials,access_code',
+            'access_code' => 'required|exists:courses,access_code',
         ]);
         if($validatedCode){
             session(['accessCode' => $validatedCode['access_code']]);
@@ -27,6 +29,10 @@ class LearningMaterialsController extends Controller
     public function learn(string $id){
         $learningMaterial = Learningmaterials::find($id);
         return response([$learningMaterial]);
+    }
+    public function subjectMaterials(string $slug){
+        $learningMaterials = Learningmaterials::where('course', $slug)->paginate(15);
+        return view('pages.subject-materials')->with(['title' => $slug,'learningMaterials' => $learningMaterials]);
     }
 
     public function singleMaterial(string $id)

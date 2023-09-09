@@ -42,8 +42,14 @@ Route::get('/programs', [ProgramsPageController::class, 'index']);
 Route::get('/programs/{id}', [ProgramsPageController::class, 'singleProgram']);
 
 // LEARNING MATERIALS
-Route::get('/learning-materials', [LearningMaterialsController::class, 'index'])
-    ->name('learning.materials');
+Route::middleware('auth')->group(function () {
+    Route::get('/learning-materials', [LearningMaterialsController::class, 'index'])
+        ->name('learning.materials');
+    Route::get('/learning/search', [LearningMaterialsController::class, 'getQuery'])->name('learning.search');
+    Route::get('/learning-materials/{slug}',[LearningMaterialsController::class, 'subjectMaterials'])->middleware('learn')->name('learn');
+    Route::get('/learning-materials/single/{id}', [LearningMaterialsController::class, 'singleMaterial']);
+    Route::post('/validate-code', [LearningMaterialsController::class, 'verify']);
+});
 
 
 // Route::get('/verify-code', [LearningMaterialsController::class, 'verificationForm'])
@@ -53,8 +59,6 @@ Route::get('/learning-materials', [LearningMaterialsController::class, 'index'])
 // Route::post('/verify-code', [LearningMaterialsController::class, 'verify']);
 
 
-Route::get('/learning-materials/single/{id}', [LearningMaterialsController::class, 'singleMaterial'])
-    ->name('learn')->middleware('learn');
 
 // Search
 
@@ -68,9 +72,6 @@ Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 // Calendar
 Route::get('/calendar', [CallendarController::class, 'index'])->name('calendar');
 
-//  Course search
-
-Route::get('/learning/search', [LearningMaterialsController::class, 'getQuery'])->name('learning.search');
 
 // Contact
 Route::get('/contact', [MessageController::class, 'index']);
@@ -79,10 +80,10 @@ Route::post('/contact', [MessageController::class, 'submitMessage']);
 // Staff
 Route::get('/staff', [StaffController::class, 'index'])->name('staff');
 Route::get('/staffdetails/{id}', [StaffController::class, 'singleStaff'])->name('staff.single');
-Route::get('/message/director', function(){
+Route::get('/message/director', function () {
     return view('pages.message-director');
 })->name('message.director');
-Route::get('/message/dean', function(){
+Route::get('/message/dean', function () {
     return view('pages.message-dean');
 })->name('message.dean');
 

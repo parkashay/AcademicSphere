@@ -11,7 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class CourseResource extends Resource
 {
@@ -28,7 +28,8 @@ class CourseResource extends Resource
         return $form
             ->schema([
                 TextInput::make('title')->required(),
-                RichEditor::make('content')->required()->columnSpan(2),
+                TextInput::make('access_code')->required(),
+                TinyEditor::make('content')->required()->columnSpan(2),
             ]);
     }
 
@@ -37,6 +38,7 @@ class CourseResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title'),
+                TextColumn::make('access_code')->badge()->color('success'),
                 TextColumn::make('content')->limit(50),
             ])
             ->filters([

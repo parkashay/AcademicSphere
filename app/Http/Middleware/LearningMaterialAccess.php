@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Course;
 use App\Models\Learningmaterials;
 use Closure;
 use Illuminate\Http\Request;
@@ -17,15 +18,15 @@ class LearningMaterialAccess
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check()) {
-            if (Auth::user()->verified === 1) {
+        if (session()->has('accessCode')) {
+            $subjectCode = Course::where('title', $request->slug)->pluck('access_code')->first();
+            if ($subjectCode == session('accessCode')) {
                 return $next($request);
-            }
-            else{
-                return redirect()->back()->with('message', 'Your Email is not Verified');
+            } else {
+                return redirect()->back()->with('message', 'Insert Valid Code !!');
             }
         } else {
-            return redirect('login');
+            return redirect()->back()->with('message', 'The code you entered is not valid !!');
         }
     }
 }

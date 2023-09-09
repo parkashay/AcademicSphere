@@ -3845,3 +3845,25 @@ a {
     line-height: 1.5;
     margin-bottom: 1em;
 }
+
+.access-code-form{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-bottom: 10px;
+   
+
+    input[type="text"]{
+        background-color: var(--grey-light);
+        padding: 5px;
+        width: 150px;
+        outline: none;
+        border: 1px solid var(--color-scheme-1);
+    }
+    input[type="submit"]{
+        padding: 5px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+}

@@ -21,6 +21,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\File;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class EventResource extends Resource
 {
@@ -43,7 +44,7 @@ class EventResource extends Resource
                     ->imageCropAspectRatio('16:9')
                     ->imageEditor()
                     ->imageEditorAspectRatios(['16:9']),
-                RichEditor::make('content')->required()->columnSpan(2),
+                TinyEditor::make('content')->required()->columnSpan(2),
             ]);
     }
 
