@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class CoursesPageController extends Controller
 {
+
     public function index()
     {
 
@@ -38,5 +39,6 @@ class CoursesPageController extends Controller
 
             )
             : redirect('/learning-materials');
+
     }
 }

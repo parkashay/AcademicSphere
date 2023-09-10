@@ -3,19 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Learningmaterials;
+
 use Illuminate\Http\Request;
 
 class LearningMaterialsController extends Controller
 {
     public function index(){
+
         // $learningMaterials = Learningmaterials::paginate(10);
         // return view('pages.learning-materials')->with(['learningMaterials' => $learningMaterials]);
         $learningMaterialsGroups = Learningmaterials::distinct()->pluck('course');
         return view('pages.learning-materials')->with(['learningMaterialsGroups' => $learningMaterialsGroups]);
+
     }
     public function verificationForm(){
         return view('pages.code-verification');
     }
+
 
     public function verify(Request $request){
         $validatedCode  = $request->validate([
@@ -74,5 +78,6 @@ class LearningMaterialsController extends Controller
         return isset($posts) ?
             view('pages.learning-material-search', ['posts' => $posts, 'query' => $search])
             : redirect('/posts');
+
     }
 }

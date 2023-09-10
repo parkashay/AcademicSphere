@@ -8,6 +8,7 @@ use App\Models\Learningmaterials;
 use App\Models\Staff;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
@@ -32,10 +33,14 @@ class LearningmaterialsResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('title')->required(),
-                Select::make('teacher')
-                ->options(Staff::all()->pluck('fullname', 'fullname'))
-                ->native(false)->required(),
+                Section::make('Material Info')->schema([
+                    TextInput::make('title')->required(),
+                    TextInput::make('access_code')->required(),
+                ])->columnSpan(1),
+                Section::make('Details')->schema([
+                    Select::make('teacher')
+                    ->options(Staff::all()->pluck('fullname', 'fullname'))
+                    ->native(false)->required()->searchable(),
                 Select::make('course')
                     ->options(Course::all()->pluck('title', 'title'))
                     ->native(false)
@@ -43,6 +48,7 @@ class LearningmaterialsResource extends Resource
                 TagsInput::make('keywords'),
                 TinyEditor::make('content')->required()->columnSpan(2),
                 FileUpload::make('files')->multiple(),
+
             ]);
     }
 
@@ -54,10 +60,11 @@ class LearningmaterialsResource extends Resource
                 TextColumn::make('title')->searchable(),
                 TextColumn::make('teacher')->badge()->color('gray'),
                 TextColumn::make('content')->limit(20)->searchable(),
-                TextColumn::make('keywords')->badge()->searchable(),
                 TextColumn::make('course'),
                 TextColumn::make('updated_at')->badge()->searchable(),
-                TextColumn::make('files')->limit(20)
+                TextColumn::make('files')->limit(20),
+                TextColumn::make('keywords')->badge()->searchable(),
+
             ])
             ->filters([
                 //
@@ -65,11 +72,11 @@ class LearningmaterialsResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
-                ->before(function (Learningmaterials $record){
-                    foreach($record->files as $file){
-                        File::delete(public_path('storage/'.$file));
-                    }
-                }),
+                    ->before(function (Learningmaterials $record) {
+                        foreach ($record->files as $file) {
+                            File::delete(public_path('storage/' . $file));
+                        }
+                    }),
 
             ])
             ->bulkActions([

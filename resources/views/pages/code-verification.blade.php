@@ -6,3 +6,4 @@
 @error('access_code')
     <div >{{$message}}</div>
 @enderror
+

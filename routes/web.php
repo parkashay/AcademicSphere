@@ -12,6 +12,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PostsPageController;
 use App\Http\Controllers\ProgramsPageController;
 use App\Http\Controllers\StaffController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,13 +51,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/learning-materials/single/{id}', [LearningMaterialsController::class, 'singleMaterial']);
     Route::post('/validate-code', [LearningMaterialsController::class, 'verify']);
 });
-
-
-// Route::get('/verify-code', [LearningMaterialsController::class, 'verificationForm'])
-//     ->name('verify.code');
-
-
-// Route::post('/verify-code', [LearningMaterialsController::class, 'verify']);
 
 
 

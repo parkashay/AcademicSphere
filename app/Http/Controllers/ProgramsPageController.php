@@ -24,5 +24,6 @@ class ProgramsPageController extends Controller
 
             )
             : redirect('/');
+
     }
 }
