@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('content');
+            $table->string('access_code');
+            $table->longText('content');
             $table->timestamps();
         });
     }

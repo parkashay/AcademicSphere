@@ -17,8 +17,7 @@ return new class extends Migration
             $table->text('teacher');
             $table->text('course');
             $table->text('keywords')->nullable();
-            $table->text('access_code');
-            $table->text('content');
+            $table->longText('content');
             $table->text('files')->nullable();
             $table->timestamps();
         });

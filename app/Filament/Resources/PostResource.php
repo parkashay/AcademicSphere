@@ -17,6 +17,7 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\File;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class PostResource extends Resource
 {
@@ -40,7 +41,7 @@ class PostResource extends Resource
                         ->pluck('name', 'name'))
                     ->native(false),
 
-                RichEditor::make('content')->required()->columnSpan(2),
+                TinyEditor::make('content')->required()->columnSpan(2),
                 TagsInput::make('keywords'),
                 FileUpload::make('thumbnail')->image()
                     ->imageResizeMode('cover')
@@ -70,9 +71,9 @@ class PostResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
-                ->before(function (Post $record){
-                    File::delete(public_path('storage/'.$record->thumbnail));
-                }),
+                    ->before(function (Post $record) {
+                        File::delete(public_path('storage/' . $record->thumbnail));
+                    }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

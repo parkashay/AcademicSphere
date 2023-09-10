@@ -7,13 +7,38 @@ use Illuminate\Http\Request;
 
 class CoursesPageController extends Controller
 {
-    public function index(){
-        $courses = Course::all();
-        return view('pages.courses')->with('courses', $courses);
-    }
-    public function singleCourse(string $id)
+
+    public function index()
     {
-        $singleCourse = Course::find($id);
-        return view('pages.single-course')->with('singleCourse', $singleCourse);
+
+        $courses = Course::orderBy('title', "ASC")->paginate(20);
+
+        return isset($courses) ?
+            view(
+                'pages.courses',
+
+                [
+                    'courses' => $courses,
+                ]
+
+            )
+            : redirect('/learning-materials');
+    }
+
+    public function singleMaterial(string $category)
+    {
+        $singleMaterial = Course::where('title', '=', $category)->first();
+
+        return isset($singleMaterial) ?
+            view(
+                'pages.single-learning-category',
+
+                [
+                    'singleMaterial' => $singleMaterial,
+                ]
+
+            )
+            : redirect('/learning-materials');
+
     }
 }

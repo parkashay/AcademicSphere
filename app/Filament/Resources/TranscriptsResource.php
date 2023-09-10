@@ -19,6 +19,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class TranscriptsResource extends Resource
 {
@@ -49,7 +50,7 @@ class TranscriptsResource extends Resource
                 Select::make('program')->options(
                     Program::all()->pluck('title', 'title')
                 )->required()->native(false) ,
-                RichEditor::make('content')->required()->columnSpan(2),
+                TinyEditor::make('content')->required()->columnSpan(2),
                 Radio::make('passed_out')
                     ->label('Is this a passed out student?')
                     ->boolean()

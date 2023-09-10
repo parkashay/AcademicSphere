@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('category');
             $table->string('keywords');
-            $table->text('content');
+            $table->longText('content');
             $table->text('thumbnail')->nullable();
             $table->timestamps();
         });
