@@ -26,7 +26,7 @@ class LearningMaterialAccess
                 return redirect()->back()->with('message', 'Insert Valid Code !!');
             }
         } else {
-            return redirect()->back()->with('message', 'The code you entered is not valid !!');
+            return redirect()->back()->with('message', 'Enter Valid Code!!');
         }
     }
 }

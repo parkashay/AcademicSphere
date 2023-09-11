@@ -28,10 +28,7 @@ class HomeController extends Controller
         ->limit(4)
         ->get();
 
-        //board of Directors
-        $director = Staff::where('designation', 'Director');
-        $chancellor = Staff::where('designation', 'Chancellor');
-        $viceChancellor = Staff::where('designation', 'Vice Chancellor');
+ 
 
         // Programs
         $programs=Program::orderBy('title','DESC')->get();
@@ -39,11 +36,11 @@ class HomeController extends Controller
         // Testimonial
         $testimonmials=Testimonial::limit(6)->get();
 
-        $boardOfDirectors = $director->union($chancellor)->union($viceChancellor)->get();
+     
         return view('pages.homepage')
         ->with([
             'noticeBoard' => $noticeBoard,
-            'boardOfDirectors'=> $boardOfDirectors,
+           
             'eventBoard' => $eventBoard,
             'programs'=>$programs,
             'testimonials'=>$testimonmials

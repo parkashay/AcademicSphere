@@ -4,10 +4,12 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\StaffResource\Pages;
 use App\Filament\Resources\StaffResource\RelationManagers;
+use App\Models\Designation;
 use App\Models\Staff;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -27,8 +29,8 @@ class StaffResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-briefcase';
     protected static ?string $navigationGroup = 'Admin Control';
     protected static ?int $navigationSort = 5;
-
-
+    protected static ?string $navigationLabel = 'Staffs and Faculties';
+    protected static ?string $modelLabel = 'Staffs and Faculties';
 
     public static function form(Form $form): Form
     {
@@ -41,7 +43,8 @@ class StaffResource extends Resource
                     ->imageResizeMode('cover')
                     ->imageCropAspectRatio('1:1')
                     ->imageEditor(),
-                TextInput::make('designation')->required(),
+                Select::make('designation')->options(Designation::all()
+                    ->pluck('designation', 'designation'))->native(false),
                 TinyEditor::make('content')->required()->columnSpan(2),
             ]);
     }
