@@ -395,12 +395,11 @@ Main components
 .header {
     position: fixed;
     top: 0;
-    left: 0;
     height: 50px;
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 0.2em;
     z-index: 3;
     background-color: #fff;
     /* Force Hardware Acceleration in WebKit */
@@ -415,6 +414,11 @@ Main components
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     transition: all 0.4s linear;
+
+    li {
+        font-size: 0.7em;
+        font-weight: 600;
+    }
 }
 
 .button {
@@ -556,14 +560,16 @@ header.is-fixed {
     display: flex;
     flex-direction: column;
     min-width: 200px;
-    font-size: 1em;
     line-height: 1.2;
-    padding: 1rem 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
     // overflow: hidden;
+    & a:hover {
+        background-color: var(--random-clr);
+        color: var(--light-txt-clr);
+    }
 }
 
 .dropdown:hover .dropdown-content {
@@ -608,7 +614,6 @@ header.is-fixed {
     display: flex;
     flex-direction: column;
     min-width: 300px;
-    font-size: 0.9em;
     line-height: 1.2;
     padding: 1rem 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -662,7 +667,7 @@ header.is-fixed {
 #cd-top-nav a {
     position: relative;
     display: inline-block;
-    padding: 0.4em;
+    padding: 10px;
     color: var(--dark-txt-clr);
     font-weight: 500;
     font-size: 0.7em;
@@ -3799,7 +3804,6 @@ a {
         padding: 1.9rem;
     }
 
-  
     @media screen and (min-width: 576px) {
         .pe-sm-6,
         .px-sm-6 {
@@ -3840,27 +3844,27 @@ a {
     .rounded {
         border-radius: 0.25rem !important;
     }
-}.para-msg p{
+}
+.para-msg p {
     font-size: 1em;
     line-height: 1.5;
     margin-bottom: 1em;
 }
 
-.access-code-form{
+.access-code-form {
     display: flex;
     justify-content: flex-end;
     gap: 5px;
     margin-bottom: 10px;
-   
 
-    input[type="text"]{
+    input[type="text"] {
         background-color: var(--grey-light);
         padding: 5px;
         width: 150px;
         outline: none;
         border: 1px solid var(--color-scheme-1);
     }
-    input[type="submit"]{
+    input[type="submit"] {
         padding: 5px;
         border: none;
         outline: none;

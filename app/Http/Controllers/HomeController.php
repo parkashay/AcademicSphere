@@ -14,8 +14,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index()
+    {
+        //Navigation
 
+        $navPrograms = Program::orderBy('title', 'DESC')->get();
         //Notice Board
         $noticeBoard = Post::orderBy('updated_at', 'DESC')->limit(12)->get();
         $noticeBoard = Post::orderBy('updated_at', 'DESC')->limit(6)->get();
@@ -23,27 +26,28 @@ class HomeController extends Controller
         $coursesPreview = Course::orderBy('updated_at', 'DESC')->limit(3)->get();
         //Events
 
-        $eventBoard=Event::orderBy('date', 'ASC')
-        ->where('date', '>', now())
-        ->limit(4)
-        ->get();
+        $eventBoard = Event::orderBy('date', 'ASC')
+            ->where('date', '>', now())
+            ->limit(4)
+            ->get();
 
- 
+
 
         // Programs
-        $programs=Program::orderBy('title','DESC')->get();
+        $programs = Program::orderBy('title', 'DESC')->get();
 
         // Testimonial
-        $testimonmials=Testimonial::limit(6)->get();
+        $testimonmials = Testimonial::limit(6)->get();
 
-     
+
         return view('pages.homepage')
-        ->with([
-            'noticeBoard' => $noticeBoard,
-           
-            'eventBoard' => $eventBoard,
-            'programs'=>$programs,
-            'testimonials'=>$testimonmials
-        ]);
+            ->with([
+                'navPrograms' => $navPrograms,
+                'noticeBoard' => $noticeBoard,
+
+                'eventBoard' => $eventBoard,
+                'programs' => $programs,
+                'testimonials' => $testimonmials
+            ]);
     }
 }
