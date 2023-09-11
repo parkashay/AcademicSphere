@@ -27,28 +27,29 @@ class LearningmaterialsResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
     protected static ?string $navigationGroup = 'Staff Control';
     protected static ?int $navigationSort = 12;
-
+    protected static ?string $navigationLabel = 'Study Materials';
+    protected static ?string $modelLabel = 'Study Materials';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Section::make('Material Info')->schema([
+                
                     TextInput::make('title')->required(),
-                    TextInput::make('access_code')->required(),
-                ])->columnSpan(1),
-                Section::make('Details')->schema([
                     Select::make('teacher')
-                    ->options(Staff::all()->pluck('fullname', 'fullname'))
-                    ->native(false)->required()->searchable(),
-                Select::make('course')
-                    ->options(Course::all()->pluck('title', 'title'))
-                    ->native(false)
-                    ->required(),
-                TagsInput::make('keywords'),
-                TinyEditor::make('content')->required()->columnSpan(2),
-                FileUpload::make('files')->multiple(),
-
+                        ->options(Staff::where('designation', 'LIKE', '%lecturer%')
+                        ->orWhere('designation', 'LIKE', '%teacher%')
+                        ->orWhere('designation', 'LIKE', '%professor%')
+                        ->pluck('fullname', 'fullname'))
+                        ->native(false)->required()->searchable(),
+                    Select::make('course')
+                        ->options(Course::all()->pluck('title', 'title'))
+                        ->native(false)
+                        ->required(),
+                    TagsInput::make('keywords'),
+                    TinyEditor::make('content')->required()->columnSpan(2),
+                    FileUpload::make('files')->multiple(),
+             
             ]);
     }
 
