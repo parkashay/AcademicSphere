@@ -7,13 +7,23 @@ use Illuminate\Http\Request;
 
 class ProgramsPageController extends Controller
 {
-    public function index(){
-        $programs = Program::all();
-        return view('pages.programs')->with(['programs' => $programs]);
-    }
-
-    public function singleProgram(string $id){
+    public function singleProgram(string $id)
+    {
         $singleProgram = Program::find($id);
-        return view('pages.single-program')->with(['singleProgram' => $singleProgram]);
+
+        // related posts
+        $otherPrograms = Program::where('id', '!=', $id)->limit(9)->get();
+        return isset($singleProgram) ?
+            view(
+                'pages.programs',
+
+                [
+                    'singleProgram' => $singleProgram,
+                    'otherPrograms' => $otherPrograms
+                ]
+
+            )
+            : redirect('/');
+
     }
 }

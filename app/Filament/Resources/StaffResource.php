@@ -18,6 +18,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\File;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class StaffResource extends Resource
 {
@@ -41,7 +42,7 @@ class StaffResource extends Resource
                     ->imageCropAspectRatio('1:1')
                     ->imageEditor(),
                 TextInput::make('designation')->required(),
-                RichEditor::make('content')->required()->columnSpan(2),
+                TinyEditor::make('content')->required()->columnSpan(2),
             ]);
     }
 

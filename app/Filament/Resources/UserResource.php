@@ -44,10 +44,11 @@ class UserResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('name')->searchable(),
                 Tables\Columns\TextColumn::make('role')->badge()->color('success'),
                 Tables\Columns\TextColumn::make('email'),
-            ])
+                Tables\Columns\CheckboxColumn::make('verified'),
+            ])->defaultSort('id', 'desc')
             ->filters([
                 //
             ])

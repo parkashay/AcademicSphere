@@ -15,6 +15,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class ProgramResource extends Resource
 {
@@ -32,7 +33,7 @@ class ProgramResource extends Resource
         return $form
             ->schema([
                 TextInput::make('title')->required(),
-                RichEditor::make('content')->required()->columnSpan(2),
+                TinyEditor::make('content')->required()->columnSpan(2),
                 TextInput::make('coordinator')->required(),
             ]);
     }

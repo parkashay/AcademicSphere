@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('caption') -> nullable();
             $table->string('date');
-            $table->text('content');
+            $table->longText('content');
             $table->timestamps();
         });
     }

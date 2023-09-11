@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\LearningmaterialsResource\Pages;
-use App\Filament\Resources\LearningmaterialsResource\RelationManagers;
 use App\Models\Course;
 use App\Models\Learningmaterials;
 use App\Models\Staff;
@@ -19,6 +18,7 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\File;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class LearningmaterialsResource extends Resource
 {
@@ -45,12 +45,10 @@ class LearningmaterialsResource extends Resource
                     ->options(Course::all()->pluck('title', 'title'))
                     ->native(false)
                     ->required(),
-                ])->columnSpan(1),
-                Section::make('Content')->schema([
-                    RichEditor::make('content')->required(),
-                    FileUpload::make('files')->multiple(),
-                ]),
                 TagsInput::make('keywords'),
+                TinyEditor::make('content')->required()->columnSpan(2),
+                FileUpload::make('files')->multiple(),
+
             ]);
     }
 
@@ -63,7 +61,6 @@ class LearningmaterialsResource extends Resource
                 TextColumn::make('teacher')->badge()->color('gray'),
                 TextColumn::make('content')->limit(20)->searchable(),
                 TextColumn::make('course'),
-                TextColumn::make('access_code')->badge()->color('success'),
                 TextColumn::make('updated_at')->badge()->searchable(),
                 TextColumn::make('files')->limit(20),
                 TextColumn::make('keywords')->badge()->searchable(),

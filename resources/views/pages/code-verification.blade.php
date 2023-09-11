@@ -1,7 +1,9 @@
-@extends('layouts.form')
-<div class="enter-code-page">
-    <div class="enter-code-form-container">
-        <img src={{asset('images/logo.png')}} alt="logo" class="logo-verify-page">
-        @include('components.enter-code-form')
-    </div>
-</div>
+<form action="/verify-code" method="POST">
+    @csrf
+<input type="text" name="access_code" required>
+<input type="submit" value="Get Access">
+</form>
+@error('access_code')
+    <div >{{$message}}</div>
+@enderror
+

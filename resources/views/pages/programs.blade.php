@@ -1,53 +1,61 @@
 @extends('layouts.page')
 
-@section('title', 'Programs - School of Engineering')
-
+@section('title', $singleProgram->title . '-SOE')
 @section('content')
+    <main class="cd-main-contentS fixed-bg px-3">
+        <section class="component-main component-main-posts">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <div data-toggle="tooltip" data-placement="left" title="Home"><a href="/"><i
+                                class="fa-solid fa-house"></i></a></div>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Currently Running Programs</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ $singleProgram->title }}</li>
+            </ol>
 
-   <!-- page title -->
-   <section class="page-title-section overlay" data-background="{{asset('images/backgrounds/page-title.jpg')}}">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <ul class="list-inline custom-breadcrumb">
-                    <li class="list-inline-item"><a class="h2 text-white font-secondary"
-                            href="@@page-link">Prorgams</a></li>
-                    <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
-                </ul>
-                <p class="text-lighten">Programs provided in Pokhara University School of Engineering</p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /page title -->
+            <div class="tiles-container">
+                <div class="post-descriptive overflow-hidden">
+                    <h1 class="post-title">{{ $singleProgram->title }}</h1>
+                    <div>
+                        <hr>
+                        <div class="date-share">
+                            <div class="post-date" style="font-size: 25px; font-weight:600;">Coordinator:
+                                <a href="/staff">{{ $singleProgram->coordinator }}</a>
 
-    {{-- programs --}}
-    <section class="section">
-        <div class="container">
-            <!-- program list -->
-            <div class="row justify-content-center">
-                @foreach ($programs as $program)
-                    <!-- program item -->
-                    <div class="col-lg-4 col-sm-6 mb-5">
-                        <div class="card p-0 border-primary rounded-0 hover-shadow">
-                            <div class="card-body">
-                                <ul class="list-inline mb-2">
-                                    <li class="list-inline-item"><i class="ti-user mr-1 text-color"></i> {{$program->coordinator}} </li>
-                                </ul>
-                                <a href="/programs/single/{{ $program->id }}">
-                                    <h4 class="card-title">{{ $program->title }}</h4>
-                                </a>
-                                <p class="card-text mb-4">
-                                    {!! Str::limit($program->content, 50) !!}
-                                </p>
-                                <a href="/programs/single/{{ $program->id }}" class="btn btn-primary btn-sm">See Details</a>
                             </div>
                         </div>
+                        <hr>
                     </div>
-                @endforeach
-            </div>
-            <!-- /program list -->
+                    <div class="post-text-image">
+                        <div class="content-text">
+                            {!! $singleProgram->content !!}
+                        </div>
+                    </div>
+                </div>
 
-        </div>
-    </section>
+                <!-- more events -->
+                <section class="latest-posts">
+                    <div class="latest-header">
+                        <div>
+                            <h1>Other Programs</h1>
+                        </div>
+                        <div data-toggle="tooltip" data-placement="left" title="Other Programs"><a href="/#programs"><i
+                                    class="fa-solid fa-square-rss"></i></a></div>
+                    </div>
+                    @foreach ($otherPrograms as $otherProgram)
+                        <div class="latest-posts-post">
+                            <div class="recent-posts-title">
+                                <a class="text-danger font-weight-bold text-lg-left" style="font-size: 20px" href="/programs/{{ $otherProgram->id }}">{{ $otherProgram->title }}</a>
+                            </div>
+                        </div>
+                        <hr>
+                    @endforeach
+
+                </section>
+
+            </div>
+        </section>
+    </main>
+
+
 @endsection

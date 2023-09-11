@@ -6,7 +6,12 @@ use App\Models\Course;
 use App\Models\Event;
 use App\Models\Post;
 use App\Models\Program;
-use App\Models\Staff;
+
+use App\Models\Testimonial;
+
+use Illuminate\Http\Request;
+
+
 class HomeController extends Controller
 {
     public function index(){
@@ -17,9 +22,12 @@ class HomeController extends Controller
         //Courses
         $coursesPreview = Course::orderBy('updated_at', 'DESC')->limit(3)->get();
         //Events
-        $eventBoard = Event::orderBy('date', 'DESC')->limit(3)->get();
-        //Programs
-        $programsPreview = Program::orderBy('created_at', 'DESC')->limit(6)->get();
+
+        $eventBoard=Event::orderBy('date', 'ASC')
+        ->where('date', '>', now())
+        ->limit(4)
+        ->get();
+
         //board of Directors
         $director = Staff::where('designation', 'Director');
         $chancellor = Staff::where('designation', 'Chancellor');
@@ -29,6 +37,7 @@ class HomeController extends Controller
         $programs=Program::orderBy('title','DESC')->get();
 
         // Testimonial
+        $testimonmials=Testimonial::limit(6)->get();
 
         $boardOfDirectors = $director->union($chancellor)->union($viceChancellor)->get();
         return view('pages.homepage')
@@ -37,6 +46,7 @@ class HomeController extends Controller
             'boardOfDirectors'=> $boardOfDirectors,
             'eventBoard' => $eventBoard,
             'programs'=>$programs,
+            'testimonials'=>$testimonmials
         ]);
     }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('fullname');
             $table->string('profile_image')->nullable();
             $table->string('designation');
-            $table->text('content');
+            $table->longText('content');
             $table->timestamps();
         });
     }
