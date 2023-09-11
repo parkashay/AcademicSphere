@@ -191,3 +191,5 @@ const heroSection = document.querySelector('.hero-container');
 if (heroSection) {
     observer.observe(heroSection);
 }
+
+
