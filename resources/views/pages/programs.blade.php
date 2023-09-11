@@ -1,4 +1,5 @@
 @extends('layouts.page')
+
 @section('title', $singleProgram->title . '-SOE')
 @section('content')
     <main class="cd-main-contentS fixed-bg px-3">
@@ -55,4 +56,6 @@
             </div>
         </section>
     </main>
+
+
 @endsection

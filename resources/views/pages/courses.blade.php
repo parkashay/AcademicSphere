@@ -40,23 +40,17 @@
 
         </div>
 
+
         <nav aria-label="Page navigation example">
             <ul class="pagination ">
 
                 <div class="mi-auto mt-4">
                     {{ $courses->links('vendor.pagination.custom') }}
-
                 </div>
             </ul>
         </nav>
         </div>
     </section>
-
-
-
-
-
-
 
 
 @endsection
