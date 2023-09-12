@@ -1,5 +1,5 @@
 @extends('layouts.page')
-@section('title', 'Staff')
+@section('title', 'Faculty')
 @section('content')
 
     <main class="cd-main-contentS fixed-bg">
@@ -10,11 +10,11 @@
                                 class="fa-solid fa-house"></i></a></div>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">SOE</li>
-                <li class="breadcrumb-item active" aria-current="page">Staffs</li>
+                <li class="breadcrumb-item active" aria-current="page">Faculty</li>
             </ol>
             <div class="box-posts-container">
-                @foreach ($staffs as $staff)
-                
+                @foreach ($faculty as $staff)
+               
                     <div class="box-post soe-staffs-profile-45952hgfdf">
                         <a href="/staffdetails/{{ $staff->id }}">
                             <div class=" post-img">
@@ -33,7 +33,7 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination ">
                     <div class="mi-auto mt-4">
-                        {{ $staffs->links('vendor.pagination.custom') }}
+                        {{ $faculty->links('vendor.pagination.custom') }}
                     </div>
                 </ul>
             </nav>

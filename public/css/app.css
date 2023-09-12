@@ -911,7 +911,8 @@ footer ul {
   flex-direction: column;
 }
 
-.footer-link a, p {
+.footer-link a,
+.footer-link p {
   color: #dcdcdc;
   line-height: 1.5;
   font-size: 0.8em;

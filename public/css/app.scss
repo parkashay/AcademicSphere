@@ -1014,10 +1014,13 @@ footer {
     flex-direction: column;
 }
 
-.footer-link a,p {
-    color: #dcdcdc;
-    line-height: 1.5;
-    font-size: 0.8em;
+.footer-link {
+    a,
+    p {
+        color: #dcdcdc;
+        line-height: 1.5;
+        font-size: 0.8em;
+    }
 }
 
 .footer-link a:hover {

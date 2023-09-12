@@ -2,7 +2,7 @@
 @section('title', $singleStaff->fullname)
 @section('content')
 
-    <!-- page title -->
+   
     <section class="page-title-section overlay" data-background="{{ asset('images/backgrounds/page-title.jpg') }}">
         <div class="container">
             <div class="row">
@@ -15,7 +15,7 @@
             </div>
         </div>
     </section>
-    <!-- /page title -->
+  
 
     <!-- teacher details -->
     <section class="section">

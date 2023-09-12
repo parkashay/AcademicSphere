@@ -9,7 +9,6 @@
                     <div data-toggle="tooltip" data-placement="left" title="Home"><a href="/"><i
                                 class="fa-solid fa-house"></i></a></div>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page"><a href="/staff">Staff</a></li>
                 <li class="breadcrumb-item" aria-current="page">{{ $staff->fullname }}</li>
             </ol>
 
@@ -55,7 +54,7 @@
                         </div>
                         <div class="col-lg-12 mb-4 mb-sm-5">
                             <div>
-                                <span class="section-title text-primary mb-3 mb-sm-4">About Me</span>
+                                <span class="section-title text-primary mb-3 mb-sm-4">About</span>
                                 {!! $staff->content !!}
                             </div>
                         </div>

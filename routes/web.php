@@ -15,16 +15,7 @@ use App\Http\Controllers\StaffController;
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -71,15 +62,17 @@ Route::get('/calendar', [CallendarController::class, 'index'])->name('calendar')
 Route::get('/contact', [MessageController::class, 'index']);
 Route::post('/contact', [MessageController::class, 'submitMessage']);
 
-// Staff
+// About
+Route::get('/about/organizational-structure', function(){
+    return view('pages.organizational-structure');
+});
+
+// Staff and Faculty
 Route::get('/staff', [StaffController::class, 'index'])->name('staff');
+Route::get('/faculty', [StaffController::class, 'faculty'])->name('faculty');
 Route::get('/staffdetails/{id}', [StaffController::class, 'singleStaff'])->name('staff.single');
-Route::get('/message/director', function () {
-    return view('pages.message-director');
-})->name('message.director');
-Route::get('/message/dean', function () {
-    return view('pages.message-dean');
-})->name('message.dean');
+Route::get('/message/director', [StaffController::class,'director'])->name('message.director');
+Route::get('/message/dean',[StaffController::class,'dean'])->name('message.dean');
 
 //Authentication
 Route::get('/login', [AuthController::class, 'index'])->name('login');

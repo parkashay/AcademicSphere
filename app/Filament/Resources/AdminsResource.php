@@ -2,27 +2,26 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
+use App\Filament\Resources\AdminsResource\Pages;
 use App\Models\Role;
 use App\Models\User;
-use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms;
 
-class UserResource extends Resource
+
+
+class AdminsResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-users';
-
+    protected static ?string $navigationIcon = 'heroicon-o-user';
     protected static ?string $navigationGroup = 'Admin Control';
-
-    protected static ?int $navigationSort = 8;
+    protected static ?int $navigationSort = 7;
+    protected static ?string $modelLabel = 'Admins';
 
 
     public static function form(Form $form): Form
@@ -45,16 +44,14 @@ class UserResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('id'),
                 Tables\Columns\TextColumn::make('name')->searchable(),
-                Tables\Columns\TextColumn::make('role')->badge()->color('success'),
                 Tables\Columns\TextColumn::make('email'),
                 Tables\Columns\CheckboxColumn::make('verified'),
-            ])->defaultSort('id', 'desc')
+            ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -76,13 +73,16 @@ class UserResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListUsers::route('/'),
-            'create' => Pages\CreateUser::route('/create'),
-            'edit' => Pages\EditUser::route('/{record}/edit'),
+            'index' => Pages\ListAdmins::route('/'),
+            'edit' => Pages\EditAdmins::route('/{record}/edit'),
         ];
     }    
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->where('role', 'admin');
+    }
     public static function shouldRegisterNavigation(): bool
     {
-        return false;
+        return (auth()->user()->role === 'admin');
     }
 }
