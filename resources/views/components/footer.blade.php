@@ -11,39 +11,29 @@
         </p>
     </div>
     <div class="footer-links">
-        <div class="footer-links">
-            <div class="footer-link">
-                <h2 class="footer-link-header">Academics</h2>
-                <ul>
-                    <li><a href="/courses">Courses</a></li>
-                    <li><a href="/programs">Programs</a></li>
-                </ul>
-            </div>
-            <div class="footer-link">
-                <h2 class="footer-link-header">Information</h2>
-                <ul>
-                    <li><a href="/about">Introduction</a></li>
-                    <li><a href="/calendar">Academic Calendar</a></li>
 
-                </ul>
-            </div>
-
-            <div class="footer-link">
-                <h2 class="footer-link-header">Posts</h2>
-                <ul>
-                    <li><a href="/posts">News and Notices</a></li>
-                    <li><a href="/events">Events</a></li>
-                </ul>
-            </div>
-        </div>
 
         <div class="footer-links">
             <div class="center">
                 <div class="footer-link">
-                    <h2 class="footer-link-header">About us</h2>
+                    <h2 class="footer-link-header">QUICK LINKS</h2>
                     <ul>
-                        <li><a href="/about">Introduction</a></li>
-                        <li><a href="/staff">Faculties and Staffs</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/downloads">Downloads</a></li>
+                        <li><a href="/study-materials">Teaching Materials</a></li>
+                        <li><a href="/posts">Notices</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="center">
+                <div class="footer-link">
+                    <h2 class="footer-link-header">RELATED LINKS</h2>
+                    <ul>
+                        <li><a href="https://pu.edu.np/">Pokhara University</a></li>
+                        <li><a href="https://nec.gov.np/">Nepal Engineering Council(NEC)</a></li>
+                        <li><a href="https://www.neanepal.org.np/">Nepal Engineers Association (NEA)</a></li>
+                        <li><a href="https://scholarship.pu.edu.np/">Scholarship</a></li>
+                        <li><a href="https://pusoe.edu.np/">LMS</a></li>
                     </ul>
                 </div>
             </div>
@@ -52,34 +42,55 @@
                 <h2 class="footer-link-header">Download & Login</h2>
                 <ul>
                     <li><a href="/admin" target="_blank">DashBoard</a></li>
-                    <li><a href="/gallery.php">Gallery</a></li>
+
+
+                    @auth
+                        <li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="btn btn-danger btn-sm btn-logout">Logout</button>
+                            </form>
+                        </li>
+                    @endauth
+                    @guest
+                        <li> <a href="{{ route('login') }}">Login</a></li>
+                        <li> <a  href="{{ route('register') }}">Register</a> </li>
+                    @endguest
+                    <li><a href="/gallery">Gallery</a></li>
                 </ul>
             </div>
             <div class="footer-link">
-                <h2 class="footer-link-header">Study and Research</h2>
+                <h2 class="footer-link-header">SCHOOL OF ENGINEERING</h2>
                 <ul>
-                    <li><a href="/learning-materials">Learning Materials</a></li>
-                    <li><a href="https://pu.edu.np/publications" target="_blank">Faculty Researches</a></li>
+                    <li><a href="/about">General Information</a></li>
+                    <li> <a href="/about/organizational-structure">Organizational Structure</a></li>
+                    <li> <a href="/message/dean">Message From Dean</a></li>
+                    <li> <a href="/message/director">Message From Director</a></li>
+
                 </ul>
+            </div>
+            <div class="footer-link">
+                <h2 class="footer-link-header">CONTACT US</h2>
+                <div class="text-white">
+                    <p>School of Engineering</p>
+                    <p><strong>Block A - </strong> Pokhara Metropolitan City-30
+                        Lekhnath, Kaski, Nepal</p>
+
+                    <p> <strong>Telephone</strong>:+977-61-504046</p>
+                    <p> <strong>Post Box</strong>: 427</p>
+                    <p><strong>Email</strong>: info@pu.edu.np</p>
+                        <br>
+                    <p><strong>Block B - </strong> Pokhara Metropolitan City-26
+                        Lekhnath, Kaski, Nepal</p>
+                    <p> <strong>Telephone</strong>:+977-61-504046</p>
+                    <p><strong>Email</strong>: purubhat2052@gmail.com</p>
+
+                </div>
             </div>
 
         </div>
     </div>
-    <div class="footer-contact-details">
-        <hr>
-        <div class="footer-contact-containers">
-            <ul class="footer-contact">
-                <li><i class="fa-solid fa-location-dot"></i>
-                    <p>
-                        Pokhara Metropolitan City-30, Lekhnath, Kaski, Nepal
-                    </p>
-                </li>
-                <li><i class="fa-solid fa-phone"></i><a href="tel:+977-61-504046">+977-61-504046</a></li>
-                <li><i class="fa-solid fa-envelope"></i><a href="mailto:soe@pu.edu.np">soe@pu.edu.np</a></li>
-            </ul>
-        </div>
-        <hr>
-    </div>
+    
     <div class="social-links">
         <p>connect with us</p><br>
         <div class="icons">

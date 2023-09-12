@@ -11,8 +11,6 @@
     <nav id="cd-top-nav" class="show-large-screen">
 
         <ul class="show-large-screen">
-            <li><a href="/" id="homen home" style="--nav-hover-clr:#ff0051;">Home</a></li>
-    
             <li>
                 <nav class="dropdown">
                     <a class="dropbtn" style="--nav-hover-clr:#ce0c94;">ABOUT <i class="fa-solid fa-angle-down"></i></a>
@@ -28,7 +26,7 @@
 
             <li>
                 <nav class="dropdown">
-                    <a class="dropbtn" style="--nav-hover-clr:#456990;">Programs <i
+                    <a class="dropbtn" style="--nav-hover-clr:#456990;">PROGRAMS <i
                             class="fa-solid fa-angle-down"></i></a>
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
@@ -82,21 +80,21 @@
                 </nav>
             </li>
 
-            
+
             <li>
                 <nav class="dropdown">
                     <a class="dropbtn" style="--nav-hover-clr:#e06f1f;">NEWS & NOTICES <i
                             class="fa-solid fa-angle-down"></i></a>
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
-                        <a href="/posts" >News</a>
-                        <a href="/posts" >Notices</a>
-                        <a href="/posts" >Results</a>
-                        <a href="/events" >Events</a>
+                        <a href="/posts">News</a>
+                        <a href="/posts">Notices</a>
+                        <a href="/posts">Results</a>
+                        <a href="/events">Events</a>
                     </nav>
                 </nav>
             </li>
-            
+
 
             <li>
                 <nav class="dropdown">
@@ -104,7 +102,7 @@
                             class="fa-solid fa-angle-down"></i></a>
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
-                        <a href="/internal-examination" >Internal Examination</a>
+                        <a href="/internal-examination">Internal Examination</a>
                         <a href="/student-welfare">Student Welfare</a>
                     </nav>
                 </nav>
@@ -115,34 +113,22 @@
                             class="fa-solid fa-angle-down"></i></a>
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
-                        <a href="/learning-materials" >Teaching Materials</a>
+                        <a href="/learning-materials">Teaching Materials</a>
                         <a href="/contact">Student's Suggestions</a>
                     </nav>
                 </nav>
             </li>
-          
+
             <li>
                 <div class="search-container">
                     <form action="{{ route('posts.search') }}" method="GET" name="search">
                         <input class="search expandright" id="searchright" type="search" placeholder="Search"
                             name="search">
-                        <label class="button searchbutton" for="searchright"><span
-                                class="mglass">&#9906;</span></label>
+                        <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
                     </form>
                 </div>
             </li>
-            <li>
-                @auth
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit" class="btn btn-danger btn-sm btn-logout">Logout</button>
-                    </form>
-                @endauth
-                @guest
-                    <a style="--nav-hover-clr:#8318b4;" href="{{ route('login') }}">Login</a>
-                    <a style="--nav-hover-clr:#8318b4;" href="{{ route('register') }}">Register</a>
-                @endguest
-            </li>
+
         </ul>
     </nav>
     <a id="cd-menu-trigger" class="show-small-screen" href="#0"><span class="cd-menu-text"></span><span
@@ -163,27 +149,58 @@
 
     </ul>
     <ul class="cd-navigation show-small-screen">
-        <ul class="cd-single-item-wrapper">
-            <li><a href="./index.php">Home</a></li>
-        </ul>
+
         <li class="item-has-children">
-            <a href="#">Academics</a>
+            <a href="#">ABOUT</a>
             <ul class="sub-menu">
                 <li class="item-has-children">
-                    <a href="#">Undergraduate(B.E)</a>
+                    <a href="/about">General Information</a>
+                </li>
+                <li class="item-has-children">
+                    <a href="/about/organizational-structure">Organizational Structure</a>
+                </li>
+                <li class="item-has-children">
+                    <a href="/message/dean">Message From Dean</a>
+                </li>
+                <li class="item-has-children">
+                    <a href="/message/director">Message From Director</a>
+                </li>
+            </ul>
+        </li> <!-- item-has-children -->
+
+
+
+
+        <li class="item-has-children">
+            <a href="#">PROGRAMS</a>
+            <ul class="sub-menu">
+                <li class="item-has-children">
+                    <a href="#">Bachelor of Engineering</a>
                     <ul class="sub-menu">
-                        <li><a href="how-to-apply.php">How to Apply</a></li>
-                        <li><a href="scholarship.php">Scholarship</a></li>
-                        <li><a href="./undergraduate.php">Undergraduate(B.E)</a></li>
+                        <li>
+                            <a href="/programs/1">Bachelor of Computer Engineering</a>
+
+                        </li>
+                        <li>
+                            <a href="/programs/2">Bachelor of Civil Engineering</a>
+
+                        </li>
+                        <li>
+                            <a href="/programs/3">Bachelor of Electrical & Electronics Engineering</a>
+
+                        </li>
+                        <li>
+                            <a href="/programs/4">Bachelor of Software Engineering</a>
+
+                        </li>
+                        <li>
+                            <a href="/programs/5">Bachelor of Civil & Rural Engineering</a>
+
+                        </li>
                     </ul>
                 </li>
                 <li class="item-has-children">
-                    <a href="#">Graduate(M.Sc)</a>
-                    <ul class="sub-menu">
-                        <li><a href="how-to-apply.php">How to Apply</a></li>
-                        <li><a href="scholarship.php">Scholarship</a></li>
-                        <li><a href="./graduate.php">Graduate</a></li>
-                    </ul>
+                    <a href="/program/masters">Masters of Engineering</a>
                 </li>
             </ul>
         </li> <!-- item-has-children -->
@@ -191,46 +208,76 @@
         <li class="item-has-children">
             <a href="">ADMISSION</a>
             <ul class="sub-menu">
-                <li><a href="admission.php">Introduction</a></li>
-                <li><a href="how-to-apply.php">How to Apply</a></li>
-                <li><a href="scholarship.php">Scholarship</a></li>
-                <li><a href="./undergraduate.php">Undergraduate(B.E)</a></li>
-                <li><a href="./graduate.php">Graduate(M.Sc.)</a></li>
-                <li><a href="./academic-calendar.php">Academic Calendar</a></li>
+                <li>
+                    <a href="/admisiion/undergraduate">Undergraduate</a>
+
+                </li>
+                <li>
+                    <a href="/admisiion/graduate">Graduate</a>
+
+                </li>
             </ul>
         </li> <!-- item-has-children -->
 
-        <li class="item-has-children">
-            <a href="#">News & Notices</a>
-            <ul class="sub-menu">
-                <li> <a href="./allpost.php">SOE News</a></li>
-                <li><a href="./category.php?category=Notice&key=2">SOE Notices</a></li>
-                <li><a href="./studymaterials.php">eLearning</a></li>
-                <li><a href="./academic-calendar.php">Academic Calendar</a></li>
-                <li><a href="#">Vacancy & Career</a></li>
-            </ul>
-        </li> <!-- item-has-children -->
+
         <ul class="cd-single-item-wrapper">
-            <li><a href="./gallery.php">Gallery</a></li>
+            <li>
+                <a href="/faculty" class="dropbtn">FACULTY </a>
+
+            </li>
         </ul>
+        <ul class="cd-single-item-wrapper">
+            <li>
+                <a href="/staff" class="dropbtn">STAFF </a>
+
+            </li>
+        </ul>
+
         <li class="item-has-children">
-            <a href="#">About SOE</a>
+            <a href="#">NEWS & NOTICES</a>
             <ul class="sub-menu">
-                <li><a href="about.php">About us</a></li>
-                <li><a href="./messagefromdirector.php">Message from Director</a></li>
-                <li><a href="#">Vision Mission Goals and Objective</a></li>
-                <li><a href="#">History of PoU</a></li>
-                <li><a href="./contact.php">Contact Us</a></li>
-                <li><a href="./staffs.php">Faculties and Staffs</a></li>
+                <li>
+                    <a href="/posts">News</a>
+
+                </li>
+                <li>
+                    <a href="/posts">Notices</a>
+
+                </li>
+                <li>
+                    <a href="/posts">Results</a>
+
+                </li>
+                <li>
+                    <a href="/events">Events</a>
+
+                </li>
             </ul>
         </li>
+
         <li class="item-has-children">
-            <a href="#">Others</a>
+            <a href="#">COMITTEE & CELL</a>
             <ul class="sub-menu">
-                <li><a href="./coming-soon.php">Faculty Reseaches</a></li>
-                <li><a href="./coming-soon.php">Workshops</a></li>
-                <li><a href="./coming-soon.php">Vision Mission Goals and Objective</a></li>
-                <li><a href="./coming-soon.php">Seminars & Conferences</a></li>
+                <li>
+                    <a href="/internal-examination">Internal Examination</a>
+                </li>
+                <li>
+                    <a href="/student-welfare">Student Welfare</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="item-has-children">
+            <a href="#">STUDENT'S SECTION</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="/learning-materials">Teaching Materials</a>
+
+                </li>
+                <li>
+                    <a href="/contact">Student's Suggestions</a>
+
+                </li>
             </ul>
         </li>
 
