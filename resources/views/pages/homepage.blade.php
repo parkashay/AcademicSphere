@@ -1,7 +1,6 @@
 @extends('layouts.page')
 @section('title', 'An Official Site of School of Engineering')
 @section('content')
-
     {{-- Toast --}}
     @if (session()->has('message'))
     
@@ -9,6 +8,7 @@
 
 
     @include('components.hero')
+    @include('components.popup')
     @include('components.news-preview')
     @include('components.home-about')
     @include('components.programs-preview')

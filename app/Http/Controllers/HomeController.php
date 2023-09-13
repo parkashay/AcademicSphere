@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Event;
+use App\Models\Popup;
 use App\Models\Post;
 use App\Models\Program;
 
@@ -16,8 +17,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        //Navigation
 
+        // PopUp
+
+        $popup=Popup::get();
+
+
+        //Navigation
         $navPrograms = Program::orderBy('title', 'DESC')->get();
         //Notice Board
         $noticeBoard = Post::orderBy('updated_at', 'DESC')->limit(12)->get();
@@ -42,6 +48,8 @@ class HomeController extends Controller
 
         return view('pages.homepage')
             ->with([
+
+                'popup'=>$popup,
                 'navPrograms' => $navPrograms,
                 'noticeBoard' => $noticeBoard,
 

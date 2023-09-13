@@ -2,6 +2,13 @@
 
 jQuery(document).ready(function ($) {
     'use strict';
+
+
+
+    $(document).ready(function () {
+        $("#subscribe").modal('show');
+    });
+
     var $lateral_menu_trigger = $("#cd-menu-trigger"),
         $content_wrapper = $(".cd-main-content"),
         $navigation = $("header");
@@ -28,7 +35,7 @@ jQuery(document).ready(function ($) {
             $("body").toggleClass("overflow-hidden");
         }
     });
-    
+
 
     //close lateral menu clicking outside the menu itself
     $content_wrapper.on("click", function (event) {
