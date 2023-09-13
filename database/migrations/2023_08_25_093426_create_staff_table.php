@@ -16,7 +16,11 @@ return new class extends Migration
             $table->string('username');
             $table->text('fullname');
             $table->string('profile_image')->nullable();
-            $table->string('designation');
+            $table->string('designation')->nullable();
+            $table->string('experience')->nullable();
+            $table->string('email')->nullable();
+            $table->string('website')->nullable();
+            $table->string('phone')->nullable();
             $table->longText('content');
             $table->timestamps();
         });
