@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('popups', function (Blueprint $table) {
             $table->id();
             $table->longText('image');
+            $table->boolean('active')->default(0);
             $table->timestamps();
         });
     }

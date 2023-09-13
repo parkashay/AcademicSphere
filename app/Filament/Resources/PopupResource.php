@@ -7,10 +7,13 @@ use App\Filament\Resources\PopupResource\RelationManagers;
 use App\Models\Popup;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\CheckboxColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -20,7 +23,9 @@ class PopupResource extends Resource
 {
     protected static ?string $model = Popup::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-bookmark-square';
+    protected static ?string $navigationGroup = 'Admin Control';
+    protected static ?int $navigationSort = 8;
 
     public static function form(Form $form): Form
     {
@@ -29,7 +34,8 @@ class PopupResource extends Resource
                 FileUpload::make('image')->image()
                     ->imageCropAspectRatio('16:9')
                     ->imageResizeMode('cover')
-                    ->imageEditor()
+                    ->imageEditor(),
+                Toggle::make('active'),
             ]);
     }
 
@@ -37,19 +43,23 @@ class PopupResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('image')
+                ImageColumn::make('image'),
+                ToggleColumn::make('active')->disabled()
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()->after(function(Popup $record){
+                    $query = Popup::where('id', '!=', $record->id)->update(['active' => 0]);
+                }),
+                Tables\Actions\DeleteAction::make()->before(function (Popup $record) {
+                    File::delete(public_path('storage/' . $record->image));
+                }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make()->before(function (Popup $record) {
-                        File::delete(public_path('storage/' . $record->image));
-                    }),
+                    Tables\Actions\DeleteBulkAction::make()
                 ]),
             ])
             ->emptyStateActions([
@@ -68,7 +78,6 @@ class PopupResource extends Resource
     {
         return [
             'index' => Pages\ListPopups::route('/'),
-            'edit' => Pages\EditPopup::route('/{record}/edit'),
         ];
     }
 }
