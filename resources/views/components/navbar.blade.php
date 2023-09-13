@@ -280,18 +280,5 @@
                 </li>
             </ul>
         </li>
-
-        <li>
-            @auth
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit" class="btn-logout">Logout</button>
-                </form>
-            @endauth
-            @guest
-                <a href="{{ route('login') }}">Login</a>
-                <a href="{{ route('register') }}">Register</a>
-            @endguest
-        </li>
     </ul> <!-- cd-navigation -->
 </nav>
