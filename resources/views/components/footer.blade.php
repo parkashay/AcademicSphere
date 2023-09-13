@@ -20,7 +20,7 @@
                     <ul>
                         <li><a href="/contact">Contact</a></li>
                         <li><a href="/downloads">Downloads</a></li>
-                        <li><a href="/study-materials">Teaching Materials</a></li>
+                        <li><a href="/learning-materials">Teaching Materials</a></li>
                         <li><a href="/posts">Notices</a></li>
                     </ul>
                 </div>

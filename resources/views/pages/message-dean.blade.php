@@ -33,8 +33,8 @@
                                                 <div>
                                                     @foreach ($staff as $staf)
                                                         <img style="float: right;margin:20px;max-width:300px;"
-                                                        src="{{ asset('storage/' . $staf->profile_image) }}"
-                                                        alt="Dean-soe-pu">
+                                                            src="{{ asset('storage/' . $staf->profile_image) }}"
+                                                            alt="Dean-soe-pu">
 
                                                         <div class="para-msg">
 

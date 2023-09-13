@@ -32,7 +32,6 @@ class PopupResource extends Resource
         return $form
             ->schema([
                 FileUpload::make('image')->image()
-                    ->imageCropAspectRatio('16:9')
                     ->imageResizeMode('cover')
                     ->imageEditor(),
                 Toggle::make('active'),

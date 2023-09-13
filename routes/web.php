@@ -43,7 +43,18 @@ Route::middleware('auth')->group(function () {
     Route::post('/validate-code', [LearningMaterialsController::class, 'verify']);
 });
 
+// Programs
+Route::get('/program/masters', function(){
+    return view('pages.masters-programs');
+});
 
+// Admission
+Route::get('/admission/undergraduate', function(){
+    return view('pages.admission-undergraduate');
+});
+Route::get('/admission/graduate', function(){
+    return view('pages.admission-graduate');
+});
 
 // Search
 
@@ -80,3 +91,8 @@ Route::post('/login', [AuthController::class, 'verifyLogin']);
 Route::get('register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'verifyRegister']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Student clubs
+Route::get('/student-clubs', function(){
+    return view('pages.student-clubs');
+});

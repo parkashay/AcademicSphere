@@ -45,7 +45,6 @@ class PostResource extends Resource
                 TagsInput::make('keywords'),
                 FileUpload::make('thumbnail')->image()
                     ->imageResizeMode('cover')
-                    ->imageCropAspectRatio('16:9')
                     ->imageEditor()
             ]);
     }

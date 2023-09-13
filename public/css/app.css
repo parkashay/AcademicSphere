@@ -777,10 +777,11 @@ header.is-fixed {
   height: 100vh;
   isolation: isolate;
 }
-.hero-container video {
+.hero-container video,
+.hero-container img {
   width: 100%;
-  filter: blur(5px);
   z-index: -1;
+  max-height: 95vh;
 }
 
 .hero-container::after {

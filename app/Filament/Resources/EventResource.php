@@ -41,9 +41,7 @@ class EventResource extends Resource
                 DatePicker::make('date')->required(),
                 FileUpload::make('image')->image()
                     ->imageResizeMode('cover')
-                    ->imageCropAspectRatio('16:9')
-                    ->imageEditor()
-                    ->imageEditorAspectRatios(['16:9']),
+                    ->imageEditor(),
                 TinyEditor::make('content')->required()->columnSpan(2),
             ]);
     }

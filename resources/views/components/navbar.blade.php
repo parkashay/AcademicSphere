@@ -6,7 +6,7 @@
 <!-- second nav -->
 
 <header class="header">
-    <a id="cd-logo" href="./"><img src="{{ asset('logo/logo_pu.png') }}" alt="School of engineering pu">School Of
+    <a id="cd-logo" href="/"><img src="{{ asset('logo/logo_pu.png') }}" alt="School of engineering pu">School Of
         Engineering</a>
     <nav id="cd-top-nav" class="show-large-screen">
 
@@ -61,8 +61,8 @@
                             class="fa-solid fa-angle-down"></i></a>
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
-                        <a href="/admisiion/undergraduate">Undergraduate</a>
-                        <a href="/admisiion/graduate">Graduate</a>
+                        <a href="/admission/undergraduate">Undergraduate</a>
+                        <a href="/admission/graduate">Graduate</a>
                     </nav>
                 </nav>
             </li>
@@ -103,7 +103,7 @@
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
                         <a href="/internal-examination">Internal Examination</a>
-                        <a href="/student-welfare">Student Welfare</a>
+                        <a href="/student-clubs">Student Clubs</a>
                     </nav>
                 </nav>
             </li>
@@ -262,7 +262,7 @@
                     <a href="/internal-examination">Internal Examination</a>
                 </li>
                 <li>
-                    <a href="/student-welfare">Student Welfare</a>
+                    <a href="/student-clubs">Student Clubs</a>
                 </li>
             </ul>
         </li>

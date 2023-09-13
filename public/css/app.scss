@@ -864,17 +864,14 @@ header.is-fixed {
     flex-direction: column;
     position: relative;
     height: 100vh;
-    // background-image: url("../assets/images/pokharauniversity-1.jpg");
-    // background-attachment: fixed;
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
     isolation: isolate;
 
-    video {
+    video,
+    img {
         width: 100%;
-        filter: blur(5px);
+ 
         z-index: -1;
+        max-height: 95vh;
     }
 }
 

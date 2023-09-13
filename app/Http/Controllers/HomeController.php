@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Event;
+use App\Models\Gallery;
 use App\Models\Popup;
 use App\Models\Post;
 use App\Models\Program;
@@ -20,7 +21,7 @@ class HomeController extends Controller
 
         // PopUp
 
-        $popup=Popup::get();
+        $popup = Popup::get();
 
 
         //Navigation
@@ -31,7 +32,6 @@ class HomeController extends Controller
         //Courses
         $coursesPreview = Course::orderBy('updated_at', 'DESC')->limit(3)->get();
         //Events
-
         $eventBoard = Event::orderBy('date', 'ASC')
             ->where('date', '>', now())
             ->limit(4)
@@ -45,11 +45,13 @@ class HomeController extends Controller
         // Testimonial
         $testimonmials = Testimonial::limit(6)->get();
 
+        // Hero 
+        $photo=Gallery::latest('updated_at')->first();
 
         return view('pages.homepage')
             ->with([
-
-                'popup'=>$popup,
+                'photo'=>$photo,
+                'popup' => $popup,
                 'navPrograms' => $navPrograms,
                 'noticeBoard' => $noticeBoard,
 
