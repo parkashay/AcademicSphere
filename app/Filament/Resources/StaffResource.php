@@ -45,6 +45,10 @@ class StaffResource extends Resource
                     ->imageEditor(),
                 Select::make('designation')->options(Designation::all()
                     ->pluck('designation', 'designation'))->native(false),
+                TextInput::make('experience'),
+                TextInput::make('email'),
+                TextInput::make('website'),
+                TextInput::make('phone'),
                 TinyEditor::make('content')->required()->columnSpan(2),
             ]);
     }
@@ -56,6 +60,10 @@ class StaffResource extends Resource
                 TextColumn::make('username'),
                 TextColumn::make('fullname')->searchable(),
                 TextColumn::make('designation')->searchable(),
+                TextColumn::make('experience'),
+                TextColumn::make('email')->searchable(),
+                TextColumn::make('website'),
+                TextColumn::make('phone')->searchable(),
                 TextColumn::make('content')->limit(50),
                 ImageColumn::make('profile_image'),
             ])

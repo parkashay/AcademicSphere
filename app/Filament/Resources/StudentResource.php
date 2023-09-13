@@ -10,6 +10,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -41,12 +42,27 @@ class StudentResource extends Resource
                 Tables\Columns\TextColumn::make('id'),
                 Tables\Columns\TextColumn::make('name')->searchable(),
                 Tables\Columns\TextColumn::make('email'),
-                Tables\Columns\CheckboxColumn::make('verified'),
+                Tables\Columns\CheckboxColumn::make('verified')
+                ->disabled(fn (User $record) => !$record->verified),
             ])->defaultSort('id', 'desc')
             ->filters([
                 //
             ])
             ->actions([
+                Action::make('verify')->action(
+                    function (User $record) {
+                        if ($record->verified == 0) {
+                            User::where('id', $record->id)->update(['verified' => 1]);
+                            return redirect('/admin/students');
+                        } else {
+                            return redirect('/admin/students');
+                        }
+                    }
+                )
+                    ->requiresConfirmation()
+                    ->modalDescription('Verify this student ?')
+                    ->modalSubmitActionLabel('Confirm and Verify')
+                    ->icon('heroicon-o-check-badge'),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
@@ -54,8 +70,7 @@ class StudentResource extends Resource
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ])
-            ->emptyStateActions([
-            ]);
+            ->emptyStateActions([]);
     }
 
     public static function getRelations(): array

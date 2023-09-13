@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Popup extends Model
 {
-    protected $fillable = ['image'];
+    protected $fillable = ['image', 'active'];
 }
