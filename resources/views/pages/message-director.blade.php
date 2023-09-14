@@ -18,7 +18,7 @@
                         <hr>
                         <div class="date-share">
                             <div class="text-primary" style="font-size: 25px; font-weight:600;text-align:center;">
-                                Message From Dean
+                                Message From Director
                             </div>
                         </div>
                         <hr>

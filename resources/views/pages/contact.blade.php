@@ -13,7 +13,7 @@
         </section>
         <div class="container-content-two-col">
             <div class="cover-bg">
-                <img src="{{ asset('images/backgrounds/campus.jpg') }}" alt="pu-cover-img">
+                <img src="{{ asset('images/backgrounds/soe_bg.jpg') }}" alt="pu-cover-img">
             </div>
 
             <div class="contact-map">

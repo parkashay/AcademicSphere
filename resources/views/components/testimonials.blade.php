@@ -15,52 +15,24 @@
 
 
                 @foreach ($testimonials as $testimonial)
-                    @if (
-                        $testimonial->name == 'Bibek Shrestha' ||
-                            $testimonial->name == 'Prakash Poudel' ||
-                            $testimonial->name == 'Rita Adhikari')
-                        <div class="col-md-4 testimonial-three-col">
-                            <div class="testimonial-inner">
-                                <div class="testimonial-image" itemprop="image">
-                                    <img width="200" height="200"
-                                        src="{{ asset('storage/' . $testimonial->avatar) }}">
-                                </div>
+                    <div class="col-md-4 testimonial-three-col">
+                        <div class="testimonial-inner">
+                            <div class="testimonial-image" itemprop="image">
+                                <img width="200" height="200" src="{{ asset('storage/' . $testimonial->avatar) }}">
+                            </div>
 
-                                <div class="testimonial-content vision-description">
-                                    <p>
-                                        {!! $testimonial->content !!}
-                                    </p>
-                                </div>
+                            <div class="testimonial-content vision-description">
+                                <p>
+                                    {!! $testimonial->content !!}
+                                </p>
+                            </div>
 
-                                <div class="testimonial-meta mt-3">
-                                    <strong class="testimonial-name mb-2"
-                                        itemprop="name">{!! $testimonial->name !!}</strong>
-                                    <span class="testimonial-job-title" itemprop="jobTitle">Student</span>
-                                </div>
+                            <div class="testimonial-meta mt-3">
+                                <strong class="testimonial-name mb-2" itemprop="name">{!! $testimonial->name !!}</strong>
+                                <span class="testimonial-job-title" itemprop="jobTitle">{{$testimonial->designation}}</span>
                             </div>
                         </div>
-                    @else
-                        <div class="col-md-4 testimonial-three-col">
-                            <div class="testimonial-inner">
-                                <div class="testimonial-image" itemprop="image">
-                                    <img width="200" height="200"
-                                        src="{{ asset('storage/' . $testimonial->avatar) }}">
-                                </div>
-
-                                <div class="testimonial-content vision-description">
-                                    <p>
-                                        {!! $testimonial->content !!}
-                                    </p>
-                                </div>
-
-                                <div class="testimonial-meta mt-3">
-                                    <strong class="testimonial-name mb-2"
-                                        itemprop="name">{!! $testimonial->name !!}</strong>
-                                    <span class="testimonial-job-title" itemprop="jobTitle">Staff</span>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
+                    </div>
                 @endforeach
 
 

@@ -29,13 +29,14 @@ class TestimonialResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name'),
+                TextInput::make('name')->required(),
+                TextInput::make('designation')->required(),
                 FileUpload::make('avatar')
                     ->image()
                     ->imageCropAspectRatio('1:1')
                     ->imageResizeMode('cover')
                     ->imageEditor(),
-                RichEditor::make('content',)
+                RichEditor::make('content',)->required()
             ]);
     }
 
@@ -44,6 +45,7 @@ class TestimonialResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name'),
+                TextColumn::make('designation'),
                 ImageColumn::make('avatar'),
                 TextColumn::make('content')->limit(50),
             ])

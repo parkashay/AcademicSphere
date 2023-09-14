@@ -48,7 +48,7 @@ class LearningmaterialsResource extends Resource
                         ->required(),
                     TagsInput::make('keywords'),
                     TinyEditor::make('content')->required()->columnSpan(2),
-                    FileUpload::make('files')->multiple(),
+                    FileUpload::make('files')->multiple()->maxSize(10000000),
              
             ]);
     }

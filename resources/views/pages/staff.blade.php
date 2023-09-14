@@ -24,8 +24,11 @@
                         <div class="box-post-title">
                             <a href="staffdetails/{{ $staff->id }}">{{ $staff->fullname }}</a>
                         </div>
-                        <div class="box-post-date">
+                        <div class="box-post-date" >
                             {{ $staff->designation }}
+                        </div>
+                        <div class="flex-center" >
+                            <a  href="staffdetails/{{ $staff->id }}" class="btn btn-md btn-primary text-white">View Details</a>
                         </div>
                     </div>
                 @endforeach

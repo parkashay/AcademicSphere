@@ -22,7 +22,7 @@
                                 <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
                                     <div class="row align-items-center">
                                         <div class="col-lg-6 mb-4 mb-lg-0">
-                                            <img src="{{ asset('storage/' . $staff->profile_image) }}" alt="...">
+                                            <img style="max-width:250px;" src="{{ asset('storage/' . $staff->profile_image) }}" alt="...">
                                         </div>
                                         <div class="col-lg-6 px-xl-10">
                                             <div class="bg-secondary d-lg-inline-block p-2 mb-1-9 rounded">
@@ -35,16 +35,16 @@
                                                     {{ $staff->designation }}</li>
                                                 <li class="mb-2 mb-xl-3 display-28"><span
                                                         class="display-26 text-secondary me-2 font-weight-600">Experience:</span>
-                                                    <?php echo rand(4, 8); ?> Years</li>
+                                                   {{$staff->experience}}</li>
                                                 <li class="mb-2 mb-xl-3 display-28"><span
                                                         class="display-26 text-secondary me-2 font-weight-600">Email:</span>
-                                                    edith@mail.com</li>
+                                                        {{$staff->email}}</li>
                                                 <li class="mb-2 mb-xl-3 display-28"><span
                                                         class="display-26 text-secondary me-2 font-weight-600">Website:</span>
-                                                    www.example.com</li>
+                                                   {{$staff->website}}</li>
                                                 <li class="display-28"><span
                                                         class="display-26 text-secondary me-2 font-weight-600">Phone:</span>
-                                                    98200563787</li>
+                                                        {{$staff->phone}}</li>
                                             </ul>
 
                                         </div>

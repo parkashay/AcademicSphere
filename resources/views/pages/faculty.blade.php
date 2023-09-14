@@ -27,6 +27,9 @@
                         <div class="box-post-date">
                             {{ $staff->designation }}
                         </div>
+                        <div class="flex-center" >
+                            <a  href="staffdetails/{{ $staff->id }}" class="btn btn-md btn-primary text-white">View Details</a>
+                        </div>
                     </div>
                 @endforeach
             </div>

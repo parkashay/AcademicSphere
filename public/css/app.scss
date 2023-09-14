@@ -57,7 +57,11 @@
 html {
     scroll-behavior: smooth;
 }
-
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 body {
     font-family: var(--theme-font);
     height: 100%;
