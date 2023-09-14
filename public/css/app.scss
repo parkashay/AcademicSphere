@@ -863,7 +863,7 @@ header.is-fixed {
     justify-content: center;
     flex-direction: column;
     position: relative;
-    height: 100vh;
+    height: 80vh;
     isolation: isolate;
 
     video,
@@ -871,7 +871,7 @@ header.is-fixed {
         width: 100%;
  
         z-index: -1;
-        max-height: 95vh;
+        max-height: 80vh;
     }
 }
 
