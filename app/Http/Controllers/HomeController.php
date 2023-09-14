@@ -47,8 +47,8 @@ class HomeController extends Controller
 
         // Hero 
         $photo=Gallery::latest('updated_at')->first();
-
-        return view('pages.homepage')
+        return isset($photo)?
+        view('pages.homepage')
             ->with([
                 'photo'=>$photo,
                 'popup' => $popup,
@@ -58,6 +58,9 @@ class HomeController extends Controller
                 'eventBoard' => $eventBoard,
                 'programs' => $programs,
                 'testimonials' => $testimonmials
-            ]);
+            ]):
+            
+            redirect('404')
+            ;
     }
 }

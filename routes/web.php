@@ -13,6 +13,7 @@ use App\Http\Controllers\PostsPageController;
 use App\Http\Controllers\ProgramsPageController;
 use App\Http\Controllers\StaffController;
 
+use App\Http\Controllers\StudentClubController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -93,6 +94,4 @@ Route::post('/register', [AuthController::class, 'verifyRegister']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Student clubs
-Route::get('/student-clubs', function(){
-    return view('pages.student-clubs');
-});
+Route::get('/student-clubs', [StudentClubController::class,'index']);
