@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-white text-center">
-                    <h2 class="section-title "> What Our Staff and Students Say About Us</h2>
+                    <h2 class="section-title "> What Our Students Say About Us</h2>
 
                 </div>
             </div>

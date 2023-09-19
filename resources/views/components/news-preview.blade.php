@@ -1,5 +1,5 @@
 <!-- news -->
-<section class="section-sm">
+<section class="fixed-bg-lg mt-5 border-7">
     <div class="container p-3" style="background-color: #fff;">
         <div class="row">
             <div class="col-12">
@@ -19,7 +19,7 @@
             @foreach ($noticeBoard as $notice)
                 <!-- course item -->
                 <div class="col-lg-4 col-sm-6 mb-2">
-                    <div class="card p-0 rounded-0 hover-shadow">
+                    <div class="card p-0 border-7 hover-shadow" style="background-color: rgb(249, 249, 249)">
                         <div class="card-body">
                             <ul class="list-inline mb-3 ">
                                 <li class="list-inline-item mr-3 home-post-date">

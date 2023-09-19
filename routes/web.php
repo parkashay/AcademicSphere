@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CallendarController;
+use App\Http\Controllers\CoordinatorMessageController;
 use App\Http\Controllers\CoursesPageController;
 use App\Http\Controllers\EventPageController;
 use App\Http\Controllers\GalleryController;
@@ -85,6 +86,12 @@ Route::get('/faculty', [StaffController::class, 'faculty'])->name('faculty');
 Route::get('/staffdetails/{id}', [StaffController::class, 'singleStaff'])->name('staff.single');
 Route::get('/message/director', [StaffController::class,'director'])->name('message.director');
 Route::get('/message/dean',[StaffController::class,'dean'])->name('message.dean');
+// Message from coordinator 
+Route::get('/message/computer',[CoordinatorMessageController::class,'computer']);
+Route::get('/message/civil',[CoordinatorMessageController::class,'civil']);
+Route::get('/message/electrical',[CoordinatorMessageController::class,'electrical']);
+Route::get('/message/software',[CoordinatorMessageController::class,'software']);
+Route::get('/message/civil&rural',[CoordinatorMessageController::class,'civilnrural']);
 
 //Authentication
 Route::get('/login', [AuthController::class, 'index'])->name('login');

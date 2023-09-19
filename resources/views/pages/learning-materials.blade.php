@@ -1,5 +1,5 @@
 @extends('layouts.page')
-@section('title', 'Study Materials')
+@section('title', 'Teaching Materials')
 @section('content')
 
     <section class="section-sm mt-5">
@@ -10,7 +10,7 @@
                                 class="fa-solid fa-house"></i></a></div>
                 </li>
 
-                <li class="breadcrumb-item active" aria-current="page">Learning Materials</li>
+                <li class="breadcrumb-item active" aria-current="page">Teaching Materials</li>
             </ol>
             @if (session()->has('message'))
                 <div class="mb-2" style="color:blue; text-align:center"> {{ session('message') }}! </div>

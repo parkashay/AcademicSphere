@@ -3,15 +3,16 @@
 @section('content')
     {{-- Toast --}}
     @if (session()->has('message'))
-    
     @endif
 
 
     @include('components.hero')
-    @include('components.popup')
-    @include('components.news-preview')
-    @include('components.home-about')
-    @include('components.programs-preview')
-    @include('components.testimonials')
-    @include('components.events-preview')
+    <div class="fixed-bg-lg">
+        @include('components.popup')
+        @include('components.news-preview')
+        @include('components.home-about')
+        @include('components.programs-preview')
+        @include('components.testimonials')
+        @include('components.events-preview')
+    </div>
 @endsection

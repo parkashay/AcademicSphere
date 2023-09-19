@@ -43,8 +43,8 @@
                                     <li> <strong>Educational Qualifications</strong> <br><br>
                                         <ul class="px-3">
                                             <li>
-                                                Completion of higher secondary education (10+2) or equivalent from a
-                                                recognized institution/board.
+                                                Completion of Bachelor or equivalent from a
+                                                recognized Univesity.
                                             </li>
                                             <li>
                                                 A strong academic record with a minimum GPA requirement specified by the
@@ -115,7 +115,7 @@
                                     </li>
                                     <br><br>
 
-                                    
+
                                 </ol>
                                 </p>
                             </div>

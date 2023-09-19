@@ -16,10 +16,42 @@
                     <a class="dropbtn" style="--nav-hover-clr:#ce0c94;">ABOUT <i class="fa-solid fa-angle-down"></i></a>
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
-                        <a href="/about">General Information</a>
-                        <a href="/about/organizational-structure">Organizational Structure</a>
-                        <a href="/message/dean">Message From Dean</a>
-                        <a href="/message/director">Message From Director</a>
+
+                        <nav class="dropdown-child">
+                            <a href="/about" class="dropbtn-child">
+                                <div><span>General Information</span>
+                                </div>
+                            </a>
+                        </nav>
+                        <nav class="dropdown-child">
+                            <a href="/about/organizational-structure" class="dropbtn-child">
+                                <div><span>Organizational
+                                    Structure</span>
+                                </div>
+                            </a>
+                        </nav>
+                        <nav class="dropdown-child">
+                            <a href="/message/director" class="dropbtn-child">
+                                <div><span>Message From Director</span>
+                                </div>
+                            </a>
+                        </nav>
+
+                        <nav class="dropdown-child">
+                            <a class="dropbtn-child">
+                                <div><span>Message From Coordinator</span> <span><i
+                                            class="fa-solid fa-angle-right"></i></span></div>
+                            </a>
+                            <div class="invible-btn2"></div>
+                            <nav class="dropdown-content-child">
+                                <a href="/message/computer">Bachelor of Computer Engineering</a>
+                                <a href="/message/civil">Bachelor of Civil Engineering</a>
+                                <a href="/message/electrical">Bachelor of Electrical & Electronics Engineering</a>
+                                <a href="/message/software">Bachelor of Software Engineering</a>
+                                <a href="/message/civil&rural">Bachelor of Civil & Rural Engineering</a>
+                            </nav>
+                        </nav>
+
                     </nav>
                 </nav>
             </li>
@@ -98,15 +130,10 @@
 
             <li>
                 <nav class="dropdown">
-                    <a class="dropbtn" style="--nav-hover-clr:#b31240;"> COMITTEE & CELL <i
-                            class="fa-solid fa-angle-down"></i></a>
-                    <div class="invible-btn"></div>
-                    <nav class="dropdown-content">
-                        <a href="/internal-examination">Internal Examination</a>
-                        <a href="/student-clubs">Student Clubs</a>
-                    </nav>
+                    <a href="/internal-examination" class="dropbtn" style="--nav-hover-clr:#008129;">INTERNAL EXAMINATION </a>
                 </nav>
             </li>
+           
             <li>
                 <nav class="dropdown">
                     <a class="dropbtn" style="--nav-hover-clr:#b31240;"> STUDENT'S SECTION <i
@@ -124,7 +151,8 @@
                     <form action="{{ route('posts.search') }}" method="GET" name="search">
                         <input class="search expandright" id="searchright" type="search" placeholder="Search"
                             name="search">
-                        <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
+                        <label class="button searchbutton" for="searchright"><span
+                                class="mglass">&#9906;</span></label>
                     </form>
                 </div>
             </li>

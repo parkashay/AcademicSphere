@@ -57,7 +57,7 @@
 html {
     scroll-behavior: smooth;
 }
-.flex-center{
+.flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -873,7 +873,7 @@ header.is-fixed {
     video,
     img {
         width: 100%;
- 
+
         z-index: -1;
         max-height: 80vh;
     }
@@ -3733,10 +3733,16 @@ a {
 
 .fixed-bg {
     background-color: #fff;
-    max-width: 1200px;
+    max-width: 900px;
     margin-inline: auto;
 }
-
+.fixed-bg-lg {
+    margin-inline: auto;
+    max-width: 1100px;
+}
+.border-7{
+    border-radius: 7px;
+}
 .mi-auto {
     margin-inline: auto;
 }
