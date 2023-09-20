@@ -13,7 +13,7 @@
             </ol>
 
             <div class="tiles-container">
-                <div class="post-descriptive">
+                <div class="post-descriptive fixed-bg px-4 py-5 border-7">
                     <h1 class="post-title">{{ $post->title }}</h1>
                     <div>
                         <hr>
@@ -25,6 +25,7 @@
                                 $formattedDate = $dateTime->format('F j, Y');
                                 print_r($formattedDate);
                                 ?>
+                                | {{$post->created_at->format('H:i')}}
 
                             </div>
                             <div class="post-share">
@@ -47,7 +48,7 @@
                 </div>
 
                 <!-- recent posts -->
-                <section class="latest-posts">
+                <section class="latest-posts border-7">
                     <div class="latest-header">
                         <div>
                             <h1>Latest</h1>

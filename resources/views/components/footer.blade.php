@@ -104,7 +104,7 @@
     <div class="copyright">
 
         <p> &copy;School of Engineering <?php $current = date('Y');
-        print_r($current); ?> | <a href="./about_site.blade.php">About this site</a>
+        print_r($current); ?> | <a href="#">ACADEMICSPHERE</a>
         </p>
 
     </div>

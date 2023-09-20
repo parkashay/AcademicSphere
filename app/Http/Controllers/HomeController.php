@@ -40,17 +40,17 @@ class HomeController extends Controller
 
 
         // Programs
-        $programs = Program::orderBy('title', 'DESC')->get();
+        $programs = Program::orderBy('id', 'ASC')->get();
 
         // Testimonial
         $testimonmials = Testimonial::limit(6)->get();
 
         // Hero 
-        $photo=Gallery::latest('updated_at')->first();
-        return isset($photo)?
-        view('pages.homepage')
+        $photo = Gallery::latest('updated_at')->first();
+        return isset($photo) ?
+            view('pages.homepage')
             ->with([
-                'photo'=>$photo,
+                'photo' => $photo,
                 'popup' => $popup,
                 'navPrograms' => $navPrograms,
                 'noticeBoard' => $noticeBoard,
@@ -58,9 +58,8 @@ class HomeController extends Controller
                 'eventBoard' => $eventBoard,
                 'programs' => $programs,
                 'testimonials' => $testimonmials
-            ]):
-            
-            redirect('404')
-            ;
+            ]) :
+
+            redirect('404');
     }
 }

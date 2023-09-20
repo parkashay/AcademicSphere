@@ -14,12 +14,12 @@
                 <li class="breadcrumb-item active" aria-current="page">Masters of Engineering</li>
             </ol>
         </section>
-        <div class="tiles-container">
+        <div>
             <div>
                 <section class="section-sm">
                     <div class="container">
-                        <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">INTRODUCTION</h1>
-                        <p class="content-xr45-text pl-3">
+                        <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight px-3 mb-3">INTRODUCTION</h1>
+                        <p class="content-xr45-text px-5">
                             Nepal adopted the multi-university concept in 1983. The idea of Pokhara University (PU) was
                             conceived in
                             1986; however, it was established only in 1997 under the Pokhara University Act, 1997. The
@@ -41,10 +41,10 @@
                 <section class="section-sm">
                     <div class="container p-3">
 
-                        <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">OBJECTIVES</h1>
+                        <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight px-3">OBJECTIVES</h1>
                         <p class="content-xr45-text pl-3">
 
-                        <ol class="with-counter">
+                        <ol class="with-counter px-5">
                             <li>Ensure high-quality teaching, labs, and projects to equip students with practical
                                 engineering
                                 skills.</li>
@@ -72,8 +72,8 @@
                 <section class="section-sm">
                     <div class="container p-3">
 
-                        <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">VISION</h1>
-                        <p class="content-xr45-text pl-3">
+                        <h1 class="font-weight-bold ml-0 px-3 text-nowrap mr-3 highlight mb-3">VISION</h1>
+                        <p class="content-xr45-text px-5">
                             "To be a leading center of excellence in engineering education and research in Nepal, producing
                             globally
                             competitive graduates and innovative solutions that contribute to sustainable development and
@@ -86,8 +86,8 @@
                 <section class="section-sm">
                     <div class="container p-3">
 
-                        <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">MISSION</h1>
-                        <p class="content-xr45-text pl-3">
+                        <h1 class="font-weight-bold ml-0 text-nowrap mr-3 px-3 highlight mb-3">MISSION</h1>
+                        <p class="content-xr45-text px-5">
                             "Our mission is to provide world-class engineering education that empowers students with the
                             knowledge,
                             skills, and ethical values needed to excel in a rapidly evolving global landscape. We are
@@ -109,10 +109,10 @@
                 <section class="section-sm">
                     <div class="container p-3">
 
-                        <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">LONG TERM GOALS</h1>
+                        <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight px-3">LONG TERM GOALS</h1>
                         <p class="content-xr45-text pl-3">
 
-                        <ol class="with-counter">
+                        <ol class="with-counter px-5">
                             <li>Achieve accreditation from reputable international engineering bodies, showcasing the
                                 institution's
                                 commitment to global standards of education.</li>
@@ -137,10 +137,10 @@
                 <section class="section-sm mb-5">
                     <div class="container p-3">
 
-                        <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">SHORT TERM GOALS</h1>
-                        <p class="content-xr45-text pl-3">
+                        <h1 class="font-weight-bold ml-0 text-nowrap mr-3 px-3 highlight">SHORT TERM GOALS</h1>
+                        <p class="content-xr45-text pl-3 ">
 
-                        <ol class="with-counter">
+                        <ol class="with-counter px-5">
                             <li>Prioritize excellence in teaching, ensuring that students receive a well-rounded education
                                 that
                                 prepares them for real-world engineering challenges.</li>
@@ -163,28 +163,6 @@
 
                     </div>
                 </section>
-
-               
             </div>
-
-
-            <section class="latest-posts">
-                <div class="latest-header">
-                    <div>
-                        <h1>Messages</h1>
-                    </div>
-                    <div data-toggle="tooltip" data-placement="left" title="More posts"></div>
-                </div>
-
-                <div class="latest-posts-post">
-                    <div class="recent-posts-title ">
-                        <a href="/message/director" class="text-danger">Director</a>
-                        <a href="/message/dean" class="text-danger">Dean</a>
-
-                    </div>
-                </div>
-                <hr>
-            </section>
-        </div>
     </main>
 @endsection

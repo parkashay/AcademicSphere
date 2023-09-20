@@ -1,5 +1,5 @@
 @extends('layouts.page')
-@section('title', 'Admission - Undergraduate')
+@section('title', 'Admission - Graduate')
 @section('content')
     <main class="cd-main-contentS">
         <section class="component-main component-main-posts">
@@ -12,7 +12,7 @@
                 <li class="breadcrumb-item active" aria-current="page">Graduate</li>
             </ol>
 
-            <div class="tiles-container" style="display:flex;justify-content:cemter;">
+            <div style="display:flex;justify-content:cemter;">
                 <div class="fixed-bg">
                     <div>
                         <hr>
@@ -26,25 +26,27 @@
                     <div class="post-text-image">
                         <section class="section-sm">
                             <div class="container">
-                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">INTRODUCTION</h1>
-                                <p class="content-xr45-text pl-3">
-                                    The admission process for undergraduate programs at Pokhara University School of
-                                    Engineering is designed to identify and welcome motivated students who are passionate
-                                    about pursuing a career in engineering. We seek individuals with a strong academic
+                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight px-3 mb-3">INTRODUCTION</h1>
+                                <p class="content-xr45-text px-5 ">
+                                    The admission process for graduate programs at Pokhara University School of
+                                    Engineering is designed to identify and welcome motivated individuals who are passionate
+                                    about advancing a career in engineering. We seek individuals with a strong academic
                                     foundation, a curious mind, and a drive for innovation. This process aims to ensure a
                                     diverse and talented cohort that will thrive in our rigorous academic environment.
                                 </p>
                             </div>
                             <div class="container">
-                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">ELIGIBILITY CRITERIA</h1>
-                                <p class="content-xr45-text pl-3">
+                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight px-3 mb-3">ELIGIBILITY CRITERIA
+                                </h1>
+                                <p class="content-xr45-text pl-3 px-5">
                                     To be considered for admission, applicants must meet the following eligibility criteria:
+
                                 <ol class="px-5">
                                     <li> <strong>Educational Qualifications</strong> <br><br>
                                         <ul class="px-3">
                                             <li>
-                                                Completion of Bachelor or equivalent from a
-                                                recognized Univesity.
+                                                Completion of bachelor in Engineering or equivalent from a
+                                                recognized University.
                                             </li>
                                             <li>
                                                 A strong academic record with a minimum GPA requirement specified by the
@@ -59,7 +61,7 @@
                                         <ul class="px-3">
                                             <li>
                                                 Applicants are required to take the Pokhara University Engineering Entrance
-                                                Examination (PU-EET) conducted by the university. This exam assesses the
+                                                Examination conducted by the university. This exam assesses the
                                                 applicant's knowledge in relevant subjects and aptitude for engineering.
                                             </li>
 
@@ -70,8 +72,9 @@
                             </div>
                             <br><br>
                             <div class="container">
-                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">APPLICATION PROCESS</h1>
-                                <p class="content-xr45-text pl-3">
+                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight px-3 mb-3">APPLICATION PROCESS
+                                </h1>
+                                <p class="content-xr45-text px-5">
 
                                 <ol class="px-5">
                                     <li> <strong>Online Application</strong> <br><br>
@@ -101,8 +104,9 @@
                             </div>
                             <br><br>
                             <div class="container">
-                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">SELECTION PROCESS</h1>
-                                <p class="content-xr45-text pl-3">
+                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight px-3 mb-3">SELECTION PROCESS
+                                </h1>
+                                <p class="content-xr45-text pl-3 px-5">
 
                                 <ol class="px-5">
                                     <li> <strong>Merit-Based Selection</strong> <br><br>

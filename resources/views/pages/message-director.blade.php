@@ -32,7 +32,7 @@
                                             <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
                                                 <div>
                                                     @foreach ($staff as $staf)
-                                                        <img style="float: right;margin:20px;max-width:300px;"
+                                                        <img style="ffloat: right;margin:10px;max-width:250px;aspect-ratio:1;border-radius:50%;"
                                                             src="{{ asset('storage/' . $staf->profile_image) }}"
                                                             alt="Dean-soe-pu">
 

@@ -2,7 +2,7 @@
 @section('title', 'Staff Details')
 @section('content')
 
-    <main class="cd-main-contentS fixed-bg">
+    <main class="cd-main-contentS fixed-bg-lg">
         <section class="component-main component-main-posts">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -25,7 +25,7 @@
                                             <img style="max-width:250px;" src="{{ asset('storage/' . $staff->profile_image) }}" alt="...">
                                         </div>
                                         <div class="col-lg-6 px-xl-10">
-                                            <div class="bg-secondary d-lg-inline-block p-2 mb-1-9 rounded">
+                                            <div class="d-lg-inline-block p-2 mb-1-9 rounded" style="background: var(--random-clr)">
                                                 <h3 class="h2 text-white mb-0">{{ $staff->fullname }}</h3>
 
                                             </div>

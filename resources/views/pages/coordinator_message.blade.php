@@ -118,7 +118,7 @@
                                                             <p> Coordinator, BEEE</p>
                                                         @elseif($from === 'software')
                                                             <strong>
-                                                                <p>Dr, Udaya Raj Dhungana</p>
+                                                                <p>Dr. Udaya Raj Dhungana</p>
                                                             </strong>
                                                             <p> Coordinator, BSE</p>
                                                         @else

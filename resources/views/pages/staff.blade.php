@@ -2,7 +2,7 @@
 @section('title', 'Staff')
 @section('content')
 
-    <main class="cd-main-contentS fixed-bg">
+    <main class="cd-main-contentS fixed-bg-lg">
         <section class="component-main component-main-posts">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">

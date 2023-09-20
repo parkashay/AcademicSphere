@@ -26,8 +26,8 @@
                     <div class="post-text-image">
                         <section class="section-sm">
                             <div class="container">
-                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">INTRODUCTION</h1>
-                                <p class="content-xr45-text pl-3">
+                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight px-3 mb-3">INTRODUCTION</h1>
+                                <p class="content-xr45-text px-5 ">
                                     The admission process for undergraduate programs at Pokhara University School of
                                     Engineering is designed to identify and welcome motivated students who are passionate
                                     about pursuing a career in engineering. We seek individuals with a strong academic
@@ -36,10 +36,11 @@
                                 </p>
                             </div>
                             <div class="container">
-                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">ELIGIBILITY CRITERIA</h1>
-                                <p class="content-xr45-text pl-3">
+                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight px-3 mb-3">ELIGIBILITY CRITERIA
+                                </h1>
+                                <p class="content-xr45-text pl-3 px-5">
                                     To be considered for admission, applicants must meet the following eligibility criteria:
-                                    <br><br>
+
                                 <ol class="px-5">
                                     <li> <strong>Educational Qualifications</strong> <br><br>
                                         <ul class="px-3">
@@ -71,8 +72,9 @@
                             </div>
                             <br><br>
                             <div class="container">
-                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">APPLICATION PROCESS</h1>
-                                <p class="content-xr45-text pl-3">
+                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight px-3 mb-3">APPLICATION PROCESS
+                                </h1>
+                                <p class="content-xr45-text px-5">
 
                                 <ol class="px-5">
                                     <li> <strong>Online Application</strong> <br><br>
@@ -102,8 +104,9 @@
                             </div>
                             <br><br>
                             <div class="container">
-                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight">SELECTION PROCESS</h1>
-                                <p class="content-xr45-text pl-3">
+                                <h1 class="font-weight-bold ml-0 text-nowrap mr-3 highlight px-3 mb-3">SELECTION PROCESS
+                                </h1>
+                                <p class="content-xr45-text pl-3 px-5">
 
                                 <ol class="px-5">
                                     <li> <strong>Merit-Based Selection</strong> <br><br>
@@ -116,7 +119,7 @@
                                     </li>
                                     <br><br>
 
-                                    
+
                                 </ol>
                                 </p>
                             </div>

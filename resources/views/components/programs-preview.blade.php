@@ -17,7 +17,7 @@
                             <p class="card-text mb-4 vision-description preview">
                                 {!! Str::limit($program->content, 200) !!}
                             </p>
-                            <a href="programs/{{ $program->id }}" class="mt-3 btn btn-sm btn-block ">View
+                            <a href="programs/{{ $program->id }}" class="mt-3 btn btn-sm btn-bg btn-block ">View
                                 Details</a>
                         </div>
                     </div>

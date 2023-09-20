@@ -26,7 +26,7 @@
                         <nav class="dropdown-child">
                             <a href="/about/organizational-structure" class="dropbtn-child">
                                 <div><span>Organizational
-                                    Structure</span>
+                                        Structure</span>
                                 </div>
                             </a>
                         </nav>
@@ -92,10 +92,28 @@
                     <a class="dropbtn" style="--nav-hover-clr:#ce0c36;">ADMISSION <i
                             class="fa-solid fa-angle-down"></i></a>
                     <div class="invible-btn"></div>
+
                     <nav class="dropdown-content">
-                        <a href="/admission/undergraduate">Undergraduate</a>
-                        <a href="/admission/graduate">Graduate</a>
+                        <nav class="dropdown-child">
+                            <a href="#" class="dropbtn-child">
+                                <div><span>Undergraduate</span> <span><i class="fa-solid fa-angle-right"></i></span>
+                                </div>
+                            </a>
+                            <div class="invible-btn2"></div>
+                            <nav class="dropdown-content-child">
+                                <a href="/admission/undergraduate">Paying</a>
+                                <a href="https://pu.edu.np/scholarship/">Scholarship</a>
+                            </nav>
+                        </nav>
+                        <nav class="dropdown-child">
+                            <a href="/admission/graduate" class="dropbtn-child">
+                                <div><span>Graduate</span>
+                                </div>
+                            </a>
+                        </nav>
                     </nav>
+
+
                 </nav>
             </li>
 
@@ -130,10 +148,11 @@
 
             <li>
                 <nav class="dropdown">
-                    <a href="/internal-examination" class="dropbtn" style="--nav-hover-clr:#008129;">INTERNAL EXAMINATION </a>
+                    <a href="/internal-examination" class="dropbtn" style="--nav-hover-clr:#008129;">INTERNAL
+                        EXAMINATION </a>
                 </nav>
             </li>
-           
+
             <li>
                 <nav class="dropdown">
                     <a class="dropbtn" style="--nav-hover-clr:#b31240;"> STUDENT'S SECTION <i
@@ -141,6 +160,7 @@
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
                         <a href="/learning-materials">Teaching Materials</a>
+                        <a href="/student-clubs">Student Clubs</a>
                         <a href="/contact">Student's Suggestions</a>
                     </nav>
                 </nav>
@@ -179,19 +199,38 @@
     <ul class="cd-navigation show-small-screen">
 
         <li class="item-has-children">
-            <a href="#">ABOUT</a>
+            <a>ABOUT</a>
             <ul class="sub-menu">
-                <li class="item-has-children">
+                <li>
                     <a href="/about">General Information</a>
                 </li>
-                <li class="item-has-children">
+                <li>
                     <a href="/about/organizational-structure">Organizational Structure</a>
                 </li>
-                <li class="item-has-children">
-                    <a href="/message/dean">Message From Dean</a>
+               
+                <li>
+                    <a href="/message/director">Message From Director</a>
                 </li>
                 <li class="item-has-children">
-                    <a href="/message/director">Message From Director</a>
+                    <a href="#">Message From Coordinator</a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="/message/computer">Bachelor of Computer Engineering</a>
+                    </li>
+                    <li>
+                        <a href="/message/civil">Bachelor of Computer Engineering</a>
+                    </li>
+                    <li>
+                        <a href="/message/electrical">Bachelor of Computer Engineering</a>
+                    </li>
+                    <li>
+                        <a href="/message/software">Bachelor of Computer Engineering</a>
+                    </li>
+                    <li>
+                        <a href="/message/civil&rural">Bachelor of Computer Engineering</a>
+                    </li>
+
+                </ul>
                 </li>
             </ul>
         </li> <!-- item-has-children -->
@@ -236,9 +275,17 @@
         <li class="item-has-children">
             <a href="">ADMISSION</a>
             <ul class="sub-menu">
-                <li>
-                    <a href="/admisiion/undergraduate">Undergraduate</a>
-
+                <li class="item-has-children">
+                    <a href="#">Undergraduate</a>
+                    <ul class="sub-menu">
+                   <li>
+                    <a href="/admisiion/undergraduate">Paying</a>
+                   </li>
+                   <li>
+                    <a href="https://pu.edu.np/scholarship">Scholarship</a>
+                   </li>
+                        
+                    </ul>
                 </li>
                 <li>
                     <a href="/admisiion/graduate">Graduate</a>
@@ -282,18 +329,13 @@
                 </li>
             </ul>
         </li>
+        <ul class="cd-single-item-wrapper">
+            <li>
+                <a href="/internal-examination">INTERNAL
+                    EXAMINATION</a>
 
-        <li class="item-has-children">
-            <a href="#">COMITTEE & CELL</a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="/internal-examination">Internal Examination</a>
-                </li>
-                <li>
-                    <a href="/student-clubs">Student Clubs</a>
-                </li>
-            </ul>
-        </li>
+            </li>
+        </ul>
 
         <li class="item-has-children">
             <a href="#">STUDENT'S SECTION</a>
@@ -301,6 +343,9 @@
                 <li>
                     <a href="/learning-materials">Teaching Materials</a>
 
+                </li>
+                <li>
+                    <a href="/student-clubs">Student Clubs</a>
                 </li>
                 <li>
                     <a href="/contact">Student's Suggestions</a>

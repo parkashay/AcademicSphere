@@ -7,12 +7,28 @@
 
 
     @include('components.hero')
-    <div class="fixed-bg-lg">
-        @include('components.popup')
-        @include('components.news-preview')
-        @include('components.home-about')
-        @include('components.programs-preview')
-        @include('components.testimonials')
-        @include('components.events-preview')
+    @include('components.popup')
+    <div class="fixed-bg-lgg">
+
+        <div class="mb-2">
+            @include('components.news-preview')
+
+        </div>
+        <div class="mb-2">
+            @include('components.home-about')
+
+        </div>
+        <div class="mb-2">
+            @include('components.programs-preview')
+
+        </div>
+        <div class="mb-2">
+            @include('components.testimonials')
+
+        </div>
+        <div class="mb-2">
+            @include('components.events-preview')
+
+        </div>
     </div>
 @endsection

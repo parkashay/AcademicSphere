@@ -1,4 +1,13 @@
 @charset "UTF-8";
+/* 
+PROJECT NAME: ACADEMICSPHERE 
+PROJECT MEMBERS: 
+-BIBEK SHRESTHA(LINKEDIN:https://www.linkedin.com/in/let-bibek/),
+-PRAKASH POUDEL,
+-NIKASH SUBEDI,
+-RITA ADHIKARI, AND
+-SALONI SHRESTHA
+*/
 /* fancy font */
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
 /* theme font */
@@ -361,8 +370,6 @@ Main components
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   transition-property: transform;
-  transition-duration: 0.4s;
-  transition: all 0.4s linear;
 }
 .header li {
   font-size: 0.7em;
@@ -590,6 +597,7 @@ header.is-fixed {
   height: 100%;
   display: none;
   padding-right: 2em;
+  transition: all 0.3s linear;
 }
 
 #cd-top-nav ul {
@@ -611,7 +619,6 @@ header.is-fixed {
   color: var(--dark-txt-clr);
   font-weight: 500;
   font-size: 0.7em;
-  transition: all 0.3s ease;
 }
 
 #cd-top-nav a:hover {
@@ -624,7 +631,7 @@ header.is-fixed {
   top: 0;
   height: 100%;
   width: 50px;
-  background-color: #5f5b5b;
+  background-color: var(--random-clr);
 }
 
 #cd-menu-trigger .cd-menu-icon {
@@ -636,7 +643,6 @@ header.is-fixed {
   bottom: auto;
   right: auto;
   transform: translateX(-50%) translateY(-50%);
-  transition: tranform 0.4s linear;
   width: 18px;
   height: 2px;
   background-color: #fff;
@@ -673,10 +679,12 @@ header.is-fixed {
 #cd-menu-trigger.is-clicked .cd-menu-icon::before {
   bottom: 0;
   transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 #cd-menu-trigger.is-clicked .cd-menu-icon::after {
   top: 0;
+  transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
@@ -692,10 +700,7 @@ header.is-fixed {
   background-color: #fff;
   overflow-y: auto;
   /* Force Hardware Acceleration in WebKit */
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition: transform 0.4s 0s, visibility 0s 0.4s;
+  transform: translateZ(0);
   /* this creates the subtle slide in animation of the navigation */
   transform: translateX(80px);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -715,12 +720,11 @@ header.is-fixed {
   line-height: 2em;
   padding: 0 16px 0 32px;
   color: var(--dark-txt-clr);
-  transition: all 0.5s ease;
   font-size: 0.9rem;
 }
 
 #cd-lateral-nav a:hover {
-  background-color: #3a4a4d;
+  background-color: var(--random-clr);
   color: #fff;
 }
 
@@ -735,8 +739,9 @@ header.is-fixed {
 
 #cd-lateral-nav.lateral-menu-is-open {
   transform: translateX(0);
+  transform: translateX(0);
   visibility: visible;
-  transition: transform 0.4s 0s, visibility 0s 0s;
+  transition: all 0.3s linear;
   /* smooth the scrolling on touch devices - webkit browsers */
   -webkit-overflow-scrolling: touch;
 }
@@ -760,8 +765,6 @@ header.is-fixed {
   right: 1em;
   background: url("../assets/icons/cd-arrow.svg") no-repeat center center;
   background-size: 8px 11px;
-  transition-property: transform;
-  transition-duration: 0.2s;
 }
 
 #cd-lateral-nav .item-has-children > a.submenu-open::after {
@@ -2031,6 +2034,7 @@ ol.with-counter li {
   counter-increment: list-counter;
   margin-bottom: 1em;
   padding-left: 2.5em;
+  line-height: 1.5;
 }
 ol.with-counter li a:hover {
   text-decoration: underline;
@@ -2811,10 +2815,11 @@ ol.with-counter li::before {
     color: #fff;
   }
   .nav-scroll {
-    background-image: linear-gradient(174.2deg, rgb(255, 244, 228) 7.1%, rgb(240, 246, 238) 67.4%);
-    box-shadow: 0px 4px 7px -3px rgba(94, 91, 91, 0.69);
-    -webkit-box-shadow: 0px 4px 7px -3px rgba(94, 91, 91, 0.69);
-    -moz-box-shadow: 0px 4px 7px -3px rgba(94, 91, 91, 0.69);
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+    border-color: #e5eaf2;
+    border-bottom: thin solid #e5eaf2;
   }
   .container-content-two-col,
   .container-content-one-col {
@@ -2847,10 +2852,11 @@ ol.with-counter li::before {
 }
 @media only screen and (max-width: 992px) {
   .header {
-    box-shadow: 0px 4px 7px -3px rgba(94, 91, 91, 0.69);
-    -webkit-box-shadow: 0px 4px 7px -3px rgba(94, 91, 91, 0.69);
-    -moz-box-shadow: 0px 4px 7px -3px rgba(94, 91, 91, 0.69);
-    background-image: linear-gradient(174.2deg, rgb(255, 244, 228) 7.1%, rgb(240, 246, 238) 67.4%);
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+    border-color: #e5eaf2;
+    border-bottom: thin solid #e5eaf2;
   }
   .soe-description {
     font-size: 0.7em;
@@ -3316,11 +3322,20 @@ a {
   background-color: #fff;
   max-width: 900px;
   margin-inline: auto;
+  margin-bottom: 1em;
 }
 
 .fixed-bg-lg {
   margin-inline: auto;
   max-width: 1100px;
+  background-color: #fff;
+  margin-bottom: 2em;
+}
+
+.fixed-bg-lgg {
+  margin-inline: auto;
+  max-width: 1100px;
+  margin-bottom: 4em;
 }
 
 .border-7 {
@@ -3457,4 +3472,19 @@ a {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.hover-shadow {
+  transition: all 0.3s linear;
+}
+.hover-shadow:hover {
+  box-shadow: 0 2px 30px 0 rgba(192, 192, 192, 0.663);
+}
+
+.btn-bg {
+  background-color: var(--theme-clr);
+  color: #fff;
+}
+.btn-bg:hover {
+  color: #dbdbdb;
 }/*# sourceMappingURL=app.css.map */
