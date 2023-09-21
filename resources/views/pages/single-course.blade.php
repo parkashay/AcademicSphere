@@ -12,12 +12,20 @@
                 <li class="breadcrumb-item active" aria-current="page">{{ $singleMaterial->title }}</li>
             </ol>
 
-            <div class="tiles-container">
+            <div class="fixed-bg px-4 py-5 border-7">
                 <div class="post-descriptive">
                     <h1 class="post-title">{{ $singleMaterial->title }}</h1>
                     <div>
                         <hr>
                         <div class="date-share">
+                            <div class="post-date">
+                                <?php
+                                $dateTime = new DateTime(substr($singleMaterial->created_at, 0, 10));
+                                $formattedDate = $dateTime->format('F j, Y');
+                                print_r($formattedDate);
+                                ?>
+                                | {{$singleMaterial->created_at->format('H:i')}}
+                            </div>
                             <div class="post-date">Material By {{ $singleMaterial->teacher }}</div>
                             <div class="post-date"><a class="link-156dhcj"
                                     href="/courses">{{ $singleMaterial->course }}</a>
@@ -30,7 +38,7 @@
                             {!! $singleMaterial->content !!}
                             @if (!empty($singleMaterial->files))
                                 <br><br>Files attached with this material is/are:
-                                <ul>
+                                <ul class="px-4">
                                     <?php
                                     $count = 0;
                                     ?>
@@ -48,8 +56,6 @@
 
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </section>

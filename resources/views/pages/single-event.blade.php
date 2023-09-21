@@ -12,8 +12,8 @@
                 <li class="breadcrumb-item active" aria-current="page">{{ $singleEvent->title }}</li>
             </ol>
 
-            <div class="tiles-container">
-                <div class="post-descriptive">
+            <div class="fixed-bg border-7 px-4 py-5">
+                <div class="post-descriptive mb-5">
                     <h1 class="post-title">{{ $singleEvent->title }}</h1>
                     <div>
                         <hr>

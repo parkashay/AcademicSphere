@@ -11,7 +11,27 @@
                 <li class="breadcrumb-item" aria-current="page">Message</li>
                 <li class="breadcrumb-item active" aria-current="page">Coordinator</li>
                 <li class="breadcrumb-item active" aria-current="page"><?php
-                $from === 'computer' ? 'Computer' : 'Other';
+                switch ($from) {
+                    case 'computer':
+                        print_r('Computer');
+                        break;
+                    case 'civil':
+                        print_r('Civil');
+                        break;
+                    case 'electrical':
+                        print_r('Electrical & Electronics');
+                        break;
+                    case 'civilnrural':
+                        print_r('Civil & Rural');
+                        break;
+                    case 'software':
+                        print_r('Software');
+                        break;
+                
+                    default:
+                        print_r('');
+                        break;
+                }
                 ?></li>
             </ol>
 

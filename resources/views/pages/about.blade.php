@@ -131,7 +131,6 @@
                         </ol>
                         </p>
                     </div>
-
                 </section>
                 <section class="section-sm mb-5">
                     <div class="container p-3">
@@ -179,7 +178,7 @@
                             <h1>5,000+</h1>
                             <p>STUDENTS</p>
                         </div>
-                       
+
                         <div>
                             <h1>100+</h1>
                             <p>SCHOLARSHIPS</p>
