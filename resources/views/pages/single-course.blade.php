@@ -20,7 +20,7 @@
                         <div class="date-share">
                             <div class="post-date">Material By {{ $singleMaterial->teacher }}</div>
                             <div class="post-date"><a class="link-156dhcj"
-                                    href="/courses/single/{{ $singleMaterial->course }}">{{ $singleMaterial->course }}</a>
+                                    href="/courses">{{ $singleMaterial->course }}</a>
                             </div>
                         </div>
                         <hr>
@@ -29,11 +29,18 @@
                         <div class="content-text">
                             {!! $singleMaterial->content !!}
                             @if (!empty($singleMaterial->files))
-                                <br><br>Downloadable file here:
+                                <br><br>Files attached with this material is/are:
                                 <ul>
+                                    <?php
+                                    $count = 0;
+                                    ?>
                                     @foreach ($singleMaterial->files as $file)
-                                        <li><a href="{{ asset('storage/').'/' . $file }}"
-                                                download="{{ asset('storage/') . $file }}">{{ $file }}</a></li>
+                                        <?php
+                                        $count++;
+                                        ?>
+                                        <li><a href="{{ asset('storage/') . '/' . $file }}"
+                                                download="{{ asset('storage/') . $file }}">{{ $singleMaterial->title . '-' . strval($count) }}</a>
+                                        </li>
                                     @endforeach
 
                                 </ul>
@@ -48,4 +55,3 @@
         </section>
     </main>
 @endsection
-

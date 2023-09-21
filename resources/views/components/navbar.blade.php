@@ -120,16 +120,15 @@
 
             <li>
                 <nav class="dropdown">
-                    <a href="/faculty" class="dropbtn" style="--nav-hover-clr:#ce0c36;">FACULTY </a>
+                    <a class="dropbtn" style="--nav-hover-clr:#e06f1f;">FACULTY & STAFF <i
+                            class="fa-solid fa-angle-down"></i></a>
+                    <div class="invible-btn"></div>
+                    <nav class="dropdown-content">
+                        <a href="/faculty">Faculty </a>
+                        <a href="/staff">Staff </a>
+                    </nav>
                 </nav>
             </li>
-
-            <li>
-                <nav class="dropdown">
-                    <a href="/staff" class="dropbtn" style="--nav-hover-clr:#5a0374;">STAFF </a>
-                </nav>
-            </li>
-
 
             <li>
                 <nav class="dropdown">
@@ -152,10 +151,15 @@
                         EXAMINATION </a>
                 </nav>
             </li>
+            <li>
+                <nav class="dropdown">
+                    <a href="/research" class="dropbtn" style="--nav-hover-clr:#f20404;">RESEARCH </a>
+                </nav>
+            </li>
 
             <li>
                 <nav class="dropdown">
-                    <a class="dropbtn" style="--nav-hover-clr:#b31240;"> STUDENT'S SECTION <i
+                    <a class="dropbtn" style="--nav-hover-clr:#b31240;"> STUDENT <i
                             class="fa-solid fa-angle-down"></i></a>
                     <div class="invible-btn"></div>
                     <nav class="dropdown-content">
@@ -207,30 +211,30 @@
                 <li>
                     <a href="/about/organizational-structure">Organizational Structure</a>
                 </li>
-               
+
                 <li>
                     <a href="/message/director">Message From Director</a>
                 </li>
                 <li class="item-has-children">
                     <a href="#">Message From Coordinator</a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="/message/computer">Bachelor of Computer Engineering</a>
-                    </li>
-                    <li>
-                        <a href="/message/civil">Bachelor of Computer Engineering</a>
-                    </li>
-                    <li>
-                        <a href="/message/electrical">Bachelor of Computer Engineering</a>
-                    </li>
-                    <li>
-                        <a href="/message/software">Bachelor of Computer Engineering</a>
-                    </li>
-                    <li>
-                        <a href="/message/civil&rural">Bachelor of Computer Engineering</a>
-                    </li>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/message/computer">Bachelor of Computer Engineering</a>
+                        </li>
+                        <li>
+                            <a href="/message/civil">Bachelor of Computer Engineering</a>
+                        </li>
+                        <li>
+                            <a href="/message/electrical">Bachelor of Computer Engineering</a>
+                        </li>
+                        <li>
+                            <a href="/message/software">Bachelor of Computer Engineering</a>
+                        </li>
+                        <li>
+                            <a href="/message/civil&rural">Bachelor of Computer Engineering</a>
+                        </li>
 
-                </ul>
+                    </ul>
                 </li>
             </ul>
         </li> <!-- item-has-children -->
@@ -278,13 +282,13 @@
                 <li class="item-has-children">
                     <a href="#">Undergraduate</a>
                     <ul class="sub-menu">
-                   <li>
-                    <a href="/admisiion/undergraduate">Paying</a>
-                   </li>
-                   <li>
-                    <a href="https://pu.edu.np/scholarship">Scholarship</a>
-                   </li>
-                        
+                        <li>
+                            <a href="/admisiion/undergraduate">Paying</a>
+                        </li>
+                        <li>
+                            <a href="https://pu.edu.np/scholarship">Scholarship</a>
+                        </li>
+
                     </ul>
                 </li>
                 <li>
@@ -295,18 +299,24 @@
         </li> <!-- item-has-children -->
 
 
-        <ul class="cd-single-item-wrapper">
-            <li>
-                <a href="/faculty" class="dropbtn">FACULTY </a>
 
-            </li>
-        </ul>
-        <ul class="cd-single-item-wrapper">
-            <li>
-                <a href="/staff" class="dropbtn">STAFF </a>
 
-            </li>
-        </ul>
+        <li class="item-has-children">
+            <a href="#">FACULTY & STAFF</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="/faculty" class="dropbtn">FACULTY </a>
+
+                </li>
+                <li>
+                    <a href="/staff" class="dropbtn">STAFF </a>
+
+                </li>
+
+
+            </ul>
+        </li>
+
 
         <li class="item-has-children">
             <a href="#">NEWS & NOTICES</a>
@@ -329,6 +339,14 @@
                 </li>
             </ul>
         </li>
+
+        <ul class="cd-single-item-wrapper">
+            <li>
+                <a href="/research" class="dropbtn">RESEARCH </a>
+
+            </li>
+        </ul>
+
         <ul class="cd-single-item-wrapper">
             <li>
                 <a href="/internal-examination">INTERNAL

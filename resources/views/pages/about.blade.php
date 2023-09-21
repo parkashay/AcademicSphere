@@ -169,19 +169,20 @@
                     <div class="home-data">
                         <div>
                             <h1>2009</h1>
-                            <p>Established In</p>
+                            <p>ESTD.</p>
                         </div>
                         <div>
-                            <h1>99+</h1>
-                            <p> Professors</p>
+                            <h1>50+</h1>
+                            <p> PROFESSORS</p>
                         </div>
                         <div>
-                            <h1>10,000+</h1>
-                            <p>Students</p>
+                            <h1>5,000+</h1>
+                            <p>STUDENTS</p>
                         </div>
+                       
                         <div>
-                            <h1>6</h1>
-                            <p>Faculties</p>
+                            <h1>100+</h1>
+                            <p>SCHOLARSHIPS</p>
                         </div>
                     </div>
                     <hr>

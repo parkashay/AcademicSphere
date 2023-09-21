@@ -25,7 +25,7 @@
                                             <div class="media d-flex">
                                                
                                                 <div class="media-body">
-                                                   <a href="/courses/single/{{$course->title}}">{{$course->title}}</a>
+                                                   <a href="/learning-materials/{{$course->title}}">{{$course->title}}</a>
                                                 </div>
                                             </div>
                                             
