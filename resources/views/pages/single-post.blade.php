@@ -25,7 +25,7 @@
                                 $formattedDate = $dateTime->format('F j, Y');
                                 print_r($formattedDate);
                                 ?>
-                                | {{$post->created_at->format('H:i')}}
+                                | {{ $post->created_at->format('H:i') }}
 
                             </div>
                             <div class="post-share">

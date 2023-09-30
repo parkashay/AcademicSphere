@@ -37,8 +37,6 @@ class HomeController extends Controller
             ->limit(4)
             ->get();
 
-
-
         // Programs
         $programs = Program::orderBy('id', 'ASC')->get();
 

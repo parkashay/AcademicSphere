@@ -42,8 +42,9 @@
 <body>
     @include('components.navbar')
 
-    @yield('content')
-
+    <div class="mt-5 mb-5">
+        @yield('content')
+    </div>
     @include('components.footer')
 
     <!-- jQuery -->

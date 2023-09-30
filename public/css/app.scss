@@ -30,6 +30,7 @@ PROJECT MEMBERS:
     --grey-light: #bdc0c3;
     --header-txt-clr: #2c2c2c;
     --link-hover-clr: rgb(3, 65, 191);
+    --nav-hover-clr:var(--link-hover-clr);
     --hover-bg: rgb(184, 179, 179);
     --random-clr: #b1040e;
     --footer-clr: #002147;
@@ -409,13 +410,17 @@ Main components
 .header {
     position: fixed;
     top: 0;
-    height: 50px;
+    height: auto;
     width: 100%;
     display: flex;
     align-items: center;
     gap: 0.2em;
     z-index: 3;
-    background-color: #fff;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-color: #e5eaf2;
+    border-bottom: thin solid #e5eaf2;
     /* Force Hardware Acceleration in WebKit */
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
@@ -427,20 +432,42 @@ Main components
     transition-property: transform, -webkit-transform;
 
     li {
-        font-size: 0.7em;
+        font-size: 0.9em;
         font-weight: 600;
+    }
+}
+.small-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 1000;
+    padding-right: 4em;
+    background-color: #052b5d;
+    ul {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20px, 40px));
+        gap: 5em;
+        justify-content: flex-end;
+        align-items: center;
+        list-style: none;
+        font-size: 0.7em;
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
     }
 }
 
 .button {
-    display: inline-block;
+    display: grid;
+    place-items:center;
     margin: 4px 2px;
-    background-color: #444;
     font-size: 14px;
     padding-left: 32px;
-    padding-right: 32px;
-    height: 50px;
-    line-height: 50px;
+    height: 25px;
     text-align: center;
     color: white;
     text-decoration: none;
@@ -457,15 +484,14 @@ Main components
     -moz-transition-duration: 0.4s;
     -webkit-transition-duration: 0.4s;
     -o-transition-duration: 0.4s;
-    background-color: rgb(81, 79, 79);
 }
 
 .search-container {
     position: relative;
     display: inline-block;
     margin: 4px 2px;
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
     vertical-align: bottom;
 }
 
@@ -537,10 +563,6 @@ header.lateral-menu-is-open {
     transition: tranform 0.4s linear;
 }
 
-header.is-fixed {
-    position: fixed;
-}
-
 .form-center {
     width: 100%;
     display: grid;
@@ -579,7 +601,7 @@ header.is-fixed {
     // overflow: hidden;
     & a:hover {
         background-color: var(--random-clr);
-        color: var(--light-txt-clr);
+        color: #fff !important;
     }
 }
 
@@ -637,7 +659,10 @@ header.is-fixed {
     opacity: 1;
     pointer-events: auto;
 }
-
+.dropdown-menu a{
+    color: var(--dark-txt-clr)!important;
+    font-size: 0.9em !important;
+}
 #cd-logo {
     display: flex;
     gap: 5px;
@@ -646,12 +671,12 @@ header.is-fixed {
     font-weight: 700;
     color: var(--random-clr);
     font-size: 18px;
-    padding: 1em 0.5em;
+    padding: 0em 0em 0em 5em;
 }
 
 #cd-logo img {
     display: block;
-    max-width: 50px;
+    max-width: 300px;
 }
 
 #cd-top-nav {
@@ -765,8 +790,7 @@ header.is-fixed {
     overflow-y: auto;
     /* Force Hardware Acceleration in WebKit */
     transform: translateZ(0);
-    
- 
+
     /* this creates the subtle slide in animation of the navigation */
     transform: translateX(80px);
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -775,7 +799,6 @@ header.is-fixed {
 
 #cd-lateral-nav .cd-navigation {
     margin: 10px 0 16px;
-    
 }
 
 #cd-lateral-nav .sub-menu {
@@ -3096,21 +3119,13 @@ ol.with-counter {
 }
 
 @media only screen and (min-width: 992px) {
+    .header {
+        top: 30px;
+        padding-right: 7em;
+    }
     #cd-top-nav {
         display: block;
         font-size: 18px;
-    }
-
-    .header {
-        background-color: transparent;
-        color: #fff;
-    }
-
-    .nav-scroll {
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(8px);
-        border-color: #e5eaf2;
-        border-bottom: thin solid #e5eaf2;
     }
 
     .container-content-two-col,
@@ -3151,13 +3166,6 @@ ol.with-counter {
 }
 
 @media only screen and (max-width: 992px) {
-    .header {
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(8px);
-        border-color: #e5eaf2;
-        border-bottom: thin solid #e5eaf2;
-    }
-
     .soe-description {
         font-size: 0.7em;
     }
@@ -3187,7 +3195,7 @@ ol.with-counter {
     }
 
     .dropdown-content {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 }
 

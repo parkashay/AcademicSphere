@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-lg-12 mb-4 mb-sm-5">
                             <div>
-                                <span class="section-title text-primary mb-3 mb-sm-4">About</span>
+                                <span class="section-title text-primary mb-3 mb-sm-4"></span>
                                 {!! $staff->content !!}
                             </div>
                         </div>

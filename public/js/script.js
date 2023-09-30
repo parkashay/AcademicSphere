@@ -96,14 +96,7 @@ window.addEventListener("scroll", () => {
 //   location.href = "#home";
 // });
 
-//Change navigation style on scroll
-window.addEventListener("scroll", (event) => {
-    let nav = document.querySelector(".header");
 
-    window.scrollY >= 50
-        ? nav.classList.add("nav-scroll")
-        : nav.classList.remove("nav-scroll");
-});
 
 const home_profile_container = document.querySelectorAll(
     ".home-profile-container"
